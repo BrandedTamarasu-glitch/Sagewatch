@@ -51,10 +51,15 @@ PlasmoidItem {
         id: dataSource
         engine: "executable"
         onNewData: function(sourceName, data) {
+            var stdout = data.stdout ? String(data.stdout).trim() : ""
+            var stderr = data.stderr ? String(data.stderr).trim() : ""
+            var hasExitCode = data["exit code"] !== undefined && data["exit code"] !== null
+            if (!stdout && !stderr && !hasExitCode) return
             root.refreshing = false
-            if (data["exit code"] !== 0 || !data.stdout) root.errorMessage = data.stderr || "Sagewatch data helper is unavailable."
-            else try { root.snapshot = JSON.parse(data.stdout); root.errorMessage = "" }
+            if (stdout) try { root.snapshot = JSON.parse(stdout); root.errorMessage = "" }
             catch (error) { root.errorMessage = "Sagewatch returned invalid local data." }
+            else if (stderr) root.errorMessage = stderr
+            else if (Number(data["exit code"]) !== 0) root.errorMessage = "Sagewatch data helper exited with code " + data["exit code"] + "."
             disconnectSource(sourceName)
         }
     }
