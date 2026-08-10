@@ -72,6 +72,8 @@ The repository includes a native Plasma 6 dashboard backed by the same Rust prov
 ./scripts/install-plasma-widget.sh
 ```
 
+Release users can instead extract `Sagewatch_Plasma_0.1.3_amd64.tar.gz` and run the included `./install.sh`. That bundle contains the prebuilt data helper, widget package, and an `uninstall.sh`; Rust and Node.js are not required.
+
 The installer:
 
 1. Builds `sagewatch-plasma-provider` in release mode.

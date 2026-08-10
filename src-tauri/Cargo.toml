@@ -1,9 +1,10 @@
 [package]
 name = "sagewatch"
-version = "0.1.2"
+version = "0.1.3"
 description = "Local Claude and Codex allowance status"
 authors = ["Sagewatch contributors"]
 edition = "2021"
+default-run = "sagewatch"
 
 [lib]
 name = "sagewatch_lib"

@@ -34,8 +34,8 @@ Read the complete [privacy model](docs/privacy.md) before enabling either option
 Download the AppImage from the [latest release](https://github.com/BrandedTamarasu-glitch/Sagewatch/releases/latest), make it executable, and launch it:
 
 ```sh
-chmod +x Sagewatch_0.1.2_amd64.AppImage
-./Sagewatch_0.1.2_amd64.AppImage
+chmod +x Sagewatch_0.1.3_amd64.AppImage
+./Sagewatch_0.1.3_amd64.AppImage
 ```
 
 > **Your accounts stay yours.** Sagewatch contains no bundled account, credential, or usage data. It reads allowance information from the Claude Code and Codex CLIs installed and authenticated for the current Linux user. If a CLI is missing or signed out, that provider appears unavailable until the user installs or signs in to it.
@@ -44,7 +44,15 @@ Sagewatch currently targets 64-bit Linux desktops. See the [setup guide](docs/se
 
 ### KDE Plasma 6 widget
 
-Sagewatch also includes a native Plasma widget. From a source checkout, install it for the current user with:
+Download `Sagewatch_Plasma_0.1.3_amd64.tar.gz` from the latest release, extract it, and run its installer:
+
+```sh
+tar -xzf Sagewatch_Plasma_0.1.3_amd64.tar.gz
+cd Sagewatch_Plasma_0.1.3_amd64
+./install.sh
+```
+
+From a source checkout, install it for the current user with:
 
 ```sh
 ./scripts/install-plasma-widget.sh
