@@ -17,6 +17,7 @@ Initial local release of a read-only Linux allowance monitor for Claude Teams an
 - Frontend production build and release Rust build
 - Frontend and Claude bridge tests
 - 12 default Rust tests plus a separately executed live Codex handshake test
+- Separately executed authenticated Claude status-line contract test
 - Rust formatting and strict Clippy
 - Compass release validation and Arbiter integration approval
 - 420×640 visual inspection, including honest unavailable states
@@ -31,6 +32,6 @@ Initial local release of a read-only Linux allowance monitor for Claude Teams an
 - /home/corye/openai-cli/Sagewatch/.forgeflow/Sagewatch/ship/ship-summary.json
 - /home/corye/openai-cli/Sagewatch/.forgeflow/Sagewatch/ship/ship-presentation.html
 
-## Residual limitation
+## Provider behavior
 
-Claude live-session ingestion still requires verification from an active authenticated Claude Code session on the target machine. When no session observation exists, Sagewatch reports unavailable or stale data rather than fabricating a value.
+Both authenticated provider paths were verified locally. Claude remains session-attached by design; when observations stop, Sagewatch reports stale data rather than fabricating a live value.

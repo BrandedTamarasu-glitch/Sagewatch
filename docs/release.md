@@ -29,9 +29,10 @@ cargo test --manifest-path src-tauri/Cargo.toml live_authenticated_app_server_ha
 - Confirm no raw provider response, transcript, credential, cookie, or token is present in app storage or logs.
 - Confirm the Codex CLI compatibility gate matches the intended release environment.
 
+The 2026-08-10 v0.1.0 release candidate passed both authenticated provider checks on the development machine.
+
 ## Shipping boundaries
 
 - The Codex rollout transcript fallback is not shipped.
 - Team-wide administrative analytics, multi-account support, and cloud sync are deferred.
 - Do not publish or push until a remote and release destination are explicitly approved.
-

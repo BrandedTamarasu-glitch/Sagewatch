@@ -9,7 +9,7 @@ npm install
 npm run tauri dev
 ```
 
-Live Claude and Codex adapters are not enabled in Waves 1–2. The interface uses fixtures while backend storage and isolation behavior are exercised with fake adapters.
+Sagewatch includes live local adapters for Claude and Codex. Until a provider produces a verified observation, the interface displays an honest unavailable state rather than example percentages.
 
 ## Claude Code status-line bridge
 
@@ -30,7 +30,7 @@ The bridge writes the sanitized observation to:
 ${XDG_DATA_HOME:-$HOME/.local/share}/sagewatch/ingest/claude-statusline.json
 ```
 
-Set `SAGEWATCH_CLAUDE_SNAPSHOT_PATH` to an absolute or relative custom destination if necessary. The future live backend adapter and the bridge must use the same override.
+Set `SAGEWATCH_CLAUDE_SNAPSHOT_PATH` to a custom destination if necessary. The live backend adapter and bridge must use the same override.
 
 The bridge intentionally prints nothing by default. To retain an existing status-line program, append `--passthrough` and an absolute executable path plus its arguments. The executable is launched directly without a shell:
 
@@ -46,4 +46,3 @@ The bridge intentionally prints nothing by default. To retain an existing status
 Only chain a program you trust: it receives Claude Code's original status-line JSON because it must render the existing output. Sagewatch never logs or persists that original input.
 
 The feed is session-attached. It updates while Claude Code invokes the status line and becomes stale when those observations stop. Use Claude Code's `/usage` or Settings > Usage for manual verification.
-

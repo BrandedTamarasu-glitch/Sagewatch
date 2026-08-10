@@ -240,4 +240,28 @@ mod tests {
         assert_eq!(status.windows[0].remaining_percent, Some(42.0));
         assert_eq!(status.windows[0].kind, WindowKind::ModelScoped);
     }
+
+    #[test]
+    #[ignore = "requires a live Claude Code status-line observation"]
+    fn live_statusline_snapshot_satisfies_contract() {
+        let path = std::env::var_os("SAGEWATCH_CLAUDE_SNAPSHOT_PATH")
+            .map(PathBuf::from)
+            .unwrap_or_else(|| {
+                let data_home = std::env::var_os("XDG_DATA_HOME")
+                    .map(PathBuf::from)
+                    .or_else(|| {
+                        std::env::var_os("HOME")
+                            .map(|home| PathBuf::from(home).join(".local/share"))
+                    })
+                    .expect("HOME or XDG_DATA_HOME is required for the live Claude test");
+                data_home.join("sagewatch/ingest/claude-statusline.json")
+            });
+        let status = ClaudeAdapter::new(path, Duration::from_secs(10 * 60))
+            .load()
+            .expect("live Claude status-line snapshot should load")
+            .normalize()
+            .expect("live Claude status-line snapshot should satisfy the domain contract");
+        assert_eq!(status.provider, Provider::Claude);
+        assert!(!status.windows.is_empty());
+    }
 }

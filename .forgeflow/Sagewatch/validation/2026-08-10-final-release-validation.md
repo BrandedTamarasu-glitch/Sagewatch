@@ -12,6 +12,7 @@ Verdict: PASS
 - `cargo clippy --offline --all-targets -- -D warnings`: pass
 - `cargo build --release --offline`: pass
 - Explicit authenticated Codex app-server handshake test: pass
+- Explicit authenticated Claude status-line bridge and Rust adapter contract test: pass
 
 ## Review evidence
 
@@ -19,6 +20,8 @@ Verdict: PASS
 - Arbiter integration: pass after shared Claude model-window contract fixture remediation
 - Visual inspection: compact 420×640 layout passes; unavailable providers display no fabricated percentage
 
-## Residual check
+## Live-provider evidence
 
-Claude status-line ingestion is contract-tested through a shared Node/Rust fixture, but still requires one active authenticated Claude Code session verification on the target machine.
+- Claude Code emitted a sanitized snapshot with five-hour and seven-day windows at the documented XDG path using `0600` file permissions.
+- The Rust Claude adapter loaded and normalized that exact snapshot successfully.
+- The Codex adapter completed an authenticated local app-server handshake and normalized the returned windows.

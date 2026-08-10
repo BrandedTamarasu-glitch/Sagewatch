@@ -20,6 +20,7 @@
     "cargo fmt --check: pass",
     "cargo test --offline: 12 passed, 1 intentionally ignored live test",
     "live authenticated Codex handshake: pass",
+    "live authenticated Claude status-line contract: pass",
     "cargo clippy --offline --all-targets -- -D warnings: pass",
     "cargo build --release --offline: pass"
   ],
@@ -39,7 +40,7 @@
   ],
   "notes": [
     "No remote, push, or PR was created.",
-    "Claude live-session verification remains a documented target-machine check.",
+    "Authenticated Claude and Codex provider paths were verified on the development machine.",
     "Team-wide administrative analytics and rollout transcript fallback remain deferred."
   ]
 }

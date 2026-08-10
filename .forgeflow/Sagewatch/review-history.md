@@ -29,3 +29,11 @@ Final verdict: APPROVE.
 - One shared contract fixture is asserted by both Node bridge and Rust Claude adapter tests.
 - No remaining integration blockers were found.
 - The authenticated live Codex app-server handshake test passed.
+
+## 2026-08-10 — Live Claude verification
+
+Verdict: APPROVE.
+
+- The active Claude Code instance invoked the Sagewatch bridge while preserving Forgeflow's existing status line through safe direct passthrough.
+- The bridge wrote a `0600` sanitized snapshot containing five-hour and seven-day allowance windows.
+- The ignored live Rust Claude adapter test loaded and normalized that exact snapshot successfully.

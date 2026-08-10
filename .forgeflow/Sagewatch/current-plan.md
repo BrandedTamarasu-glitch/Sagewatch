@@ -1,6 +1,6 @@
 # Current Plan — Sagewatch
 
-Status: implementation and release validation complete; one live Claude session verification remains a documented residual check.
+Status: implementation and release validation complete, including authenticated live Claude and Codex verification.
 
 Canonical phase plan: [../../docs/implementation-phases.md](../../docs/implementation-phases.md)
 
@@ -11,7 +11,7 @@ Canonical phase plan: [../../docs/implementation-phases.md](../../docs/implement
 3. **Provider framework and local safety** — completed. Rust owns the provider boundary, normalization, safe storage, and refresh orchestration.
 4. **Claude Teams and Codex adapters** — completed. Claude uses the session-attached status-line bridge; Codex uses the local `app-server` path with the live probe captured in the adapter tests.
 5. **Product polish, preferences, and alerts** — completed for the shipped UI/settings surface. The rollout-cache fallback remains deferred and disabled; preference restoration, scheduled refresh, backend backoff, and accessible threshold alerts are wired.
-6. **Verification, documentation, and release readiness** — completed for the implemented surface. Build, frontend tests, bridge tests, and the default Rust suite are green; Claude live-session verification is still pending.
+6. **Verification, documentation, and release readiness** — completed. Build, frontend tests, bridge tests, the default Rust suite, and both authenticated live provider checks are green.
 
 ## Hard Gate
 
@@ -29,7 +29,7 @@ Version 1 is a single-user, local, read-only allowance monitor. Team-wide admini
 - `cargo test --offline` passes with 12 Rust tests and 1 intentionally ignored live Codex handshake probe.
 - The ignored live Codex app-server test was run explicitly against the authenticated local CLI and passed.
 - `cargo fmt --check`, strict Clippy, and the release build pass.
-- The remaining live probe is Claude status-line verification in an authenticated active Claude Code session.
+- The Claude status-line bridge produced a private live snapshot containing five-hour and seven-day windows, and the Rust adapter's explicit live contract test passed.
 - Stale or estimated data is labeled explicitly.
 - Logs, caches, and fixtures contain no reusable secrets.
 - Keyboard, contrast, reduced motion, screen-reader labeling, responsive 200% layout, and honest unavailable states passed Forgeflow review and visual inspection.
