@@ -8,7 +8,8 @@ import org.kde.plasma.plasmoid
 
 PlasmoidItem {
     id: root
-    readonly property string helperPath: StandardPaths.writableLocation(StandardPaths.HomeLocation) + "/.local/libexec/sagewatch-plasma-provider"
+    readonly property url homeUrl: StandardPaths.writableLocation(StandardPaths.HomeLocation)
+    readonly property string helperPath: homeUrl.toLocalFile() + "/.local/libexec/sagewatch-plasma-provider"
     property var snapshot: ({"providers": {}})
     property string errorMessage: ""
     property bool refreshing: false
