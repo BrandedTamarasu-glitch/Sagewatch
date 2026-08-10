@@ -38,6 +38,8 @@ chmod +x Sagewatch_0.1.2_amd64.AppImage
 ./Sagewatch_0.1.2_amd64.AppImage
 ```
 
+> **Your accounts stay yours.** Sagewatch contains no bundled account, credential, or usage data. It reads allowance information from the Claude Code and Codex CLIs installed and authenticated for the current Linux user. If a CLI is missing or signed out, that provider appears unavailable until the user installs or signs in to it.
+
 Sagewatch currently targets 64-bit Linux desktops. See the [setup guide](docs/setup.md) for provider configuration, desktop integration, and removal.
 
 ## Provider support

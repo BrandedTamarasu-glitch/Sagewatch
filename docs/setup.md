@@ -11,6 +11,15 @@ npm run tauri dev
 
 Sagewatch includes live local adapters for Claude and Codex. Until a provider produces a verified observation, the interface displays an honest unavailable state rather than example percentages.
 
+## Account and authentication boundary
+
+Sagewatch does not ship with a Claude or Codex account and does not ask users to enter provider credentials. It uses the Claude Code and Codex CLIs installed and authenticated for the current Linux user:
+
+- Each installation displays allowance data only for that user's locally authenticated CLI sessions.
+- A missing or signed-out CLI produces an unavailable or signed-out provider state.
+- Sagewatch does not copy, bundle, upload, or share account credentials or usage data.
+- Installing a release built by another person does not give access to the builder's accounts.
+
 ## Claude Code status-line bridge
 
 Claude Code sends its status-line command one JSON object on standard input. Configure the absolute bridge path as the status-line command in Claude Code:
