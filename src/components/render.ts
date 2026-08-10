@@ -21,7 +21,7 @@ export function alertList(alerts: AllowanceAlert[]): string {
 export function providerCard(status: ProviderStatus, preferences: Preferences, refreshing: boolean): string {
   const headline = status.windows.find((window) => window.id === status.headline_window_id);
   const providerName = name(status.provider);
-  return `<article class="provider-card" aria-labelledby="${status.provider}-title">
+  return `<article class="provider-card provider-card--${status.provider}" aria-labelledby="${status.provider}-title">
     <header class="provider-card__header"><div><h2 id="${status.provider}-title">${providerName}</h2><p class="provider-card__plan">${status.plan === "unknown" ? "Plan unknown" : escape(status.plan)}</p></div>${badge(status.health, "health")}</header>
     <div class="allowance" aria-label="${providerName} remaining allowance ${percentage(headline?.remaining_percent)}"><strong>${percentage(headline?.remaining_percent)}</strong><span>remaining${headline ? ` · ${escape(headline.label)}` : ""}</span></div>
     ${headline?.remaining_percent != null ? `<progress max="100" value="${headline.remaining_percent}" aria-label="${providerName} remaining percentage"></progress>` : ""}

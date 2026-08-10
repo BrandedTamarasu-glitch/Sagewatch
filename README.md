@@ -1,29 +1,80 @@
 # Sagewatch
 
-Sagewatch is a local-first Linux desktop widget for the remaining allowance, reset time, freshness, and health of one Claude Teams seat and one Codex subscription.
+**A private, local-first Linux dashboard for Claude and Codex usage allowances.**
 
-Version 0.1 includes a Tauri 2/Rust backend, a Vite/TypeScript interface, private atomic JSON storage, a sanitized bridge for Claude Code's documented status-line `rate_limits` input, and a version-gated local Codex app-server adapter. The authenticated Codex handshake has been verified live; Claude updates remain session-attached and become explicitly stale when Claude Code stops emitting status-line data.
+Sagewatch keeps your remaining allowance, reset time, freshness, and provider health visible in one compact desktop widget. It uses a polished, provider-aware interface and stays honest about stale or unavailable data.
+
+> Sagewatch runs locally. It has no account system, cloud service, analytics, or telemetry.
+
+## What it shows
+
+- Claude and Codex remaining allowance side by side
+- Absolute reset dates and times
+- Live, recent, stale, and unavailable freshness states
+- Provider health and source-confidence details
+- Local threshold notifications
+- A tray icon and optional launch at login
+- Responsive light and dark themes
+
+## Privacy by design
+
+Sagewatch is built around a narrow, read-only data model:
+
+- Provider credentials, cookies, tokens, prompts, and transcripts are never stored.
+- Provider snapshots are saved locally in private, atomic JSON files.
+- Claude's optional `/usage` probe runs in a private working directory and retains only its sanitized status-line snapshot.
+- The sensitive Codex rollout-cache fallback is disabled unless explicitly enabled.
+- One provider failing never hides or invalidates the other.
+- Stale or estimated information is never presented as live and exact.
+
+Read the complete [privacy model](docs/privacy.md) before enabling either optional fallback.
+
+## Install on Linux
+
+Download the AppImage from the [latest release](https://github.com/BrandedTamarasu-glitch/Sagewatch/releases/latest), make it executable, and launch it:
+
+```sh
+chmod +x Sagewatch_0.1.2_amd64.AppImage
+./Sagewatch_0.1.2_amd64.AppImage
+```
+
+Sagewatch currently targets 64-bit Linux desktops. See the [setup guide](docs/setup.md) for provider configuration, desktop integration, and removal.
+
+## Provider support
+
+| Provider | Integration | Notes |
+| --- | --- | --- |
+| Codex | Local app-server adapter | Authenticated handshake and allowance feed verified locally |
+| Claude | Documented status-line input | Updates follow Claude Code sessions; the optional zero-token `/usage` probe can refresh on demand |
+
+Both integrations are deliberately version-aware and surface an explicit diagnostic instead of silently guessing when an upstream format changes.
 
 ## Development
 
-Prerequisites are Node.js 20+, Rust stable, and the Linux system libraries required by Tauri 2.
+Prerequisites:
+
+- Node.js 20 or newer
+- Rust stable
+- The [Tauri 2 Linux system dependencies](https://v2.tauri.app/start/prerequisites/)
 
 ```sh
 npm install
-npm run build
 npm run test:frontend
 npm run test:bridge
-npm run tauri build
-npm run tauri dev
+cargo test --manifest-path src-tauri/Cargo.toml
+npm run build
+NO_STRIP=1 npm run tauri -- build
 ```
 
-See [setup](docs/setup.md), [privacy](docs/privacy.md), [troubleshooting](docs/troubleshooting.md), and the [release checklist](docs/release.md) for provider and release details.
+`NO_STRIP=1` avoids an incompatibility between rolling-release Linux libraries and the older `strip` bundled with `linuxdeploy`.
 
-## Product principles
+## Documentation
 
-- Local-first, read-only provider access
-- No cloud aggregation or telemetry
-- No credential, cookie, token, transcript, or raw provider-response retention
-- Stale or estimated data is never presented as live and exact
-- One provider failure never hides the other
-- Status remains understandable without relying on color
+- [Setup](docs/setup.md)
+- [Privacy](docs/privacy.md)
+- [Troubleshooting](docs/troubleshooting.md)
+- [Release checklist](docs/release.md)
+
+## Status
+
+Sagewatch is an early release. Provider interfaces can change, so diagnostics and explicit freshness labels are part of the product contract—not incidental UI.
