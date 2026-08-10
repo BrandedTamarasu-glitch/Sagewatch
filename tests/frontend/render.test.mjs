@@ -44,8 +44,8 @@ test("settings expose alert thresholds and explicit fallback privacy text", () =
 });
 
 test("diagnostics identify the running Sagewatch version", () => {
-  const html = diagnosticsPanel(fixtureDiagnostics, "0.1.1");
-  assert.match(html, /Sagewatch version 0\.1\.1/);
+  const html = diagnosticsPanel(fixtureDiagnostics, "0.1.2");
+  assert.match(html, /Sagewatch version 0\.1\.2/);
 });
 
 test("settings surface autostart failures accessibly without changing the checkbox", () => {

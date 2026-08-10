@@ -10,9 +10,9 @@ test("the initial window shows both provider cards without triggering the stacke
   const window = config.app.windows[0];
 
   const styles = await readFile(stylesUrl, "utf8");
-  assert.match(styles, /@media \(max-width: 639px\).*provider-grid \{ grid-template-columns: 1fr;/s);
-  assert.ok(window.width > 639);
-  assert.ok(window.minWidth > 639);
+  assert.match(styles, /@media \(max-width: 52rem\)[\s\S]*provider-card__secondary-fact \{ display: none !important;/);
+  assert.match(styles, /@media \(max-width: 22\.5rem\)[\s\S]*provider-grid \{ grid-template-columns: 1fr;/);
+  assert.equal(window.minWidth, 360);
 
   // The screenshot-driven default leaves room for the header, tabs, complete
   // provider cards, and actions without requiring an initial resize.
@@ -20,5 +20,5 @@ test("the initial window shows both provider cards without triggering the stacke
     { width: window.width, height: window.height },
     { width: 900, height: 800 },
   );
-  assert.equal(window.minHeight, 640);
+  assert.equal(window.minHeight, 440);
 });

@@ -22,10 +22,10 @@ export function providerCard(status: ProviderStatus, preferences: Preferences, r
   const headline = status.windows.find((window) => window.id === status.headline_window_id);
   const providerName = name(status.provider);
   return `<article class="provider-card" aria-labelledby="${status.provider}-title">
-    <header class="provider-card__header"><div><h2 id="${status.provider}-title">${providerName}</h2><p>${status.plan === "unknown" ? "Plan unknown" : escape(status.plan)}</p></div>${badge(status.health, "health")}</header>
+    <header class="provider-card__header"><div><h2 id="${status.provider}-title">${providerName}</h2><p class="provider-card__plan">${status.plan === "unknown" ? "Plan unknown" : escape(status.plan)}</p></div>${badge(status.health, "health")}</header>
     <div class="allowance" aria-label="${providerName} remaining allowance ${percentage(headline?.remaining_percent)}"><strong>${percentage(headline?.remaining_percent)}</strong><span>remaining${headline ? ` · ${escape(headline.label)}` : ""}</span></div>
     ${headline?.remaining_percent != null ? `<progress max="100" value="${headline.remaining_percent}" aria-label="${providerName} remaining percentage"></progress>` : ""}
-    <dl class="provider-card__facts"><div><dt>Resets</dt><dd>${time(headline?.reset_at ?? null, preferences.time_format)}</dd></div><div><dt>Freshness</dt><dd>${badge(status.freshness, "freshness")}</dd></div><div><dt>Confidence</dt><dd>${badge(status.source_confidence, "confidence")}</dd></div></dl>
+    <dl class="provider-card__facts"><div><dt>Resets</dt><dd>${time(headline?.reset_at ?? null, preferences.time_format)}</dd></div><div><dt>Freshness</dt><dd>${badge(status.freshness, "freshness")}</dd></div><div class="provider-card__secondary-fact"><dt>Confidence</dt><dd>${badge(status.source_confidence, "confidence")}</dd></div></dl>
     <div class="provider-card__actions"><button type="button" class="button button--quiet" data-refresh="${status.provider}" ${refreshing ? "disabled" : ""} aria-label="Refresh ${providerName}">${refreshing ? "Refreshing…" : "Refresh"}</button><button type="button" class="button" data-details="${status.provider}" aria-haspopup="dialog">View details</button></div>
   </article>`;
 }
