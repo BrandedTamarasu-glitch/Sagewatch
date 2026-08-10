@@ -1,0 +1,36 @@
+{
+  "schema_version": "1",
+  "generated_at": "2026-08-07T22:07:49.605Z",
+  "root": "/home/corye/openai-cli/Sagewatch",
+  "query": "execute Sagewatch binding implementation brief Tauri Vite Rust frontend tests docs",
+  "query_tokens": [
+    "execute",
+    "sagewatch",
+    "binding",
+    "implementation",
+    "brief",
+    "tauri",
+    "vite",
+    "rust",
+    "frontend",
+    "tests",
+    "docs"
+  ],
+  "lanes": {
+    "shared": [],
+    "smith": [],
+    "warden": [],
+    "lumen": [],
+    "compass": [],
+    "atlas": []
+  },
+  "counts": {
+    "shared": 0,
+    "smith": 0,
+    "warden": 0,
+    "lumen": 0,
+    "compass": 0,
+    "atlas": 0
+  },
+  "denied": []
+}

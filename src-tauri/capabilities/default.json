@@ -1,0 +1,8 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Minimal capability set for the Sagewatch main window.",
+  "windows": ["main"],
+  "permissions": ["core:default"]
+}
+

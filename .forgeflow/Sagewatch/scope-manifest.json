@@ -1,0 +1,35 @@
+{
+  "schema_version": "1",
+  "generated_at": "2026-08-07T22:00:05.833Z",
+  "root": "/home/corye/openai-cli/Sagewatch",
+  "query": "Sagewatch Claude Codex subscription allowance widget adapters Tauri accessibility security",
+  "query_tokens": [
+    "sagewatch",
+    "claude",
+    "codex",
+    "subscription",
+    "allowance",
+    "widget",
+    "adapters",
+    "tauri",
+    "accessibility",
+    "security"
+  ],
+  "lanes": {
+    "shared": [],
+    "smith": [],
+    "warden": [],
+    "lumen": [],
+    "compass": [],
+    "atlas": []
+  },
+  "counts": {
+    "shared": 0,
+    "smith": 0,
+    "warden": 0,
+    "lumen": 0,
+    "compass": 0,
+    "atlas": 0
+  },
+  "denied": []
+}

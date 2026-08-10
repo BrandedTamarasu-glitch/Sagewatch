@@ -1,0 +1,3175 @@
+{
+  "schema_version": "1",
+  "generated_at": "2026-08-07T22:07:49.578Z",
+  "project_dir": ".forgeflow/Sagewatch",
+  "sources": [
+    {
+      "path": ".forgeflow/Sagewatch/current-discussion.md",
+      "bytes": 22,
+      "mtime_ms": 1786138992383
+    },
+    {
+      "path": ".forgeflow/Sagewatch/current-research.md",
+      "bytes": 7693,
+      "mtime_ms": 1786139989281
+    },
+    {
+      "path": ".forgeflow/Sagewatch/current-plan.md",
+      "bytes": 1756,
+      "mtime_ms": 1786139050027
+    },
+    {
+      "path": ".forgeflow/Sagewatch/current-brief.md",
+      "bytes": 7788,
+      "mtime_ms": 1786140454735
+    },
+    {
+      "path": ".forgeflow/Sagewatch/patterns.md",
+      "bytes": 63,
+      "mtime_ms": 1786138992383
+    },
+    {
+      "path": ".forgeflow/Sagewatch/codebase-map.md",
+      "bytes": 58,
+      "mtime_ms": 1786138992383
+    },
+    {
+      "path": ".forgeflow/Sagewatch/review-history.md",
+      "bytes": 18,
+      "mtime_ms": 1786138992383
+    },
+    {
+      "path": ".forgeflow/Sagewatch/learnings.jsonl",
+      "bytes": 0,
+      "mtime_ms": 1786138992383
+    }
+  ],
+  "records": [
+    {
+      "id": ".forgeflow/Sagewatch/current-discussion.md:1",
+      "source": ".forgeflow/Sagewatch/current-discussion.md",
+      "line": 1,
+      "kind": "heading",
+      "text": "Current Discussion",
+      "keywords": [
+        "current",
+        "discussion"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:1",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 1,
+      "kind": "heading",
+      "text": "Current Research — Provider observability",
+      "keywords": [
+        "current",
+        "research",
+        "provider",
+        "observability"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:5",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 5,
+      "kind": "heading",
+      "text": "Recommendation",
+      "keywords": [
+        "recommendation"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:9",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 9,
+      "kind": "bullet",
+      "text": "Recommendation: - **Claude Teams:** consume the officially documented Claude Code status-line `rate_limits` payload. This is session-attached rather than a general background API, so the last observation becomes `stale` when Claude Code is not running. Manual verification through `/usage` or Settings > Usage remains...",
+      "keywords": [
+        "recommendation",
+        "claude",
+        "teams",
+        "consume",
+        "officially",
+        "documented",
+        "code",
+        "status",
+        "line",
+        "rate",
+        "limits",
+        "payload",
+        "this",
+        "session",
+        "attached",
+        "rather",
+        "than",
+        "general",
+        "background",
+        "last",
+        "observation",
+        "becomes",
+        "stale",
+        "when",
+        "running",
+        "manual",
+        "verification",
+        "through",
+        "usage",
+        "settings",
+        "remains",
+        "fallback"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:10",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 10,
+      "kind": "bullet",
+      "text": "Recommendation: - **Codex subscription:** use the local Codex app-server request `account/rateLimits/read`. The installed CLI's generated protocol includes primary and secondary windows, used percentage, and reset timestamps. Treat this integration as version-coupled because app-server is currently marked experimental.",
+      "keywords": [
+        "recommendation",
+        "codex",
+        "subscription",
+        "local",
+        "server",
+        "request",
+        "account",
+        "ratelimits",
+        "read",
+        "installed",
+        "generated",
+        "protocol",
+        "includes",
+        "primary",
+        "secondary",
+        "windows",
+        "used",
+        "percentage",
+        "reset",
+        "timestamps",
+        "treat",
+        "this",
+        "integration",
+        "version",
+        "coupled",
+        "because",
+        "currently",
+        "marked",
+        "experimental"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:11",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 11,
+      "kind": "bullet",
+      "text": "Recommendation: - **Codex fallback:** optionally extract only `rate_limits` events from local rollout JSONL files. This must be explicit opt-in because those files also contain conversation data; the parser must discard every unrelated event without retaining raw records.",
+      "keywords": [
+        "recommendation",
+        "codex",
+        "fallback",
+        "optionally",
+        "extract",
+        "only",
+        "rate",
+        "limits",
+        "events",
+        "from",
+        "local",
+        "rollout",
+        "jsonl",
+        "files",
+        "this",
+        "must",
+        "explicit",
+        "because",
+        "those",
+        "also",
+        "contain",
+        "conversation",
+        "data",
+        "parser",
+        "discard",
+        "every",
+        "unrelated",
+        "event",
+        "without",
+        "retaining",
+        "records"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:12",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 12,
+      "kind": "bullet",
+      "text": "Recommendation: - **Reject:** browser scraping, direct calls to undocumented Claude OAuth endpoints, copying tokens, or presenting inferred limits as exact.",
+      "keywords": [
+        "recommendation",
+        "reject",
+        "browser",
+        "scraping",
+        "direct",
+        "calls",
+        "undocumented",
+        "claude",
+        "oauth",
+        "endpoints",
+        "copying",
+        "tokens",
+        "presenting",
+        "inferred",
+        "limits",
+        "exact"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:16",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 16,
+      "kind": "heading",
+      "text": "Options considered",
+      "keywords": [
+        "options",
+        "considered"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:18",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 18,
+      "kind": "heading",
+      "text": "Claude Teams",
+      "keywords": [
+        "claude",
+        "teams"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:20",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 20,
+      "kind": "bullet",
+      "text": "Claude Teams: 1. **Claude Code status-line payload — selected.** Anthropic documents `rate_limits` fields for watching remaining allowance. It reuses the user's existing authenticated client and avoids credential handling. Limitation: observations arrive with active Claude Code status updates.",
+      "keywords": [
+        "claude",
+        "teams",
+        "code",
+        "status",
+        "line",
+        "payload",
+        "selected",
+        "anthropic",
+        "documents",
+        "rate",
+        "limits",
+        "fields",
+        "watching",
+        "remaining",
+        "allowance",
+        "reuses",
+        "user",
+        "existing",
+        "authenticated",
+        "client",
+        "avoids",
+        "credential",
+        "handling",
+        "limitation",
+        "observations",
+        "arrive",
+        "with",
+        "active",
+        "updates"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:21",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 21,
+      "kind": "bullet",
+      "text": "Claude Teams: 2. **Interactive `/usage` or Settings > Usage — fallback.** Documented and authoritative, but not autonomous or machine-oriented.",
+      "keywords": [
+        "claude",
+        "teams",
+        "interactive",
+        "usage",
+        "settings",
+        "fallback",
+        "documented",
+        "authoritative",
+        "autonomous",
+        "machine",
+        "oriented"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:22",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 22,
+      "kind": "bullet",
+      "text": "Claude Teams: 3. **Direct internal `/api/oauth/usage` — rejected.** Present in the installed client but not a supported headless integration contract.",
+      "keywords": [
+        "claude",
+        "teams",
+        "direct",
+        "internal",
+        "oauth",
+        "usage",
+        "rejected",
+        "present",
+        "installed",
+        "client",
+        "supported",
+        "headless",
+        "integration",
+        "contract"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:23",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 23,
+      "kind": "bullet",
+      "text": "Claude Teams: 4. **Authenticated browser scraping — rejected.** Brittle, auth-sensitive, and unnecessary.",
+      "keywords": [
+        "claude",
+        "teams",
+        "authenticated",
+        "browser",
+        "scraping",
+        "rejected",
+        "brittle",
+        "auth",
+        "sensitive",
+        "unnecessary"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:27",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 27,
+      "kind": "heading",
+      "text": "Codex subscription",
+      "keywords": [
+        "codex",
+        "subscription"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:29",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 29,
+      "kind": "bullet",
+      "text": "Codex subscription: 1. **Local app server — selected.** Codex CLI 0.147.0 generates a JSON schema containing `account/rateLimits/read`, `account/rateLimits/updated`, `RateLimitWindow.usedPercent`, `RateLimitWindow.resetsAt`, and primary/secondary windows.",
+      "keywords": [
+        "codex",
+        "subscription",
+        "local",
+        "server",
+        "selected",
+        "generates",
+        "json",
+        "schema",
+        "containing",
+        "account",
+        "ratelimits",
+        "read",
+        "updated",
+        "ratelimitwindow",
+        "usedpercent",
+        "resetsat",
+        "primary",
+        "secondary",
+        "windows"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:30",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 30,
+      "kind": "bullet",
+      "text": "Codex subscription: 2. **Rate-limit events in local rollout JSONL — opt-in fallback.** Technically sufficient but privacy-sensitive because the surrounding files contain transcripts.",
+      "keywords": [
+        "codex",
+        "subscription",
+        "rate",
+        "limit",
+        "events",
+        "local",
+        "rollout",
+        "jsonl",
+        "fallback",
+        "technically",
+        "sufficient",
+        "privacy",
+        "sensitive",
+        "because",
+        "surrounding",
+        "files",
+        "contain",
+        "transcripts"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:31",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 31,
+      "kind": "bullet",
+      "text": "Codex subscription: 3. **Codex Settings > Usage — manual verification fallback.** Authoritative for the user but not suitable for routine widget refresh.",
+      "keywords": [
+        "codex",
+        "subscription",
+        "settings",
+        "usage",
+        "manual",
+        "verification",
+        "fallback",
+        "authoritative",
+        "user",
+        "suitable",
+        "routine",
+        "widget",
+        "refresh"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:32",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 32,
+      "kind": "bullet",
+      "text": "Codex subscription: 4. **Browser scraping — rejected.** Highest drift and authentication risk.",
+      "keywords": [
+        "codex",
+        "subscription",
+        "browser",
+        "scraping",
+        "rejected",
+        "highest",
+        "drift",
+        "authentication",
+        "risk"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:36",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 36,
+      "kind": "heading",
+      "text": "Normalized contract",
+      "keywords": [
+        "normalized",
+        "contract"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:61",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 61,
+      "kind": "bullet",
+      "text": "Normalized contract: - Preserve multiple windows.",
+      "keywords": [
+        "normalized",
+        "contract",
+        "preserve",
+        "multiple",
+        "windows"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:62",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 62,
+      "kind": "bullet",
+      "text": "Normalized contract: - Derive `remaining_percent = 100 - used_percent` only after clamping verified numeric input to 0–100.",
+      "keywords": [
+        "normalized",
+        "contract",
+        "derive",
+        "remaining",
+        "percent",
+        "used",
+        "only",
+        "after",
+        "clamping",
+        "verified",
+        "numeric",
+        "input"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:63",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 63,
+      "kind": "bullet",
+      "text": "Normalized contract: - Never derive a reset time that the source did not provide.",
+      "keywords": [
+        "normalized",
+        "contract",
+        "never",
+        "derive",
+        "reset",
+        "time",
+        "that",
+        "source",
+        "provide"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:64",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 64,
+      "kind": "bullet",
+      "text": "Normalized contract: - The compact headline may use the lowest remaining active window; details list every window.",
+      "keywords": [
+        "normalized",
+        "contract",
+        "compact",
+        "headline",
+        "lowest",
+        "remaining",
+        "active",
+        "window",
+        "details",
+        "list",
+        "every"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:65",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 65,
+      "kind": "bullet",
+      "text": "Normalized contract: - Show reset time as absolute local time, with a relative countdown only as secondary text.",
+      "keywords": [
+        "normalized",
+        "contract",
+        "show",
+        "reset",
+        "time",
+        "absolute",
+        "local",
+        "with",
+        "relative",
+        "countdown",
+        "only",
+        "secondary",
+        "text"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:66",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 66,
+      "kind": "bullet",
+      "text": "Normalized contract: - Track `freshness` separately from `health`.",
+      "keywords": [
+        "normalized",
+        "contract",
+        "track",
+        "freshness",
+        "separately",
+        "from",
+        "health"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:68",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 68,
+      "kind": "heading",
+      "text": "Privacy and security posture",
+      "keywords": [
+        "privacy",
+        "security",
+        "posture"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:70",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 70,
+      "kind": "bullet",
+      "text": "Privacy and security posture: - Never request or persist account passwords, OAuth tokens, cookies, or raw authenticated responses.",
+      "keywords": [
+        "privacy",
+        "security",
+        "posture",
+        "never",
+        "request",
+        "persist",
+        "account",
+        "passwords",
+        "oauth",
+        "tokens",
+        "cookies",
+        "authenticated",
+        "responses"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:71",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 71,
+      "kind": "bullet",
+      "text": "Privacy and security posture: - Prefer data delivered by already authenticated local clients.",
+      "keywords": [
+        "privacy",
+        "security",
+        "posture",
+        "prefer",
+        "data",
+        "delivered",
+        "already",
+        "authenticated",
+        "local",
+        "clients"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:72",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 72,
+      "kind": "bullet",
+      "text": "Privacy and security posture: - Store normalized snapshots only, using atomic local writes and restrictive permissions.",
+      "keywords": [
+        "privacy",
+        "security",
+        "posture",
+        "store",
+        "normalized",
+        "snapshots",
+        "only",
+        "using",
+        "atomic",
+        "local",
+        "writes",
+        "restrictive",
+        "permissions"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:73",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 73,
+      "kind": "bullet",
+      "text": "Privacy and security posture: - Redact logs by construction; log adapter state and schema errors, not payloads.",
+      "keywords": [
+        "privacy",
+        "security",
+        "posture",
+        "redact",
+        "logs",
+        "construction",
+        "adapter",
+        "state",
+        "schema",
+        "errors",
+        "payloads"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:74",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 74,
+      "kind": "bullet",
+      "text": "Privacy and security posture: - Keep transcript fallback disabled by default and explain its privacy implications before opt-in.",
+      "keywords": [
+        "privacy",
+        "security",
+        "posture",
+        "keep",
+        "transcript",
+        "fallback",
+        "disabled",
+        "default",
+        "explain",
+        "implications",
+        "before"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:75",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 75,
+      "kind": "bullet",
+      "text": "Privacy and security posture: - Poll conservatively. Prefer events/status updates and user-triggered refresh over sub-minute loops.",
+      "keywords": [
+        "privacy",
+        "security",
+        "posture",
+        "poll",
+        "conservatively",
+        "prefer",
+        "events",
+        "status",
+        "updates",
+        "user",
+        "triggered",
+        "refresh",
+        "over",
+        "minute",
+        "loops"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:76",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 76,
+      "kind": "bullet",
+      "text": "Privacy and security posture: - One provider's failure must not affect the other provider's last known state.",
+      "keywords": [
+        "privacy",
+        "security",
+        "posture",
+        "provider",
+        "failure",
+        "must",
+        "affect",
+        "other",
+        "last",
+        "known",
+        "state"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:78",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 78,
+      "kind": "heading",
+      "text": "Codebase patterns",
+      "keywords": [
+        "codebase",
+        "patterns"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:80",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 80,
+      "kind": "bullet",
+      "text": "Codebase patterns: - Reuse the parent workspace's Tauri 2/Vite split: thin web UI, Rust-owned provider and persistence boundary.",
+      "keywords": [
+        "codebase",
+        "patterns",
+        "reuse",
+        "parent",
+        "workspace",
+        "tauri",
+        "vite",
+        "split",
+        "thin",
+        "rust",
+        "owned",
+        "provider",
+        "persistence",
+        "boundary"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:81",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 81,
+      "kind": "bullet",
+      "text": "Codebase patterns: - Follow the existing Rust validation, mutex-protected state, atomic-write, and rollback patterns.",
+      "keywords": [
+        "codebase",
+        "patterns",
+        "follow",
+        "existing",
+        "rust",
+        "validation",
+        "mutex",
+        "protected",
+        "state",
+        "atomic",
+        "write",
+        "rollback"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:82",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 82,
+      "kind": "bullet",
+      "text": "Codebase patterns: - Reuse CI patterns of `cargo check` plus frontend build.",
+      "keywords": [
+        "codebase",
+        "patterns",
+        "reuse",
+        "cargo",
+        "check",
+        "plus",
+        "frontend",
+        "build"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:83",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 83,
+      "kind": "bullet",
+      "text": "Codebase patterns: - Run smoke tests against an isolated temporary home rather than real subscription state.",
+      "keywords": [
+        "codebase",
+        "patterns",
+        "smoke",
+        "tests",
+        "against",
+        "isolated",
+        "temporary",
+        "home",
+        "rather",
+        "than",
+        "real",
+        "subscription",
+        "state"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:84",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 84,
+      "kind": "bullet",
+      "text": "Codebase patterns: - Treat unstable provider surfaces like PenguinSlide treats unstable platform integration: capability-gate them, isolate them, and fail closed.",
+      "keywords": [
+        "codebase",
+        "patterns",
+        "treat",
+        "unstable",
+        "provider",
+        "surfaces",
+        "like",
+        "penguinslide",
+        "treats",
+        "platform",
+        "integration",
+        "capability",
+        "gate",
+        "them",
+        "isolate",
+        "fail",
+        "closed"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:86",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 86,
+      "kind": "heading",
+      "text": "Risks and tradeoffs",
+      "keywords": [
+        "risks",
+        "tradeoffs"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:88",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 88,
+      "kind": "bullet",
+      "text": "Risks and tradeoffs: - Claude data is session-attached, so background freshness is limited. UI must make staleness obvious.",
+      "keywords": [
+        "risks",
+        "tradeoffs",
+        "claude",
+        "data",
+        "session",
+        "attached",
+        "background",
+        "freshness",
+        "limited",
+        "must",
+        "make",
+        "staleness",
+        "obvious"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:89",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 89,
+      "kind": "bullet",
+      "text": "Risks and tradeoffs: - Codex app-server is experimental and may change across CLI updates. Pin compatible versions and use contract tests.",
+      "keywords": [
+        "risks",
+        "tradeoffs",
+        "codex",
+        "server",
+        "experimental",
+        "change",
+        "across",
+        "updates",
+        "compatible",
+        "versions",
+        "contract",
+        "tests"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:90",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 90,
+      "kind": "bullet",
+      "text": "Risks and tradeoffs: - Allowance semantics differ by provider and plan. Do not label all secondary windows simply as “weekly” without source evidence.",
+      "keywords": [
+        "risks",
+        "tradeoffs",
+        "allowance",
+        "semantics",
+        "differ",
+        "provider",
+        "plan",
+        "label",
+        "secondary",
+        "windows",
+        "simply",
+        "weekly",
+        "without",
+        "source",
+        "evidence"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:91",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 91,
+      "kind": "bullet",
+      "text": "Risks and tradeoffs: - Rollout fallback touches files that contain sensitive conversations. It must be opt-in, streaming, event-filtered, and non-retaining.",
+      "keywords": [
+        "risks",
+        "tradeoffs",
+        "rollout",
+        "fallback",
+        "touches",
+        "files",
+        "that",
+        "contain",
+        "sensitive",
+        "conversations",
+        "must",
+        "streaming",
+        "event",
+        "filtered",
+        "retaining"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:92",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 92,
+      "kind": "bullet",
+      "text": "Risks and tradeoffs: - Provider refreshes can fail due to signed-out clients, sandboxes, or state-directory permissions. Diagnostics must distinguish these states.",
+      "keywords": [
+        "risks",
+        "tradeoffs",
+        "provider",
+        "refreshes",
+        "fail",
+        "signed",
+        "clients",
+        "sandboxes",
+        "state",
+        "directory",
+        "permissions",
+        "diagnostics",
+        "must",
+        "distinguish",
+        "these",
+        "states"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:94",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 94,
+      "kind": "heading",
+      "text": "Accessibility implications",
+      "keywords": [
+        "accessibility",
+        "implications"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:96",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 96,
+      "kind": "bullet",
+      "text": "Accessibility implications: - Every freshness and health state needs visible text, not only color or iconography.",
+      "keywords": [
+        "accessibility",
+        "implications",
+        "every",
+        "freshness",
+        "health",
+        "state",
+        "needs",
+        "visible",
+        "text",
+        "only",
+        "color",
+        "iconography"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:97",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 97,
+      "kind": "bullet",
+      "text": "Accessibility implications: - Compact view uses the most constrained window but exposes the selection rule accessibly.",
+      "keywords": [
+        "accessibility",
+        "implications",
+        "compact",
+        "view",
+        "uses",
+        "most",
+        "constrained",
+        "window",
+        "exposes",
+        "selection",
+        "rule",
+        "accessibly"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:98",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 98,
+      "kind": "bullet",
+      "text": "Accessibility implications: - Detailed view lists all windows with explicit provider, label, percentage, and absolute reset time.",
+      "keywords": [
+        "accessibility",
+        "implications",
+        "detailed",
+        "view",
+        "lists",
+        "windows",
+        "with",
+        "explicit",
+        "provider",
+        "label",
+        "percentage",
+        "absolute",
+        "reset",
+        "time"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:99",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 99,
+      "kind": "bullet",
+      "text": "Accessibility implications: - Status changes should not create noisy live-region announcements; reserve announcements for user-initiated refresh and threshold crossings.",
+      "keywords": [
+        "accessibility",
+        "implications",
+        "status",
+        "changes",
+        "should",
+        "create",
+        "noisy",
+        "live",
+        "region",
+        "announcements",
+        "reserve",
+        "user",
+        "initiated",
+        "refresh",
+        "threshold",
+        "crossings"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:100",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 100,
+      "kind": "bullet",
+      "text": "Accessibility implications: - Keyboard, 200% scaling, high contrast, and reduced motion remain release gates.",
+      "keywords": [
+        "accessibility",
+        "implications",
+        "keyboard",
+        "scaling",
+        "high",
+        "contrast",
+        "reduced",
+        "motion",
+        "remain",
+        "release",
+        "gates"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:102",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 102,
+      "kind": "heading",
+      "text": "Phase 0 decision",
+      "keywords": [
+        "phase",
+        "decision"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:106",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 106,
+      "kind": "bullet",
+      "text": "Phase 0 decision: 1. Prototype and contract-test the Codex app-server handshake before UI integration.",
+      "keywords": [
+        "phase",
+        "decision",
+        "prototype",
+        "contract",
+        "test",
+        "codex",
+        "server",
+        "handshake",
+        "before",
+        "integration"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:107",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 107,
+      "kind": "bullet",
+      "text": "Phase 0 decision: 2. Implement Claude as status-line-fed and explicitly session-attached.",
+      "keywords": [
+        "phase",
+        "decision",
+        "implement",
+        "claude",
+        "status",
+        "line",
+        "explicitly",
+        "session",
+        "attached"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:108",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 108,
+      "kind": "bullet",
+      "text": "Phase 0 decision: 3. Keep all manual and cache fallbacks honest about freshness and confidence.",
+      "keywords": [
+        "phase",
+        "decision",
+        "keep",
+        "manual",
+        "cache",
+        "fallbacks",
+        "honest",
+        "about",
+        "freshness",
+        "confidence"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:109",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 109,
+      "kind": "bullet",
+      "text": "Phase 0 decision: 4. Do not add direct provider credential handling or browser scraping.",
+      "keywords": [
+        "phase",
+        "decision",
+        "direct",
+        "provider",
+        "credential",
+        "handling",
+        "browser",
+        "scraping"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:111",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 111,
+      "kind": "heading",
+      "text": "Evidence",
+      "keywords": [
+        "evidence"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:113",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 113,
+      "kind": "bullet",
+      "text": "Evidence: - Anthropic documents `/usage`, subscription usage bars, rolling limits, and custom status-line rate-limit fields in the Claude Code documentation.",
+      "keywords": [
+        "evidence",
+        "anthropic",
+        "documents",
+        "usage",
+        "subscription",
+        "bars",
+        "rolling",
+        "limits",
+        "custom",
+        "status",
+        "line",
+        "rate",
+        "limit",
+        "fields",
+        "claude",
+        "code",
+        "documentation"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:114",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 114,
+      "kind": "bullet",
+      "text": "Evidence: - The locally installed Claude Code 2.1.220 binary models five-hour, weekly, model-scoped, utilization, and reset fields.",
+      "keywords": [
+        "evidence",
+        "locally",
+        "installed",
+        "claude",
+        "code",
+        "binary",
+        "models",
+        "five",
+        "hour",
+        "weekly",
+        "model",
+        "scoped",
+        "utilization",
+        "reset",
+        "fields"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:115",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 115,
+      "kind": "bullet",
+      "text": "Evidence: - The locally installed Codex CLI 0.147.0 generated an experimental app-server schema containing `account/rateLimits/read` and structured rate-limit windows.",
+      "keywords": [
+        "evidence",
+        "locally",
+        "installed",
+        "codex",
+        "generated",
+        "experimental",
+        "server",
+        "schema",
+        "containing",
+        "account",
+        "ratelimits",
+        "read",
+        "structured",
+        "rate",
+        "limit",
+        "windows"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-research.md:116",
+      "source": ".forgeflow/Sagewatch/current-research.md",
+      "line": 116,
+      "kind": "bullet",
+      "text": "Evidence: - Existing workspace Tauri/Vite, CI, smoke-test, and platform capability-gating patterns provide an implementation baseline.",
+      "keywords": [
+        "evidence",
+        "existing",
+        "workspace",
+        "tauri",
+        "vite",
+        "smoke",
+        "test",
+        "platform",
+        "capability",
+        "gating",
+        "patterns",
+        "provide",
+        "implementation",
+        "baseline"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-plan.md:1",
+      "source": ".forgeflow/Sagewatch/current-plan.md",
+      "line": 1,
+      "kind": "heading",
+      "text": "Current Plan — Sagewatch",
+      "keywords": [
+        "current",
+        "plan",
+        "sagewatch"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-plan.md:7",
+      "source": ".forgeflow/Sagewatch/current-plan.md",
+      "line": 7,
+      "kind": "heading",
+      "text": "Phase sequence",
+      "keywords": [
+        "phase",
+        "sequence"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-plan.md:9",
+      "source": ".forgeflow/Sagewatch/current-plan.md",
+      "line": 9,
+      "kind": "bullet",
+      "text": "Phase sequence: 1. **Source discovery and contracts** — prove Claude Teams and Codex data sources, define allowance semantics, and complete the privacy threat model.",
+      "keywords": [
+        "phase",
+        "sequence",
+        "source",
+        "discovery",
+        "contracts",
+        "prove",
+        "claude",
+        "teams",
+        "codex",
+        "data",
+        "sources",
+        "define",
+        "allowance",
+        "semantics",
+        "complete",
+        "privacy",
+        "threat",
+        "model"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-plan.md:10",
+      "source": ".forgeflow/Sagewatch/current-plan.md",
+      "line": 10,
+      "kind": "bullet",
+      "text": "Phase sequence: 2. **Project foundation and widget shell** — scaffold the isolated Linux app and validate compact/expanded UX with fixtures.",
+      "keywords": [
+        "phase",
+        "sequence",
+        "project",
+        "foundation",
+        "widget",
+        "shell",
+        "scaffold",
+        "isolated",
+        "linux",
+        "validate",
+        "compact",
+        "expanded",
+        "with",
+        "fixtures"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-plan.md:11",
+      "source": ".forgeflow/Sagewatch/current-plan.md",
+      "line": 11,
+      "kind": "bullet",
+      "text": "Phase sequence: 3. **Provider framework and local safety** — implement adapters, caching, health states, refresh controls, redaction, and safe storage.",
+      "keywords": [
+        "phase",
+        "sequence",
+        "provider",
+        "framework",
+        "local",
+        "safety",
+        "implement",
+        "adapters",
+        "caching",
+        "health",
+        "states",
+        "refresh",
+        "controls",
+        "redaction",
+        "safe",
+        "storage"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-plan.md:12",
+      "source": ".forgeflow/Sagewatch/current-plan.md",
+      "line": 12,
+      "kind": "bullet",
+      "text": "Phase sequence: 4. **Claude Teams and Codex adapters** — integrate proven sources and validate values against samples.",
+      "keywords": [
+        "phase",
+        "sequence",
+        "claude",
+        "teams",
+        "codex",
+        "adapters",
+        "integrate",
+        "proven",
+        "sources",
+        "validate",
+        "values",
+        "against",
+        "samples"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-plan.md:13",
+      "source": ".forgeflow/Sagewatch/current-plan.md",
+      "line": 13,
+      "kind": "bullet",
+      "text": "Phase sequence: 5. **Product polish, preferences, and alerts** — complete daily-use UX and optional local thresholds.",
+      "keywords": [
+        "phase",
+        "sequence",
+        "product",
+        "polish",
+        "preferences",
+        "alerts",
+        "complete",
+        "daily",
+        "optional",
+        "local",
+        "thresholds"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-plan.md:14",
+      "source": ".forgeflow/Sagewatch/current-plan.md",
+      "line": 14,
+      "kind": "bullet",
+      "text": "Phase sequence: 6. **Verification, documentation, and release readiness** — validate accessibility, degraded behavior, privacy, packaging, and setup.",
+      "keywords": [
+        "phase",
+        "sequence",
+        "verification",
+        "documentation",
+        "release",
+        "readiness",
+        "validate",
+        "accessibility",
+        "degraded",
+        "behavior",
+        "privacy",
+        "packaging",
+        "setup"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-plan.md:16",
+      "source": ".forgeflow/Sagewatch/current-plan.md",
+      "line": 16,
+      "kind": "heading",
+      "text": "Hard gate",
+      "keywords": [
+        "hard",
+        "gate"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-plan.md:20",
+      "source": ".forgeflow/Sagewatch/current-plan.md",
+      "line": 20,
+      "kind": "heading",
+      "text": "Scope guardrail",
+      "keywords": [
+        "scope",
+        "guardrail"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-plan.md:24",
+      "source": ".forgeflow/Sagewatch/current-plan.md",
+      "line": 24,
+      "kind": "heading",
+      "text": "Validation summary",
+      "keywords": [
+        "validation",
+        "summary"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-plan.md:26",
+      "source": ".forgeflow/Sagewatch/current-plan.md",
+      "line": 26,
+      "kind": "bullet",
+      "text": "Validation summary: - Each provider refreshes and fails independently.",
+      "keywords": [
+        "validation",
+        "summary",
+        "each",
+        "provider",
+        "refreshes",
+        "fails",
+        "independently"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-plan.md:27",
+      "source": ".forgeflow/Sagewatch/current-plan.md",
+      "line": 27,
+      "kind": "bullet",
+      "text": "Validation summary: - Values match fixed source samples.",
+      "keywords": [
+        "validation",
+        "summary",
+        "values",
+        "match",
+        "fixed",
+        "source",
+        "samples"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-plan.md:28",
+      "source": ".forgeflow/Sagewatch/current-plan.md",
+      "line": 28,
+      "kind": "bullet",
+      "text": "Validation summary: - Stale or estimated data is labeled explicitly.",
+      "keywords": [
+        "validation",
+        "summary",
+        "stale",
+        "estimated",
+        "data",
+        "labeled",
+        "explicitly"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-plan.md:29",
+      "source": ".forgeflow/Sagewatch/current-plan.md",
+      "line": 29,
+      "kind": "bullet",
+      "text": "Validation summary: - Logs, caches, and fixtures contain no reusable secrets.",
+      "keywords": [
+        "validation",
+        "summary",
+        "logs",
+        "caches",
+        "fixtures",
+        "contain",
+        "reusable",
+        "secrets"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-plan.md:30",
+      "source": ".forgeflow/Sagewatch/current-plan.md",
+      "line": 30,
+      "kind": "bullet",
+      "text": "Validation summary: - Keyboard, contrast, reduced motion, screen-reader labeling, and 200% scaling are checked before release.",
+      "keywords": [
+        "validation",
+        "summary",
+        "keyboard",
+        "contrast",
+        "reduced",
+        "motion",
+        "screen",
+        "reader",
+        "labeling",
+        "scaling",
+        "checked",
+        "before",
+        "release"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:1",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 1,
+      "kind": "heading",
+      "text": "Sagewatch binding implementation brief",
+      "keywords": [
+        "sagewatch",
+        "binding",
+        "implementation",
+        "brief"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:5",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 5,
+      "kind": "heading",
+      "text": "Authority and resolved decisions",
+      "keywords": [
+        "authority",
+        "resolved",
+        "decisions"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:7",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 7,
+      "kind": "bullet",
+      "text": "Authority and resolved decisions: - `.forgeflow/Sagewatch/current-research.md` is authoritative where planning artifacts differ.",
+      "keywords": [
+        "authority",
+        "resolved",
+        "decisions",
+        "forgeflow",
+        "sagewatch",
+        "current",
+        "research",
+        "authoritative",
+        "where",
+        "planning",
+        "artifacts",
+        "differ"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:8",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 8,
+      "kind": "bullet",
+      "text": "Authority and resolved decisions: - Use Tauri 2 and Vite unless live provider probes prove the platform cannot access the required local surfaces.",
+      "keywords": [
+        "authority",
+        "resolved",
+        "decisions",
+        "tauri",
+        "vite",
+        "unless",
+        "live",
+        "provider",
+        "probes",
+        "prove",
+        "platform",
+        "cannot",
+        "access",
+        "required",
+        "local",
+        "surfaces"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:9",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 9,
+      "kind": "bullet",
+      "text": "Authority and resolved decisions: - Rust owns provider access, normalization, cache, refresh scheduling, diagnostics, and error mapping.",
+      "keywords": [
+        "authority",
+        "resolved",
+        "decisions",
+        "rust",
+        "owns",
+        "provider",
+        "access",
+        "normalization",
+        "cache",
+        "refresh",
+        "scheduling",
+        "diagnostics",
+        "error",
+        "mapping"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:10",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 10,
+      "kind": "bullet",
+      "text": "Authority and resolved decisions: - The frontend is presentation-only and never receives raw provider payloads.",
+      "keywords": [
+        "authority",
+        "resolved",
+        "decisions",
+        "frontend",
+        "presentation",
+        "only",
+        "never",
+        "receives",
+        "provider",
+        "payloads"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:11",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 11,
+      "kind": "bullet",
+      "text": "Authority and resolved decisions: - Use restrictive atomic JSON files for normalized snapshots and non-secret preferences in v1. Defer SQLite until history or trends justify it.",
+      "keywords": [
+        "authority",
+        "resolved",
+        "decisions",
+        "restrictive",
+        "atomic",
+        "json",
+        "files",
+        "normalized",
+        "snapshots",
+        "secret",
+        "preferences",
+        "defer",
+        "sqlite",
+        "until",
+        "history",
+        "trends",
+        "justify"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:12",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 12,
+      "kind": "bullet",
+      "text": "Authority and resolved decisions: - Do not build the Codex rollout JSONL fallback until the primary app-server adapter works and is contract-tested. The fallback remains opt-in and disabled by default.",
+      "keywords": [
+        "authority",
+        "resolved",
+        "decisions",
+        "build",
+        "codex",
+        "rollout",
+        "jsonl",
+        "fallback",
+        "until",
+        "primary",
+        "server",
+        "adapter",
+        "works",
+        "contract",
+        "tested",
+        "remains",
+        "disabled",
+        "default"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:14",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 14,
+      "kind": "heading",
+      "text": "Locked v1 scope",
+      "keywords": [
+        "locked",
+        "scope"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:18",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 18,
+      "kind": "bullet",
+      "text": "Locked v1 scope: - One Claude Teams seat and one Codex subscription",
+      "keywords": [
+        "locked",
+        "scope",
+        "claude",
+        "teams",
+        "seat",
+        "codex",
+        "subscription"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:19",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 19,
+      "kind": "bullet",
+      "text": "Locked v1 scope: - Remaining allowance, reset time, freshness, health, and source confidence",
+      "keywords": [
+        "locked",
+        "scope",
+        "remaining",
+        "allowance",
+        "reset",
+        "time",
+        "freshness",
+        "health",
+        "source",
+        "confidence"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:20",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 20,
+      "kind": "bullet",
+      "text": "Locked v1 scope: - Compact widget plus expanded details, diagnostics, and settings",
+      "keywords": [
+        "locked",
+        "scope",
+        "compact",
+        "widget",
+        "plus",
+        "expanded",
+        "details",
+        "diagnostics",
+        "settings"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:21",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 21,
+      "kind": "bullet",
+      "text": "Locked v1 scope: - Local cache, manual refresh, and optional rate-limited alerts",
+      "keywords": [
+        "locked",
+        "scope",
+        "local",
+        "cache",
+        "manual",
+        "refresh",
+        "optional",
+        "rate",
+        "limited",
+        "alerts"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:25",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 25,
+      "kind": "bullet",
+      "text": "Locked v1 scope: - Credential, cookie, or token collection",
+      "keywords": [
+        "locked",
+        "scope",
+        "credential",
+        "cookie",
+        "token",
+        "collection"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:26",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 26,
+      "kind": "bullet",
+      "text": "Locked v1 scope: - Raw provider-response persistence",
+      "keywords": [
+        "locked",
+        "scope",
+        "provider",
+        "response",
+        "persistence"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:27",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 27,
+      "kind": "bullet",
+      "text": "Locked v1 scope: - Browser scraping or direct hidden provider endpoints",
+      "keywords": [
+        "locked",
+        "scope",
+        "browser",
+        "scraping",
+        "direct",
+        "hidden",
+        "provider",
+        "endpoints"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:28",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 28,
+      "kind": "bullet",
+      "text": "Locked v1 scope: - Cloud sync, multi-account support, admin analytics, and historical charts",
+      "keywords": [
+        "locked",
+        "scope",
+        "cloud",
+        "sync",
+        "multi",
+        "account",
+        "support",
+        "admin",
+        "analytics",
+        "historical",
+        "charts"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:30",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 30,
+      "kind": "heading",
+      "text": "Implementation waves and ownership",
+      "keywords": [
+        "implementation",
+        "waves",
+        "ownership"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:32",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 32,
+      "kind": "heading",
+      "text": "Wave 1 — Scaffold and frozen contracts",
+      "keywords": [
+        "wave",
+        "scaffold",
+        "frozen",
+        "contracts"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:36",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 36,
+      "kind": "bullet",
+      "text": "Wave 1 — Scaffold and frozen contracts: - Create the Tauri/Vite app.",
+      "keywords": [
+        "wave",
+        "scaffold",
+        "frozen",
+        "contracts",
+        "create",
+        "tauri",
+        "vite"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:37",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 37,
+      "kind": "bullet",
+      "text": "Wave 1 — Scaffold and frozen contracts: - Register `get_status`, `refresh_provider`, `set_preferences`, and `get_diagnostics` only.",
+      "keywords": [
+        "wave",
+        "scaffold",
+        "frozen",
+        "contracts",
+        "register",
+        "status",
+        "refresh",
+        "provider",
+        "preferences",
+        "diagnostics",
+        "only"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:38",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 38,
+      "kind": "bullet",
+      "text": "Wave 1 — Scaffold and frozen contracts: - Freeze domain/DTO schemas, fixtures, and error taxonomy.",
+      "keywords": [
+        "wave",
+        "scaffold",
+        "frozen",
+        "contracts",
+        "freeze",
+        "domain",
+        "schemas",
+        "fixtures",
+        "error",
+        "taxonomy"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:39",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 39,
+      "kind": "bullet",
+      "text": "Wave 1 — Scaffold and frozen contracts: - Build compact and expanded views from fixtures.",
+      "keywords": [
+        "wave",
+        "scaffold",
+        "frozen",
+        "contracts",
+        "build",
+        "compact",
+        "expanded",
+        "views",
+        "from",
+        "fixtures"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:41",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 41,
+      "kind": "heading",
+      "text": "Wave 2 — Store, scheduler, and fake adapters",
+      "keywords": [
+        "wave",
+        "store",
+        "scheduler",
+        "fake",
+        "adapters"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:45",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 45,
+      "kind": "bullet",
+      "text": "Wave 2 — Store, scheduler, and fake adapters: - Atomic snapshot/preferences storage beneath the Tauri app-data directory with `0700` directories and `0600` files.",
+      "keywords": [
+        "wave",
+        "store",
+        "scheduler",
+        "fake",
+        "adapters",
+        "atomic",
+        "snapshot",
+        "preferences",
+        "storage",
+        "beneath",
+        "tauri",
+        "data",
+        "directory",
+        "with",
+        "0700",
+        "directories",
+        "0600",
+        "files"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:46",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 46,
+      "kind": "bullet",
+      "text": "Wave 2 — Store, scheduler, and fake adapters: - Refresh orchestration, timeouts, jittered backoff, independent provider states, staleness rules, and diagnostics.",
+      "keywords": [
+        "wave",
+        "store",
+        "scheduler",
+        "fake",
+        "adapters",
+        "refresh",
+        "orchestration",
+        "timeouts",
+        "jittered",
+        "backoff",
+        "independent",
+        "provider",
+        "states",
+        "staleness",
+        "rules",
+        "diagnostics"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:47",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 47,
+      "kind": "bullet",
+      "text": "Wave 2 — Store, scheduler, and fake adapters: - Fake Claude and Codex adapters for integration and UI tests.",
+      "keywords": [
+        "wave",
+        "store",
+        "scheduler",
+        "fake",
+        "adapters",
+        "claude",
+        "codex",
+        "integration",
+        "tests"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:49",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 49,
+      "kind": "heading",
+      "text": "Wave 3 — Codex primary adapter",
+      "keywords": [
+        "wave",
+        "codex",
+        "primary",
+        "adapter"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:53",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 53,
+      "kind": "bullet",
+      "text": "Wave 3 — Codex primary adapter: - Version-gated local app-server client using fixed arguments, bounded execution, and no network listener.",
+      "keywords": [
+        "wave",
+        "codex",
+        "primary",
+        "adapter",
+        "version",
+        "gated",
+        "local",
+        "server",
+        "client",
+        "using",
+        "fixed",
+        "arguments",
+        "bounded",
+        "execution",
+        "network",
+        "listener"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:54",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 54,
+      "kind": "bullet",
+      "text": "Wave 3 — Codex primary adapter: - Normalize `account/rateLimits/read` into the shared contract.",
+      "keywords": [
+        "wave",
+        "codex",
+        "primary",
+        "adapter",
+        "normalize",
+        "account",
+        "ratelimits",
+        "read",
+        "into",
+        "shared",
+        "contract"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:55",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 55,
+      "kind": "bullet",
+      "text": "Wave 3 — Codex primary adapter: - Fail closed on protocol/schema drift.",
+      "keywords": [
+        "wave",
+        "codex",
+        "primary",
+        "adapter",
+        "fail",
+        "closed",
+        "protocol",
+        "schema",
+        "drift"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:56",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 56,
+      "kind": "bullet",
+      "text": "Wave 3 — Codex primary adapter: - Keep rollout fallback disabled and unimplemented until the primary adapter passes.",
+      "keywords": [
+        "wave",
+        "codex",
+        "primary",
+        "adapter",
+        "keep",
+        "rollout",
+        "fallback",
+        "disabled",
+        "unimplemented",
+        "until",
+        "passes"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:58",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 58,
+      "kind": "heading",
+      "text": "Wave 4 — Claude primary adapter",
+      "keywords": [
+        "wave",
+        "claude",
+        "primary",
+        "adapter"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:62",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 62,
+      "kind": "bullet",
+      "text": "Wave 4 — Claude primary adapter: - Ingest documented Claude Code status-line `rate_limits` input from the already authenticated local client.",
+      "keywords": [
+        "wave",
+        "claude",
+        "primary",
+        "adapter",
+        "ingest",
+        "documented",
+        "code",
+        "status",
+        "line",
+        "rate",
+        "limits",
+        "input",
+        "from",
+        "already",
+        "authenticated",
+        "local",
+        "client"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:63",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 63,
+      "kind": "bullet",
+      "text": "Wave 4 — Claude primary adapter: - Retain the last normalized snapshot and mark it stale when session-fed observations stop.",
+      "keywords": [
+        "wave",
+        "claude",
+        "primary",
+        "adapter",
+        "retain",
+        "last",
+        "normalized",
+        "snapshot",
+        "mark",
+        "stale",
+        "when",
+        "session",
+        "observations",
+        "stop"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:64",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 64,
+      "kind": "bullet",
+      "text": "Wave 4 — Claude primary adapter: - Provide manual `/usage` or Settings > Usage guidance only; no automated browser/API fallback.",
+      "keywords": [
+        "wave",
+        "claude",
+        "primary",
+        "adapter",
+        "provide",
+        "manual",
+        "usage",
+        "settings",
+        "guidance",
+        "only",
+        "automated",
+        "browser",
+        "fallback"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:66",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 66,
+      "kind": "heading",
+      "text": "Wave 5 — Product polish and optional alerts",
+      "keywords": [
+        "wave",
+        "product",
+        "polish",
+        "optional",
+        "alerts"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:70",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 70,
+      "kind": "bullet",
+      "text": "Wave 5 — Product polish and optional alerts: - Complete the compact trust-first two-card layout and expanded diagnostics.",
+      "keywords": [
+        "wave",
+        "product",
+        "polish",
+        "optional",
+        "alerts",
+        "complete",
+        "compact",
+        "trust",
+        "first",
+        "card",
+        "layout",
+        "expanded",
+        "diagnostics"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:71",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 71,
+      "kind": "bullet",
+      "text": "Wave 5 — Product polish and optional alerts: - Add preferences for refresh cadence, time format, and thresholds.",
+      "keywords": [
+        "wave",
+        "product",
+        "polish",
+        "optional",
+        "alerts",
+        "preferences",
+        "refresh",
+        "cadence",
+        "time",
+        "format",
+        "thresholds"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:72",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 72,
+      "kind": "bullet",
+      "text": "Wave 5 — Product polish and optional alerts: - Add optional rate-limited local alerts with accessible behavior.",
+      "keywords": [
+        "wave",
+        "product",
+        "polish",
+        "optional",
+        "alerts",
+        "rate",
+        "limited",
+        "local",
+        "with",
+        "accessible",
+        "behavior"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:74",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 74,
+      "kind": "heading",
+      "text": "Wave 6 — Verification and release readiness",
+      "keywords": [
+        "wave",
+        "verification",
+        "release",
+        "readiness"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:78",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 78,
+      "kind": "bullet",
+      "text": "Wave 6 — Verification and release readiness: - Run domain, store, adapter, integration, accessibility, and packaging checks.",
+      "keywords": [
+        "wave",
+        "verification",
+        "release",
+        "readiness",
+        "domain",
+        "store",
+        "adapter",
+        "integration",
+        "accessibility",
+        "packaging",
+        "checks"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:79",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 79,
+      "kind": "bullet",
+      "text": "Wave 6 — Verification and release readiness: - Publish setup, privacy, troubleshooting, and source-limitations documentation.",
+      "keywords": [
+        "wave",
+        "verification",
+        "release",
+        "readiness",
+        "publish",
+        "setup",
+        "privacy",
+        "troubleshooting",
+        "source",
+        "limitations",
+        "documentation"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:81",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 81,
+      "kind": "heading",
+      "text": "Exact module boundaries",
+      "keywords": [
+        "exact",
+        "module",
+        "boundaries"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:85",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 85,
+      "kind": "bullet",
+      "text": "Exact module boundaries: - `src-tauri/src/domain/`: canonical types, validation, error taxonomy",
+      "keywords": [
+        "exact",
+        "module",
+        "boundaries",
+        "tauri",
+        "domain",
+        "canonical",
+        "types",
+        "validation",
+        "error",
+        "taxonomy"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:86",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 86,
+      "kind": "bullet",
+      "text": "Exact module boundaries: - `src-tauri/src/providers/`: adapter trait, `claude.rs`, `codex.rs`, and later `codex_rollout.rs`",
+      "keywords": [
+        "exact",
+        "module",
+        "boundaries",
+        "tauri",
+        "providers",
+        "adapter",
+        "trait",
+        "claude",
+        "codex",
+        "later",
+        "rollout"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:87",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 87,
+      "kind": "bullet",
+      "text": "Exact module boundaries: - `src-tauri/src/store/`: snapshot/preference stores and atomic filesystem helpers",
+      "keywords": [
+        "exact",
+        "module",
+        "boundaries",
+        "tauri",
+        "store",
+        "snapshot",
+        "preference",
+        "stores",
+        "atomic",
+        "filesystem",
+        "helpers"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:88",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 88,
+      "kind": "bullet",
+      "text": "Exact module boundaries: - `src-tauri/src/service/`: refresh orchestration, scheduler, diagnostics, and in-memory state",
+      "keywords": [
+        "exact",
+        "module",
+        "boundaries",
+        "tauri",
+        "service",
+        "refresh",
+        "orchestration",
+        "scheduler",
+        "diagnostics",
+        "memory",
+        "state"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:89",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 89,
+      "kind": "bullet",
+      "text": "Exact module boundaries: - `src-tauri/src/commands/`: Tauri IPC handlers only",
+      "keywords": [
+        "exact",
+        "module",
+        "boundaries",
+        "tauri",
+        "commands",
+        "handlers",
+        "only"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:90",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 90,
+      "kind": "bullet",
+      "text": "Exact module boundaries: - `src-tauri/src/main.rs`: bootstrap and command registration only",
+      "keywords": [
+        "exact",
+        "module",
+        "boundaries",
+        "tauri",
+        "main",
+        "bootstrap",
+        "command",
+        "registration",
+        "only"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:94",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 94,
+      "kind": "bullet",
+      "text": "Exact module boundaries: - `src/lib/api.ts`: typed IPC wrappers only",
+      "keywords": [
+        "exact",
+        "module",
+        "boundaries",
+        "typed",
+        "wrappers",
+        "only"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:95",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 95,
+      "kind": "bullet",
+      "text": "Exact module boundaries: - `src/lib/types.ts`: DTO mirrors only",
+      "keywords": [
+        "exact",
+        "module",
+        "boundaries",
+        "types",
+        "mirrors",
+        "only"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:96",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 96,
+      "kind": "bullet",
+      "text": "Exact module boundaries: - `src/components/`: compact cards, detail panels, status badges, diagnostics",
+      "keywords": [
+        "exact",
+        "module",
+        "boundaries",
+        "components",
+        "compact",
+        "cards",
+        "detail",
+        "panels",
+        "status",
+        "badges",
+        "diagnostics"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:97",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 97,
+      "kind": "bullet",
+      "text": "Exact module boundaries: - `src/views/`: widget shell and settings/details composition",
+      "keywords": [
+        "exact",
+        "module",
+        "boundaries",
+        "views",
+        "widget",
+        "shell",
+        "settings",
+        "details",
+        "composition"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:98",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 98,
+      "kind": "bullet",
+      "text": "Exact module boundaries: - No provider parsing or business rules in the frontend",
+      "keywords": [
+        "exact",
+        "module",
+        "boundaries",
+        "provider",
+        "parsing",
+        "business",
+        "rules",
+        "frontend"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:100",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 100,
+      "kind": "heading",
+      "text": "Locked adapter interface",
+      "keywords": [
+        "locked",
+        "adapter",
+        "interface"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:109",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 109,
+      "kind": "heading",
+      "text": "Locked domain contract",
+      "keywords": [
+        "locked",
+        "domain",
+        "contract"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:142",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 142,
+      "kind": "bullet",
+      "text": "Locked domain contract: - `refresh_interval_seconds`",
+      "keywords": [
+        "locked",
+        "domain",
+        "contract",
+        "refresh",
+        "interval",
+        "seconds"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:143",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 143,
+      "kind": "bullet",
+      "text": "Locked domain contract: - `time_format`",
+      "keywords": [
+        "locked",
+        "domain",
+        "contract",
+        "time",
+        "format"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:144",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 144,
+      "kind": "bullet",
+      "text": "Locked domain contract: - `alert_thresholds`",
+      "keywords": [
+        "locked",
+        "domain",
+        "contract",
+        "alert",
+        "thresholds"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:145",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 145,
+      "kind": "bullet",
+      "text": "Locked domain contract: - `alerts_enabled`",
+      "keywords": [
+        "locked",
+        "domain",
+        "contract",
+        "alerts",
+        "enabled"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:146",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 146,
+      "kind": "bullet",
+      "text": "Locked domain contract: - `codex_rollout_fallback_enabled`",
+      "keywords": [
+        "locked",
+        "domain",
+        "contract",
+        "codex",
+        "rollout",
+        "fallback",
+        "enabled"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:148",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 148,
+      "kind": "heading",
+      "text": "Source ingestion rules",
+      "keywords": [
+        "source",
+        "ingestion",
+        "rules"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:150",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 150,
+      "kind": "bullet",
+      "text": "Source ingestion rules: - Claude: documented status-line `rate_limits` ingestion only, session-attached by design.",
+      "keywords": [
+        "source",
+        "ingestion",
+        "rules",
+        "claude",
+        "documented",
+        "status",
+        "line",
+        "rate",
+        "limits",
+        "only",
+        "session",
+        "attached",
+        "design"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:151",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 151,
+      "kind": "bullet",
+      "text": "Source ingestion rules: - Codex: local app-server `account/rateLimits/read`, gated to known compatible CLI/protocol versions, fixed arguments, bounded process, no network listener.",
+      "keywords": [
+        "source",
+        "ingestion",
+        "rules",
+        "codex",
+        "local",
+        "server",
+        "account",
+        "ratelimits",
+        "read",
+        "gated",
+        "known",
+        "compatible",
+        "protocol",
+        "versions",
+        "fixed",
+        "arguments",
+        "bounded",
+        "process",
+        "network",
+        "listener"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:152",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 152,
+      "kind": "bullet",
+      "text": "Source ingestion rules: - Codex fallback: later opt-in streaming JSONL parser that extracts only rate-limit events, discards all other records, canonicalizes allowed paths, and rejects traversal/symlink escape.",
+      "keywords": [
+        "source",
+        "ingestion",
+        "rules",
+        "codex",
+        "fallback",
+        "later",
+        "streaming",
+        "jsonl",
+        "parser",
+        "that",
+        "extracts",
+        "only",
+        "rate",
+        "limit",
+        "events",
+        "discards",
+        "other",
+        "records",
+        "canonicalizes",
+        "allowed",
+        "paths",
+        "rejects",
+        "traversal",
+        "symlink",
+        "escape"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:154",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 154,
+      "kind": "heading",
+      "text": "Acceptance gates",
+      "keywords": [
+        "acceptance",
+        "gates"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:156",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 156,
+      "kind": "bullet",
+      "text": "Acceptance gates: - Schemas and fixtures land before live adapter UI wiring.",
+      "keywords": [
+        "acceptance",
+        "gates",
+        "schemas",
+        "fixtures",
+        "land",
+        "before",
+        "live",
+        "adapter",
+        "wiring"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:157",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 157,
+      "kind": "bullet",
+      "text": "Acceptance gates: - One provider failure never blocks the other or erases its last known snapshot.",
+      "keywords": [
+        "acceptance",
+        "gates",
+        "provider",
+        "failure",
+        "never",
+        "blocks",
+        "other",
+        "erases",
+        "last",
+        "known",
+        "snapshot"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:158",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 158,
+      "kind": "bullet",
+      "text": "Acceptance gates: - No raw response, transcript, token, cookie, or credential is logged, cached, or included in fixtures.",
+      "keywords": [
+        "acceptance",
+        "gates",
+        "response",
+        "transcript",
+        "token",
+        "cookie",
+        "credential",
+        "logged",
+        "cached",
+        "included",
+        "fixtures"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:159",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 159,
+      "kind": "bullet",
+      "text": "Acceptance gates: - Drift maps to `source_changed` or `unsupported`, never fabricated values.",
+      "keywords": [
+        "acceptance",
+        "gates",
+        "drift",
+        "maps",
+        "source",
+        "changed",
+        "unsupported",
+        "never",
+        "fabricated",
+        "values"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:160",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 160,
+      "kind": "bullet",
+      "text": "Acceptance gates: - Compact view shows the most constrained active window; expanded view lists all windows.",
+      "keywords": [
+        "acceptance",
+        "gates",
+        "compact",
+        "view",
+        "shows",
+        "most",
+        "constrained",
+        "active",
+        "window",
+        "expanded",
+        "lists",
+        "windows"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:161",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 161,
+      "kind": "bullet",
+      "text": "Acceptance gates: - Freshness, health, source confidence, and absolute local reset time remain visible.",
+      "keywords": [
+        "acceptance",
+        "gates",
+        "freshness",
+        "health",
+        "source",
+        "confidence",
+        "absolute",
+        "local",
+        "reset",
+        "time",
+        "remain",
+        "visible"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:162",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 162,
+      "kind": "bullet",
+      "text": "Acceptance gates: - Keyboard navigation, screen-reader labels, focus visibility, contrast, non-color cues, reduced motion, and 200% scaling are release gates.",
+      "keywords": [
+        "acceptance",
+        "gates",
+        "keyboard",
+        "navigation",
+        "screen",
+        "reader",
+        "labels",
+        "focus",
+        "visibility",
+        "contrast",
+        "color",
+        "cues",
+        "reduced",
+        "motion",
+        "scaling",
+        "release"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:164",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 164,
+      "kind": "heading",
+      "text": "Required tests",
+      "keywords": [
+        "required",
+        "tests"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:166",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 166,
+      "kind": "bullet",
+      "text": "Required tests: - Domain normalization: clamping, headline selection, and reset handling",
+      "keywords": [
+        "required",
+        "tests",
+        "domain",
+        "normalization",
+        "clamping",
+        "headline",
+        "selection",
+        "reset",
+        "handling"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:167",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 167,
+      "kind": "bullet",
+      "text": "Required tests: - Store: atomic writes, restrictive permissions, corrupt-file recovery",
+      "keywords": [
+        "required",
+        "tests",
+        "store",
+        "atomic",
+        "writes",
+        "restrictive",
+        "permissions",
+        "corrupt",
+        "file",
+        "recovery"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:168",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 168,
+      "kind": "bullet",
+      "text": "Required tests: - Adapters: healthy, stale, signed-out, unavailable, exhausted, and drift fixtures",
+      "keywords": [
+        "required",
+        "tests",
+        "adapters",
+        "healthy",
+        "stale",
+        "signed",
+        "unavailable",
+        "exhausted",
+        "drift",
+        "fixtures"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:169",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 169,
+      "kind": "bullet",
+      "text": "Required tests: - Security: redaction, provider isolation, protocol mismatch, path traversal, symlink defense, and fallback non-retention",
+      "keywords": [
+        "required",
+        "tests",
+        "security",
+        "redaction",
+        "provider",
+        "isolation",
+        "protocol",
+        "mismatch",
+        "path",
+        "traversal",
+        "symlink",
+        "defense",
+        "fallback",
+        "retention"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:170",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 170,
+      "kind": "bullet",
+      "text": "Required tests: - Frontend: compact/detail rendering, stale/error semantics, keyboard flow, and accessible labels",
+      "keywords": [
+        "required",
+        "tests",
+        "frontend",
+        "compact",
+        "detail",
+        "rendering",
+        "stale",
+        "error",
+        "semantics",
+        "keyboard",
+        "flow",
+        "accessible",
+        "labels"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:172",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 172,
+      "kind": "heading",
+      "text": "Live-probe gates",
+      "keywords": [
+        "live",
+        "probe",
+        "gates"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:174",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 174,
+      "kind": "bullet",
+      "text": "Live-probe gates: - Confirm the Codex app-server handshake, version gate, and bounded invocation in the user's normal local context.",
+      "keywords": [
+        "live",
+        "probe",
+        "gates",
+        "confirm",
+        "codex",
+        "server",
+        "handshake",
+        "version",
+        "gate",
+        "bounded",
+        "invocation",
+        "user",
+        "normal",
+        "local",
+        "context"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:175",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 175,
+      "kind": "bullet",
+      "text": "Live-probe gates: - Confirm Claude status-line ingestion and that its payload satisfies the locked contract.",
+      "keywords": [
+        "live",
+        "probe",
+        "gates",
+        "confirm",
+        "claude",
+        "status",
+        "line",
+        "ingestion",
+        "that",
+        "payload",
+        "satisfies",
+        "locked",
+        "contract"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-brief.md:176",
+      "source": ".forgeflow/Sagewatch/current-brief.md",
+      "line": 176,
+      "kind": "bullet",
+      "text": "Live-probe gates: - Waves 1 and 2 may proceed before these probes complete. If a probe fails, revise only that adapter strategy rather than reopening the shared contract or UI foundation.",
+      "keywords": [
+        "live",
+        "probe",
+        "gates",
+        "waves",
+        "proceed",
+        "before",
+        "these",
+        "probes",
+        "complete",
+        "fails",
+        "revise",
+        "only",
+        "that",
+        "adapter",
+        "strategy",
+        "rather",
+        "than",
+        "reopening",
+        "shared",
+        "contract",
+        "foundation"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/patterns.md:1",
+      "source": ".forgeflow/Sagewatch/patterns.md",
+      "line": 1,
+      "kind": "heading",
+      "text": "Patterns",
+      "keywords": [
+        "patterns"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:1",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 1,
+      "kind": "heading",
+      "text": "Codebase Map",
+      "keywords": [
+        "codebase"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/review-history.md:1",
+      "source": ".forgeflow/Sagewatch/review-history.md",
+      "line": 1,
+      "kind": "heading",
+      "text": "Review History",
+      "keywords": [
+        "review",
+        "history"
+      ]
+    }
+  ]
+}
