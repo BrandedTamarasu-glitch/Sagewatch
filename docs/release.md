@@ -38,6 +38,18 @@ cargo test --manifest-path src-tauri/Cargo.toml live_authenticated_app_server_ha
 
 The 2026-08-10 v0.1.0 release candidate passed both authenticated provider checks on the development machine.
 
+## Post-build desktop smoke soak
+
+Run this short check against the exact AppImage intended for installation, then repeat the persistence checks after one logout/login or reboot:
+
+- Tray: open the app from the tray, hide it, refresh both providers while hidden, reopen it, and quit from the tray. Confirm no inaccessible background process remains.
+- Autostart: enable **Start Sagewatch at login**, restart the app, and confirm the preference remains enabled. After the next login, confirm exactly one Sagewatch instance starts; then disable it and confirm the autostart entry is removed.
+- Notifications: with alerts enabled, cross one configured threshold and confirm one desktop notification plus the accessible in-app alert. Refresh again without changing the threshold state and confirm neither alert duplicates. Denying desktop notification delivery must not affect provider refresh or stored status.
+- Claude probe: enable **Experimental Claude /usage refresh**, refresh Claude, and confirm the observation becomes live with updated usage/reset values. Restart Sagewatch and confirm the option remains enabled and a subsequent refresh succeeds. Disable it afterward if the release should retain its default-off state.
+- Restart integrity: after quitting and relaunching, confirm the last snapshot, preferences, and tray behavior survive, while stale data remains labeled stale.
+
+Record the AppImage filename or checksum, desktop environment, notification result, autostart result, and any failure before promoting the artifact.
+
 ## Linux packaging
 
 When AppImage bundling is enabled for a release run, Tauri documents the output as an executable AppImage that can be launched directly after `chmod +x`. Build on an old-enough Linux base to avoid glibc compatibility problems on older user systems, and use the Tauri Linux prerequisites for the host machine. See the official Tauri prerequisites and AppImage docs for the current package list and limitations:

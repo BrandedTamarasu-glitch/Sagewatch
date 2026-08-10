@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { alertList, badge, detailsDialog, providerCard, settingsPanel } from "../../src/components/render.ts";
-import { fixturePreferences, fixtureProviders } from "../../src/fixtures/status.ts";
+import { alertList, badge, detailsDialog, diagnosticsPanel, providerCard, settingsPanel } from "../../src/components/render.ts";
+import { fixtureDiagnostics, fixturePreferences, fixtureProviders } from "../../src/fixtures/status.ts";
 import { deliverDesktopAlerts, reconcileStatusSnapshot, refreshMilliseconds, ThresholdAlertTracker } from "../../src/lib/alerts.ts";
 import { checkedSetting } from "../../src/lib/form.ts";
 
@@ -41,6 +41,11 @@ test("settings expose alert thresholds and explicit fallback privacy text", () =
   assert.match(html, /name="claude_usage_probe_enabled"/);
   assert.match(html, /Experimental privacy note/);
   assert.match(html, /sends \/usage, Escape, and \/exit/);
+});
+
+test("diagnostics identify the running Sagewatch version", () => {
+  const html = diagnosticsPanel(fixtureDiagnostics, "0.1.1");
+  assert.match(html, /Sagewatch version 0\.1\.1/);
 });
 
 test("settings surface autostart failures accessibly without changing the checkbox", () => {

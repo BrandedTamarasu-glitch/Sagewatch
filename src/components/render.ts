@@ -39,9 +39,9 @@ export function detailsDialog(status: ProviderStatus, preferences: Preferences):
   return `<dialog class="detail-dialog" aria-labelledby="detail-title"><header class="dialog-header"><div><p class="eyebrow">Provider details</p><h2 id="detail-title">${providerName}</h2></div><button type="button" class="icon-button" data-close aria-label="Close ${providerName} details">×</button></header><div class="badge-row">${badge(status.health, "health")}${badge(status.freshness, "freshness")}${badge(status.source_confidence, "confidence")}</div><p class="source-note">Source: ${display(status.source)}. Observed ${time(status.observed_at, preferences.time_format)}.</p><section aria-labelledby="windows-title"><h3 id="windows-title">All allowance windows</h3><div class="window-list">${status.windows.length ? status.windows.map((window) => allowanceRow(window, preferences)).join("") : "<p>No allowance windows reported.</p>"}</div></section></dialog>`;
 }
 
-export function diagnosticsPanel(diagnostics: Diagnostics | null): string {
+export function diagnosticsPanel(diagnostics: Diagnostics | null, appVersion = "unavailable"): string {
   const items = diagnostics ? Object.values(diagnostics).filter((item) => item != null) : [];
-  return `<section class="panel" aria-labelledby="diagnostics-title"><h2 id="diagnostics-title">Diagnostics</h2>${items.length ? items.map((item) => `<article class="diagnostic"><h3>${item!.provider === "claude" ? "Claude" : "Codex"} · ${display(item!.health)}</h3><p>${escape(item!.summary)}</p><p>${item!.retryable ? "Retry is available." : "No automatic retry is recommended."}</p></article>`).join("") : "<p>No diagnostics are currently reported.</p>"}</section>`;
+  return `<section class="panel" aria-labelledby="diagnostics-title"><h2 id="diagnostics-title">Diagnostics</h2><p class="source-note">Sagewatch version ${escape(appVersion)}</p>${items.length ? items.map((item) => `<article class="diagnostic"><h3>${item!.provider === "claude" ? "Claude" : "Codex"} · ${display(item!.health)}</h3><p>${escape(item!.summary)}</p><p>${item!.retryable ? "Retry is available." : "No automatic retry is recommended."}</p></article>`).join("") : "<p>No diagnostics are currently reported.</p>"}</section>`;
 }
 
 export function settingsPanel(preferences: Preferences, saving: boolean, autostartEnabled = false, autostartError = ""): string {

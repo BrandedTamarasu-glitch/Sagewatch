@@ -1,4 +1,5 @@
 import { listen, type UnlistenFn } from "@tauri-apps/api/event";
+import { getVersion } from "@tauri-apps/api/app";
 import * as api from "./lib/api";
 import { fixtureDiagnostics, fixturePreferences, unavailableProviders } from "./fixtures/status";
 import type { Diagnostics, Preferences, ProviderId, ProviderStatus, StatusSnapshot } from "./lib/types";
@@ -12,6 +13,7 @@ export class SagewatchApp {
   private providers: ProviderStatus[] = unavailableProviders;
   private preferences: Preferences = fixturePreferences;
   private diagnostics: Diagnostics | null = fixtureDiagnostics;
+  private appVersion = "unavailable";
   private tab: Tab = "usage";
   private selected: ProviderId | null = null;
   private refreshing: ProviderId | null = null;
@@ -48,9 +50,10 @@ export class SagewatchApp {
     catch {
       this.notice = "Tray refresh updates are unavailable. In-app refresh remains available.";
     }
-    const [statusResult, autostartResult] = await Promise.allSettled([
+    const [statusResult, autostartResult, versionResult] = await Promise.allSettled([
       api.getStatus(),
       api.getAutostartEnabled(),
+      getVersion(),
     ]);
     if (statusResult.status === "fulfilled") {
       const snapshot = statusResult.value;
@@ -68,13 +71,14 @@ export class SagewatchApp {
     else {
       this.autostartError = "Start-at-login status is unavailable. No login setting was changed.";
     }
+    if (versionResult.status === "fulfilled") this.appVersion = versionResult.value;
     this.render();
     this.scheduleRefresh();
     void this.refreshAll();
   }
 
   private render() {
-    const content = this.tab === "usage" ? `<section class="provider-grid" aria-label="Provider allowance status">${this.providers.map((status) => providerCard(status, this.preferences, this.refreshing === status.provider)).join("")}</section>` : this.tab === "diagnostics" ? diagnosticsPanel(this.diagnostics) : settingsPanel(this.preferences, this.saving, this.autostartEnabled, this.autostartError);
+    const content = this.tab === "usage" ? `<section class="provider-grid" aria-label="Provider allowance status">${this.providers.map((status) => providerCard(status, this.preferences, this.refreshing === status.provider)).join("")}</section>` : this.tab === "diagnostics" ? diagnosticsPanel(this.diagnostics, this.appVersion) : settingsPanel(this.preferences, this.saving, this.autostartEnabled, this.autostartError);
     const selectedStatus = this.providers.find((provider) => provider.provider === this.selected);
     this.root.innerHTML = `<main class="shell"><header class="app-header"><div><p class="eyebrow">Local allowance monitor</p><h1>Sagewatch</h1></div><span class="privacy-mark">Local only</span></header><nav class="tabs" aria-label="Sagewatch sections">${(["usage", "diagnostics", "settings"] as Tab[]).map((tab) => `<button type="button" data-tab="${tab}" ${this.tab === tab ? 'aria-current="page"' : ""}>${tab[0].toUpperCase()}${tab.slice(1)}</button>`).join("")}</nav><p class="sr-only" role="status" aria-live="polite">${this.notice}</p><p class="sr-only" role="status" aria-live="assertive">${this.alertAnnouncement}</p>${alertList(this.alerts)}${content}${selectedStatus ? detailsDialog(selectedStatus, this.preferences) : ""}</main>`;
     this.alertAnnouncement = "";

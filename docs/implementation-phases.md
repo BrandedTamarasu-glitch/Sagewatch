@@ -197,3 +197,31 @@ Deferred:
 ## Next release intent
 
 The tray, autostart, local notification, and AppImage work above is the next bounded release increment. It is a desktop-integration follow-on, not a scope expansion into provider features or collaboration features.
+
+## Future phase — private multi-PC snapshot sync
+
+This phase is deferred until the local desktop release is stable. Its purpose is narrowly to let one person view recent sanitized Sagewatch observations produced by their own computers. It does not change how provider usage is collected and does not make a remote snapshot equivalent to a live provider response.
+
+Scope:
+
+- Sync only the normalized, sanitized status fields Sagewatch already permits locally: provider, allowance windows, remaining percentage, reset time, observation time, freshness metadata, source confidence, and an opaque device identifier.
+- Use explicit opt-in enrollment per device, authenticated device identities, encryption in transit, and end-to-end encryption when a relay cannot be fully trusted.
+- Keep encryption keys and provider authentication material out of the relay. Provide device revocation, key rotation/recovery guidance, bounded retention, and a user-visible delete-all operation.
+- Preserve provenance and timestamps per device. The client must label remote, stale, conflicting, and unavailable observations honestly rather than merging them into a fabricated live value.
+- Minimize metadata, redact logs, rate-limit uploads, validate all payloads, and document the relay operator's remaining visibility and threat model before implementation.
+
+Non-goals:
+
+- No provider credentials, session cookies, tokens, transcripts, raw CLI output, or raw provider responses leave a device.
+- No remote control, command execution, background Claude sessions, or transfer of an authenticated provider session between computers.
+- No team dashboard, employer monitoring, multi-user analytics, historical behavior profiling, billing actions, or bypass of provider limits.
+- No mandatory account or cloud dependency for Sagewatch's existing local-only operation.
+
+Acceptance criteria:
+
+- A newly enrolled second device can display a first device's sanitized observation with its source device and observation time, without receiving provider authentication material.
+- Captured relay traffic and relay storage reveal no plaintext allowance values when end-to-end encryption is selected; server logs contain no payloads or reusable secrets.
+- Revoking a device prevents new uploads and downloads from that device, and deleting synchronized data removes it within the documented retention window.
+- Offline devices continue to show their local last-known state; sync failures cannot block either provider adapter or erase valid local snapshots.
+- Conflicting or old observations remain attributable and visibly remote/stale. Clock skew, replay, malformed payload, relay outage, and key-loss tests fail safely.
+- The feature is disabled by default, can be removed without affecting local data collection, and passes a documented security/privacy review before release.
