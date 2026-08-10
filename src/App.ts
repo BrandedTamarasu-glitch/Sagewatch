@@ -110,9 +110,14 @@ export class SagewatchApp {
     const data = new FormData(form); const thresholds = String(data.get("alert_thresholds") ?? "").split(",").map(Number).filter((value) => Number.isFinite(value) && value >= 0 && value <= 100);
     const next: Preferences = { ...this.preferences, refresh_interval_seconds: Number(data.get("refresh_interval_seconds")), time_format: data.get("time_format") as Preferences["time_format"], alert_thresholds: thresholds, alerts_enabled: data.get("alerts_enabled") === "on", start_at_login: this.autostartEnabled, codex_rollout_fallback_enabled: data.get("codex_rollout_fallback_enabled") === "on", claude_usage_probe_enabled: data.get("claude_usage_probe_enabled") === "on" };
     const requestedAutostart = data.get("autostart_enabled") === "on";
+    const previousPreferences = this.preferences;
+    // Keep the submitted controls stable while the async save is in flight. Rendering the
+    // saving state from the old preferences made newly checked boxes appear to clear.
+    this.preferences = next;
     this.saving = true; this.render();
     const preferencesResult = await Promise.allSettled([api.setPreferences(next)]).then(([result]) => result);
     if (preferencesResult.status === "fulfilled") { this.preferences = preferencesResult.value; this.scheduleRefresh(); }
+    else { this.preferences = previousPreferences; }
     const autostartResult = await Promise.allSettled([
       requestedAutostart === this.autostartEnabled ? Promise.resolve(this.autostartEnabled) : api.setAutostartEnabled(requestedAutostart),
     ]).then(([result]) => result);

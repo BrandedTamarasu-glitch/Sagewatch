@@ -50,6 +50,13 @@ test("settings surface autostart failures accessibly without changing the checkb
   assert.doesNotMatch(html, /name="autostart_enabled"[^>]*checked/);
 });
 
+test("settings retain a submitted Claude usage probe choice while saving", () => {
+  const preferences = { ...fixturePreferences, claude_usage_probe_enabled: true };
+  const html = settingsPanel(preferences, true, false);
+  assert.match(html, /name="claude_usage_probe_enabled"[^>]*checked/);
+  assert.match(html, /Saving…/);
+});
+
 test("provider text is escaped before insertion", () => {
   const unsafe = { ...fixtureProviders[0], plan: "<script>bad()</script>" };
   const html = providerCard(unsafe, fixturePreferences, false);
