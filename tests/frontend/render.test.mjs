@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { alertList, badge, detailsDialog, providerCard, settingsPanel } from "../../src/components/render.ts";
 import { fixturePreferences, fixtureProviders } from "../../src/fixtures/status.ts";
 import { deliverDesktopAlerts, reconcileStatusSnapshot, refreshMilliseconds, ThresholdAlertTracker } from "../../src/lib/alerts.ts";
+import { checkedSetting } from "../../src/lib/form.ts";
 
 test("compact cards expose trust and absolute reset information", () => {
   const html = providerCard(fixtureProviders[0], fixturePreferences, false);
@@ -55,6 +56,16 @@ test("settings retain a submitted Claude usage probe choice while saving", () =>
   const html = settingsPanel(preferences, true, false);
   assert.match(html, /name="claude_usage_probe_enabled"[^>]*checked/);
   assert.match(html, /Saving…/);
+});
+
+test("settings read the Claude usage probe from the live checkbox state", () => {
+  const checkedInput = { checked: true };
+  const form = {
+    querySelector: (selector) => selector === 'input[name="claude_usage_probe_enabled"]' ? checkedInput : null,
+  };
+  assert.equal(checkedSetting(form, "claude_usage_probe_enabled"), true);
+  checkedInput.checked = false;
+  assert.equal(checkedSetting(form, "claude_usage_probe_enabled"), false);
 });
 
 test("provider text is escaped before insertion", () => {
