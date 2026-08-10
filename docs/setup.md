@@ -91,6 +91,7 @@ To remove it:
 ```sh
 kpackagetool6 --type Plasma/Applet --remove com.github.brandedtamarasu.sagewatch
 rm ~/.local/libexec/sagewatch-plasma-provider
+rm ~/.local/libexec/sagewatch-plasma-refresh
 ```
 
 ## Experimental background Claude refresh

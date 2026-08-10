@@ -7,6 +7,7 @@ widget_id="com.github.brandedtamarasu.sagewatch"
 cargo build --release --manifest-path "${repo_root}/src-tauri/Cargo.toml" --bin sagewatch-plasma-provider
 install -d -m 0755 "${helper_dir}"
 install -m 0755 "${repo_root}/src-tauri/target/release/sagewatch-plasma-provider" "${helper_dir}/sagewatch-plasma-provider"
+install -m 0755 "${repo_root}/src-tauri/target/release/sagewatch-plasma-provider" "${helper_dir}/sagewatch-plasma-refresh"
 if kpackagetool6 --type Plasma/Applet --show "${widget_id}" >/dev/null 2>&1; then
   kpackagetool6 --type Plasma/Applet --upgrade "${package_dir}"
 else

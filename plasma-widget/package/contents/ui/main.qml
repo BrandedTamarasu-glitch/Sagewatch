@@ -10,6 +10,7 @@ PlasmoidItem {
     id: root
     readonly property url homeUrl: StandardPaths.writableLocation(StandardPaths.HomeLocation)
     readonly property string helperPath: homeUrl.toLocalFile() + "/.local/libexec/sagewatch-plasma-provider"
+    readonly property string refreshHelperPath: homeUrl.toLocalFile() + "/.local/libexec/sagewatch-plasma-refresh"
     property var snapshot: ({"providers": {}})
     property string errorMessage: ""
     property bool refreshing: false
@@ -38,14 +39,14 @@ PlasmoidItem {
         var value = new Date(item.reset_at)
         return isNaN(value.getTime()) ? "Not available" : value.toLocaleString(Qt.locale(), Locale.ShortFormat)
     }
-    function run(command) {
+    function run(path) {
         if (dataSource.connectedSources.length) dataSource.disconnectSource(dataSource.connectedSources[0])
-        dataSource.connectSource(helperPath + " " + command)
+        dataSource.connectSource(path)
     }
-    function refresh() { refreshing = true; run("refresh") }
-    Component.onCompleted: run("status")
+    function refresh() { refreshing = true; run(refreshHelperPath) }
+    Component.onCompleted: run(helperPath)
 
-    Timer { interval: 60000; repeat: true; running: true; onTriggered: root.run("status") }
+    Timer { interval: 60000; repeat: true; running: true; onTriggered: root.run(root.helperPath) }
     Plasma5Support.DataSource {
         id: dataSource
         engine: "executable"

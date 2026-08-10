@@ -26,14 +26,18 @@ async fn snapshot(refresh: bool) -> Result<AppSnapshot, String> {
 }
 
 fn main() {
-    let refresh = match env::args().nth(1).as_deref() {
+    let arguments: Vec<String> = env::args().collect();
+    let refresh_entry_point = arguments
+        .first()
+        .is_some_and(|path| path.ends_with("sagewatch-plasma-refresh"));
+    let refresh = match arguments.get(1).map(String::as_str) {
         None | Some("status") => false,
         Some("refresh") => true,
         Some(_) => {
             eprintln!("usage: sagewatch-plasma-provider [status|refresh]");
             std::process::exit(2);
         }
-    };
+    } || refresh_entry_point;
     let runtime = tokio::runtime::Builder::new_current_thread()
         .enable_all()
         .build()
