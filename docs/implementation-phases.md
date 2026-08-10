@@ -121,6 +121,26 @@ Exit gate:
 - Critical status, failure, privacy, and accessibility paths pass validation.
 - Release notes state which data sources are supported and which may change upstream.
 
+## Daily-use desktop integration increment
+
+Deliver the next bounded Linux release increment without expanding into team-wide analytics:
+
+- Add a system-tray icon with Show, Hide, Refresh, and Quit actions.
+- After a tray interaction confirms a recovery path, closing hides the window to the tray. Before that confirmation, closing exits rather than risking an inaccessible background process; explicit Quit always terminates.
+- Add an opt-in `Start Sagewatch at login` preference backed by the desktop autostart facility. It must default off and surface failures honestly.
+- Emit local desktop notifications for newly crossed allowance thresholds only when alerts are enabled; preserve the existing in-app accessible alert path and deduplication semantics.
+- Produce a release AppImage using the existing Tauri bundle configuration and document installation, desktop integration, troubleshooting, and removal.
+- Add a practical soak-test checklist covering startup, tray lifecycle, provider isolation, refresh cadence, threshold deduplication, suspend/resume, offline behavior, and restart persistence.
+
+Exit gate:
+
+- No hidden network listener, credential read, or provider-source expansion.
+- Tray actions remain usable when the main window is hidden, and window close never strands an unquittable background process.
+- Autostart is user-controlled, persisted, idempotent, and testable without silently changing login state during automated tests.
+- Desktop-notification permission or delivery failure never blocks refresh, erases status, or duplicates threshold alerts.
+- Keyboard and screen-reader behavior of existing in-app alerts remains intact.
+- Frontend tests, bridge tests, Rust tests, Clippy, production build, and AppImage generation pass, or an environmental packaging blocker is documented with exact evidence.
+
 ## Scope boundaries
 
 In scope for version 1:
@@ -142,7 +162,7 @@ Deferred:
 - Team-wide Claude administrative analytics
 - Multi-user and multi-account reporting
 - Historical trend charts
-- Native Waybar JSON module, tray integrations, and additional providers
+- Native Waybar JSON module and additional providers
 - Automated overage purchases or seat upgrades
 
 ## Dependencies and risks
@@ -174,3 +194,6 @@ Deferred:
 - The compact view is usable by keyboard and at 200% scaling.
 - Setup and troubleshooting can be followed from a clean installation.
 
+## Next release intent
+
+The tray, autostart, local notification, and AppImage work above is the next bounded release increment. It is a desktop-integration follow-on, not a scope expansion into provider features or collaboration features.

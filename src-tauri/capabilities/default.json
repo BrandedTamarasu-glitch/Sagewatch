@@ -3,6 +3,11 @@
   "identifier": "default",
   "description": "Minimal capability set for the Sagewatch main window.",
   "windows": ["main"],
-  "permissions": ["core:default"]
+  "permissions": [
+    "core:default",
+    "autostart:allow-enable",
+    "autostart:allow-disable",
+    "autostart:allow-is-enabled",
+    "notification:allow-notify"
+  ]
 }
-

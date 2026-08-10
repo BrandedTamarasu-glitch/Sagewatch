@@ -1,10 +1,12 @@
 # Forgeflow Scope Packet: warden
 
-Query: Sagewatch Claude Codex subscription allowance widget adapters Tauri accessibility security
-Query tokens: sagewatch, claude, codex, subscription, allowance, widget, adapters, tauri, accessibility, security
+Query: Sagewatch system tray minimize login autostart AppImage desktop notifications soak test
+Query tokens: sagewatch, system, tray, minimize, login, autostart, appimage, desktop, notifications, soak, test
 
 ## Shared Files
-(none)
+- .forgeflow/Sagewatch/validation/2026-08-10-compass-revalidation.md (docs, 6125 bytes, score 1, signals warden:security/boundary, compass:test/validation, atlas:docs/coordination)
+- .forgeflow/Sagewatch/validation/2026-08-10-compass-validation.md (docs, 4693 bytes, score 1, signals warden:security/boundary, compass:test/validation, atlas:docs/coordination)
+- .forgeflow/Sagewatch/validation/2026-08-10-final-release-validation.md (docs, 1198 bytes, score 1, signals warden:security/boundary, compass:test/validation, atlas:docs/coordination)
 
 ## Lane Files
 (none)

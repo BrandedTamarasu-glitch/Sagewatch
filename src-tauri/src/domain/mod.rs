@@ -171,6 +171,8 @@ pub struct Preferences {
     pub alert_thresholds: Vec<u8>,
     pub alerts_enabled: bool,
     pub codex_rollout_fallback_enabled: bool,
+    #[serde(default)]
+    pub start_at_login: bool,
 }
 
 impl Default for Preferences {
@@ -181,6 +183,7 @@ impl Default for Preferences {
             alert_thresholds: vec![20, 10],
             alerts_enabled: false,
             codex_rollout_fallback_enabled: false,
+            start_at_login: false,
         }
     }
 }

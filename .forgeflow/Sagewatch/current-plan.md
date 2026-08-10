@@ -33,3 +33,15 @@ Version 1 is a single-user, local, read-only allowance monitor. Team-wide admini
 - Stale or estimated data is labeled explicitly.
 - Logs, caches, and fixtures contain no reusable secrets.
 - Keyboard, contrast, reduced motion, screen-reader labeling, responsive 200% layout, and honest unavailable states passed Forgeflow review and visual inspection.
+
+## Next Increment
+
+The completed release is the base. The next bounded follow-on is daily-use desktop integration:
+
+- system tray actions
+- opt-in autostart
+- local threshold notifications
+- AppImage packaging
+- a practical soak-test checklist
+
+This follow-on should stay local-only and read-only. It should not add provider scope, telemetry, or collaboration features.

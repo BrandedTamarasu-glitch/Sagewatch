@@ -1,11 +1,55 @@
-import type { Preferences, ProviderStatus } from "./types";
+import type { Preferences, ProviderStatus, StatusSnapshot } from "./types";
 
 export interface AllowanceAlert {
   id: string;
   message: string;
 }
 
+export interface StatusReconciliation {
+  providers: ProviderStatus[];
+  alerts: AllowanceAlert[];
+}
+
 export const refreshMilliseconds = (seconds: number): number => Math.max(30, seconds) * 1_000;
+
+export async function deliverDesktopAlerts(
+  alerts: AllowanceAlert[],
+  notify: (title: string, body: string) => Promise<void>,
+): Promise<boolean> {
+  const results = await Promise.allSettled(
+    alerts.map((alert) => notify("Sagewatch allowance alert", alert.message)),
+  );
+  return results.every((result) => result.status === "fulfilled");
+}
+
+export function reconcileProviderStatuses(
+  current: ProviderStatus[],
+  incoming: ProviderStatus[],
+  preferences: Preferences,
+  tracker: ThresholdAlertTracker,
+): StatusReconciliation {
+  const providers = [...current];
+  const alerts: AllowanceAlert[] = [];
+  for (const status of incoming) {
+    const before = providers.find((provider) => provider.provider === status.provider);
+    alerts.push(...tracker.evaluate(before, status, preferences));
+    const index = providers.findIndex((provider) => provider.provider === status.provider);
+    if (index === -1) providers.push(status);
+    else providers[index] = status;
+  }
+  return { providers, alerts };
+}
+
+export function reconcileStatusSnapshot(
+  current: ProviderStatus[],
+  snapshot: StatusSnapshot,
+  tracker: ThresholdAlertTracker,
+): StatusReconciliation {
+  const incoming = Object.values(snapshot.providers).flatMap((state) =>
+    state?.status ? [state.status] : [],
+  );
+  return reconcileProviderStatuses(current, incoming, snapshot.preferences, tracker);
+}
 
 export class ThresholdAlertTracker {
   private previous = new Map<string, number>();

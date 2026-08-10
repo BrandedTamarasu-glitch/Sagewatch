@@ -1,35 +1,1073 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-08-07T22:00:05.833Z",
+  "generated_at": "2026-08-10T14:58:34.264Z",
   "root": "/home/corye/openai-cli/Sagewatch",
-  "query": "Sagewatch Claude Codex subscription allowance widget adapters Tauri accessibility security",
+  "query": "Sagewatch system tray minimize login autostart AppImage desktop notifications soak test",
   "query_tokens": [
     "sagewatch",
-    "claude",
-    "codex",
-    "subscription",
-    "allowance",
-    "widget",
-    "adapters",
-    "tauri",
-    "accessibility",
-    "security"
+    "system",
+    "tray",
+    "minimize",
+    "login",
+    "autostart",
+    "appimage",
+    "desktop",
+    "notifications",
+    "soak",
+    "test"
   ],
   "lanes": {
-    "shared": [],
-    "smith": [],
+    "shared": [
+      {
+        "path": ".forgeflow/Sagewatch/validation/2026-08-10-compass-revalidation.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 6125,
+        "score": 1,
+        "signals": {
+          "warden": [
+            "security/boundary"
+          ],
+          "compass": [
+            "test/validation"
+          ],
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/validation/2026-08-10-compass-validation.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 4693,
+        "score": 1,
+        "signals": {
+          "warden": [
+            "security/boundary"
+          ],
+          "compass": [
+            "test/validation"
+          ],
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/validation/2026-08-10-final-release-validation.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 1198,
+        "score": 1,
+        "signals": {
+          "warden": [
+            "security/boundary"
+          ],
+          "compass": [
+            "test/validation"
+          ],
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      }
+    ],
+    "smith": [
+      {
+        "path": ".forgeflow/Sagewatch/context/memory-context-telemetry.json",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 435,
+        "score": 1,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ],
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/context/scope-manifest.json",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 414,
+        "score": 1,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ],
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/context/scope-telemetry.json",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 544,
+        "score": 1,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ],
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/implementation-scope.json",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 658,
+        "score": 1,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ],
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/index/memory-index.json",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 125670,
+        "score": 1,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ],
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/learnings.jsonl",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 0,
+        "score": 1,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ],
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/scope-manifest.json",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 667,
+        "score": 1,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ],
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/ship/ship-presentation.html",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 5869,
+        "score": 1,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ],
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/ship/ship-summary.json",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 2269,
+        "score": 1,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ],
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": "src-tauri/gen/schemas/desktop-schema.json",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 116049,
+        "score": 1,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/context-advisor-history.jsonl",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 584,
+        "score": 0,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ],
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".github/workflows/ci.yml",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 861,
+        "score": 0,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ]
+        }
+      },
+      {
+        "path": ".gitignore",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 55,
+        "score": 0,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ]
+        }
+      },
+      {
+        "path": "index.html",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 426,
+        "score": 0,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ]
+        }
+      },
+      {
+        "path": "package-lock.json",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 68677,
+        "score": 0,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ]
+        }
+      },
+      {
+        "path": "package.json",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 687,
+        "score": 0,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ]
+        }
+      },
+      {
+        "path": "scripts/claude-statusline-bridge.mjs",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 5794,
+        "score": 0,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ]
+        }
+      },
+      {
+        "path": "src-tauri/build.rs",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 39,
+        "score": 0,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ]
+        }
+      },
+      {
+        "path": "src-tauri/capabilities/default.json",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 214,
+        "score": 0,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ]
+        }
+      },
+      {
+        "path": "src-tauri/Cargo.lock",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 113065,
+        "score": 0,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ]
+        }
+      },
+      {
+        "path": "src-tauri/Cargo.toml",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 747,
+        "score": 0,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ]
+        }
+      },
+      {
+        "path": "src-tauri/gen/schemas/acl-manifests.json",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 65934,
+        "score": 0,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ]
+        }
+      },
+      {
+        "path": "src-tauri/gen/schemas/capabilities.json",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 169,
+        "score": 0,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ]
+        }
+      },
+      {
+        "path": "src-tauri/gen/schemas/linux-schema.json",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 116049,
+        "score": 0,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ]
+        }
+      },
+      {
+        "path": "src-tauri/icons/icon.png",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 2258,
+        "score": 0,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ]
+        }
+      },
+      {
+        "path": "src-tauri/src/commands/diagnostics.rs",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 323,
+        "score": 0,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ]
+        }
+      },
+      {
+        "path": "src-tauri/src/commands/mod.rs",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 204,
+        "score": 0,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ]
+        }
+      },
+      {
+        "path": "src-tauri/src/commands/preferences.rs",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 334,
+        "score": 0,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ]
+        }
+      },
+      {
+        "path": "src-tauri/src/commands/status.rs",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 529,
+        "score": 0,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ]
+        }
+      },
+      {
+        "path": "src-tauri/src/domain/mod.rs",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 7292,
+        "score": 0,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ]
+        }
+      },
+      {
+        "path": "src-tauri/src/lib.rs",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 933,
+        "score": 0,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ]
+        }
+      },
+      {
+        "path": "src-tauri/src/main.rs",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 40,
+        "score": 0,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ]
+        }
+      },
+      {
+        "path": "src-tauri/src/providers/claude.rs",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 9074,
+        "score": 0,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ]
+        }
+      },
+      {
+        "path": "src-tauri/src/providers/codex.rs",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 11329,
+        "score": 0,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ]
+        }
+      },
+      {
+        "path": "src-tauri/src/providers/mod.rs",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 4103,
+        "score": 0,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ]
+        }
+      },
+      {
+        "path": "src-tauri/src/service/mod.rs",
+        "kind": "service",
+        "exists": true,
+        "size_bytes": 12791,
+        "score": 0,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ]
+        }
+      },
+      {
+        "path": "src-tauri/src/store/mod.rs",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 4773,
+        "score": 0,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ]
+        }
+      },
+      {
+        "path": "src-tauri/tauri.conf.json",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 775,
+        "score": 0,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ]
+        }
+      },
+      {
+        "path": "src/App.ts",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 7867,
+        "score": 0,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ]
+        }
+      },
+      {
+        "path": "src/fixtures/status.ts",
+        "kind": "code",
+        "exists": true,
+        "size_bytes": 2440,
+        "score": 0,
+        "signals": {
+          "smith": [
+            "backend/data/code"
+          ]
+        }
+      }
+    ],
     "warden": [],
-    "lumen": [],
-    "compass": [],
-    "atlas": []
+    "lumen": [
+      {
+        "path": "src/components/render.ts",
+        "kind": "frontend",
+        "exists": true,
+        "size_bytes": 7191,
+        "score": 0,
+        "signals": {
+          "lumen": [
+            "frontend/ux"
+          ]
+        }
+      },
+      {
+        "path": "src/styles.css",
+        "kind": "frontend",
+        "exists": true,
+        "size_bytes": 6491,
+        "score": 0,
+        "signals": {
+          "lumen": [
+            "frontend/ux"
+          ]
+        }
+      }
+    ],
+    "compass": [
+      {
+        "path": "scripts/__tests__/claude-statusline-bridge.test.mjs",
+        "kind": "test",
+        "exists": true,
+        "size_bytes": 3308,
+        "score": 1,
+        "signals": {
+          "compass": [
+            "test/validation"
+          ]
+        }
+      },
+      {
+        "path": "tests/fixtures/claude-model-statusline.json",
+        "kind": "test",
+        "exists": true,
+        "size_bytes": 254,
+        "score": 1,
+        "signals": {
+          "compass": [
+            "test/validation"
+          ]
+        }
+      },
+      {
+        "path": "tests/frontend/render.test.mjs",
+        "kind": "test",
+        "exists": true,
+        "size_bytes": 3699,
+        "score": 1,
+        "signals": {
+          "compass": [
+            "test/validation"
+          ]
+        }
+      }
+    ],
+    "atlas": [
+      {
+        "path": ".forgeflow/Sagewatch/codebase-map.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 2894,
+        "score": 1,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/context/memory-context.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 3149,
+        "score": 1,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/context/scope-packets/atlas.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 326,
+        "score": 1,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/context/scope-packets/compass.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 328,
+        "score": 1,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/context/scope-packets/lumen.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 326,
+        "score": 1,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/context/scope-packets/shared.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 327,
+        "score": 1,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/context/scope-packets/smith.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 326,
+        "score": 1,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/context/scope-packets/warden.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 327,
+        "score": 1,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/current-brief.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 7788,
+        "score": 1,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/current-discussion.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 22,
+        "score": 1,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/current-plan.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 2607,
+        "score": 1,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/current-research.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 7693,
+        "score": 1,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/implementation-packets/atlas.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 488,
+        "score": 1,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/implementation-packets/compass.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 490,
+        "score": 1,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/implementation-packets/lumen.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 488,
+        "score": 1,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/implementation-packets/shared.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 489,
+        "score": 1,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/implementation-packets/smith.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 488,
+        "score": 1,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/implementation-packets/warden.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 489,
+        "score": 1,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/patterns.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 1660,
+        "score": 1,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/review-history.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 1544,
+        "score": 1,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/scope-packets/atlas.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 503,
+        "score": 1,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/scope-packets/compass.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 505,
+        "score": 1,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/scope-packets/lumen.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 503,
+        "score": 1,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/scope-packets/shared.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 504,
+        "score": 1,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/scope-packets/smith.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 503,
+        "score": 1,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/scope-packets/warden.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 504,
+        "score": 1,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": ".forgeflow/Sagewatch/ship/pr-body.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 1518,
+        "score": 1,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": "docs/implementation-phases.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 7577,
+        "score": 0,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": "docs/privacy.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 1307,
+        "score": 0,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": "docs/provider-research.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 562,
+        "score": 0,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": "docs/release.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 1610,
+        "score": 0,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": "docs/setup.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 2059,
+        "score": 0,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": "docs/troubleshooting.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 1877,
+        "score": 0,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      },
+      {
+        "path": "README.md",
+        "kind": "docs",
+        "exists": true,
+        "size_bytes": 1344,
+        "score": 0,
+        "signals": {
+          "atlas": [
+            "docs/coordination"
+          ]
+        }
+      }
+    ]
   },
   "counts": {
-    "shared": 0,
-    "smith": 0,
+    "shared": 3,
+    "smith": 40,
     "warden": 0,
-    "lumen": 0,
-    "compass": 0,
-    "atlas": 0
+    "lumen": 2,
+    "compass": 3,
+    "atlas": 34
   },
   "denied": []
 }

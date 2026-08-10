@@ -1,26 +1,26 @@
 {
   "schema_version": "1",
   "kind": "scope-manifest",
-  "generated_at": "2026-08-07T22:07:49.606Z",
-  "baseline_chars": 3942,
-  "compact_chars": 2932,
-  "saved_chars": 1010,
-  "estimated_baseline_tokens": 986,
-  "estimated_compact_tokens": 733,
-  "estimated_saved_tokens": 253,
-  "percent_saved": 25.62,
+  "generated_at": "2026-08-10T14:58:34.265Z",
+  "baseline_chars": 140736,
+  "compact_chars": 14228,
+  "saved_chars": 126508,
+  "estimated_baseline_tokens": 35184,
+  "estimated_compact_tokens": 3557,
+  "estimated_saved_tokens": 31627,
+  "percent_saved": 89.89,
   "detail": {
     "lanes": 6,
     "denied": 0,
-    "manifest_chars": 657,
-    "packet_chars": 2932,
+    "manifest_chars": 23456,
+    "packet_chars": 14228,
     "counts": {
-      "shared": 0,
-      "smith": 0,
+      "shared": 3,
+      "smith": 40,
       "warden": 0,
-      "lumen": 0,
-      "compass": 0,
-      "atlas": 0
+      "lumen": 2,
+      "compass": 3,
+      "atlas": 34
     }
   }
 }

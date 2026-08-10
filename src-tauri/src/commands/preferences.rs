@@ -3,9 +3,12 @@ use tauri::State;
 
 #[tauri::command]
 pub async fn set_preferences(
-    preferences: Preferences,
+    mut preferences: Preferences,
     state: State<'_, AppState>,
 ) -> Result<Preferences, String> {
+    // Login integration is deliberately controlled only by set_autostart_enabled so a
+    // generic preference write can never change desktop login state or claim that it did.
+    preferences.start_at_login = state.service.preferences().await.start_at_login;
     state
         .service
         .set_preferences(preferences)

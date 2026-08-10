@@ -5,6 +5,7 @@ export const fixturePreferences: Preferences = {
   time_format: "local_12_hour",
   alert_thresholds: [20, 10],
   alerts_enabled: false,
+  start_at_login: false,
   codex_rollout_fallback_enabled: false,
 };
 

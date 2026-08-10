@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { alertList, badge, detailsDialog, providerCard, settingsPanel } from "../../src/components/render.ts";
 import { fixturePreferences, fixtureProviders } from "../../src/fixtures/status.ts";
-import { refreshMilliseconds, ThresholdAlertTracker } from "../../src/lib/alerts.ts";
+import { deliverDesktopAlerts, reconcileStatusSnapshot, refreshMilliseconds, ThresholdAlertTracker } from "../../src/lib/alerts.ts";
 
 test("compact cards expose trust and absolute reset information", () => {
   const html = providerCard(fixtureProviders[0], fixturePreferences, false);
@@ -31,10 +31,20 @@ test("every health state has a visible text label and icon hook", () => {
 });
 
 test("settings expose alert thresholds and explicit fallback privacy text", () => {
-  const html = settingsPanel(fixturePreferences, false);
+  const html = settingsPanel(fixturePreferences, false, true);
   assert.match(html, /name="alert_thresholds"/);
+  assert.match(html, /name="autostart_enabled"[^>]*checked/);
+  assert.match(html, /Start Sagewatch at login/);
   assert.match(html, /Privacy note/);
   assert.match(html, /off by default/);
+});
+
+test("settings surface autostart failures accessibly without changing the checkbox", () => {
+  const html = settingsPanel(fixturePreferences, false, false, "Login integration unavailable.");
+  assert.match(html, /role="status"/);
+  assert.match(html, /aria-describedby="autostart-error"/);
+  assert.match(html, /Login integration unavailable/);
+  assert.doesNotMatch(html, /name="autostart_enabled"[^>]*checked/);
 });
 
 test("provider text is escaped before insertion", () => {
@@ -69,4 +79,36 @@ test("exhaustion alerts render clear dismissible text", () => {
   const alerts = tracker.evaluate(before, exhausted, preferences);
   assert.match(alertList(alerts), /is exhausted/);
   assert.match(alertList(alerts), /Dismiss alert/);
+});
+
+test("desktop notification failures are reported without rejecting alert delivery", async () => {
+  const alerts = [{ id: "claude:weekly:20", message: "Claude Weekly crossed 20% remaining." }];
+  const delivered = await deliverDesktopAlerts(alerts, async () => { throw new Error("permission denied"); });
+  assert.equal(delivered, false);
+  assert.equal(await deliverDesktopAlerts([], async () => { throw new Error("must not run"); }), true);
+});
+
+test("a tray snapshot crossing produces one notification and remains deduped after delivery failure", async () => {
+  const tracker = new ThresholdAlertTracker();
+  const preferences = { ...fixturePreferences, alerts_enabled: true, alert_thresholds: [20] };
+  const before = { ...fixtureProviders[0], windows: [{ ...fixtureProviders[0].windows[0], remaining_percent: 25 }] };
+  const crossed = { ...before, windows: [{ ...before.windows[0], remaining_percent: 19 }] };
+  const snapshot = {
+    preferences,
+    providers: { claude: { status: crossed, diagnostics: null, consecutive_failures: 0, next_retry_at: null, refreshing: false } },
+  };
+  const first = reconcileStatusSnapshot([before, fixtureProviders[1]], snapshot, tracker);
+  let notifications = 0;
+  const delivered = await deliverDesktopAlerts(first.alerts, async () => {
+    notifications += 1;
+    throw new Error("desktop notifications unavailable");
+  });
+  assert.equal(delivered, false);
+  assert.equal(notifications, 1);
+  assert.equal(first.providers.find((provider) => provider.provider === "claude").windows[0].remaining_percent, 19);
+
+  const repeated = reconcileStatusSnapshot(first.providers, snapshot, tracker);
+  assert.equal(repeated.alerts.length, 0);
+  assert.equal(await deliverDesktopAlerts(repeated.alerts, async () => { notifications += 1; }), true);
+  assert.equal(notifications, 1);
 });

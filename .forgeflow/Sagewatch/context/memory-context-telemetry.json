@@ -1,18 +1,18 @@
 {
   "schema_version": "1",
   "kind": "memory-context",
-  "generated_at": "2026-08-07T22:07:49.585Z",
-  "baseline_chars": 17398,
-  "compact_chars": 3031,
-  "saved_chars": 14367,
-  "estimated_baseline_tokens": 4350,
-  "estimated_compact_tokens": 758,
-  "estimated_saved_tokens": 3592,
-  "percent_saved": 82.58,
+  "generated_at": "2026-08-10T14:58:34.234Z",
+  "baseline_chars": 24208,
+  "compact_chars": 3132,
+  "saved_chars": 21076,
+  "estimated_baseline_tokens": 6052,
+  "estimated_compact_tokens": 783,
+  "estimated_saved_tokens": 5269,
+  "percent_saved": 87.06,
   "detail": {
     "sources": 8,
-    "records": 164,
-    "selected_count": 38,
+    "records": 260,
+    "selected_count": 40,
     "max_hits": 40,
     "max_chars": 8000
   }

@@ -50,3 +50,25 @@ The bridge intentionally prints nothing by default. To retain an existing status
 Only chain a program you trust: it receives Claude Code's original status-line JSON because it must render the existing output. Sagewatch never logs or persists that original input.
 
 The feed is session-attached. It updates while Claude Code invokes the status line and becomes stale when those observations stop. Use Claude Code's `/usage` or Settings > Usage for manual verification.
+
+## Desktop integration
+
+The tray icon, notifications, and start-at-login preference are part of the desktop-integration release increment. They are local-only features and depend on the current Linux desktop session honoring the standard tray, notification, and XDG autostart facilities.
+
+If you are testing an AppImage build, make the artifact executable and launch it directly:
+
+```sh
+chmod +x Sagewatch-*.AppImage
+./Sagewatch-*.AppImage
+```
+
+Removal is the reverse:
+
+1. Delete the `*.AppImage` file.
+2. Remove any desktop launcher you created.
+3. Remove any autostart entry created for Sagewatch from `~/.config/autostart/`.
+
+The repository now enables the AppImage target. Build it with `npm run tauri -- build`.
+On rolling-release distributions whose libraries contain `.relr.dyn` sections, use
+`NO_STRIP=1 npm run tauri -- build` because linuxdeploy's bundled `strip` may be older
+than the host libraries.

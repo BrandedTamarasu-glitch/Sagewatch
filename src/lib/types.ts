@@ -51,6 +51,7 @@ export interface Preferences {
   time_format: TimeFormat;
   alert_thresholds: number[];
   alerts_enabled: boolean;
+  start_at_login: boolean;
   codex_rollout_fallback_enabled: boolean;
 }
 

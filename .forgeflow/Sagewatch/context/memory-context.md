@@ -4,6 +4,13 @@ Index: .forgeflow/Sagewatch/index/memory-index.json
 Keywords: (none)
 
 - .forgeflow/Sagewatch/codebase-map.md:1 [heading] Codebase Map
+- .forgeflow/Sagewatch/codebase-map.md:5 [heading] Current Shape
+- .forgeflow/Sagewatch/codebase-map.md:12 [heading] Ownership Map
+- .forgeflow/Sagewatch/codebase-map.md:14 [heading] Warden
+- .forgeflow/Sagewatch/codebase-map.md:34 [heading] Smith
+- .forgeflow/Sagewatch/codebase-map.md:58 [heading] Lumen
+- .forgeflow/Sagewatch/codebase-map.md:71 [heading] Validation Surfaces
+- .forgeflow/Sagewatch/codebase-map.md:79 [heading] Deferred Surfaces
 - .forgeflow/Sagewatch/current-brief.md:1 [heading] Sagewatch binding implementation brief
 - .forgeflow/Sagewatch/current-brief.md:5 [heading] Authority and resolved decisions
 - .forgeflow/Sagewatch/current-brief.md:14 [heading] Locked v1 scope
@@ -23,10 +30,10 @@ Keywords: (none)
 - .forgeflow/Sagewatch/current-brief.md:172 [heading] Live-probe gates
 - .forgeflow/Sagewatch/current-discussion.md:1 [heading] Current Discussion
 - .forgeflow/Sagewatch/current-plan.md:1 [heading] Current Plan — Sagewatch
-- .forgeflow/Sagewatch/current-plan.md:7 [heading] Phase sequence
-- .forgeflow/Sagewatch/current-plan.md:16 [heading] Hard gate
-- .forgeflow/Sagewatch/current-plan.md:20 [heading] Scope guardrail
-- .forgeflow/Sagewatch/current-plan.md:24 [heading] Validation summary
+- .forgeflow/Sagewatch/current-plan.md:7 [heading] Phase Sequence
+- .forgeflow/Sagewatch/current-plan.md:16 [heading] Hard Gate
+- .forgeflow/Sagewatch/current-plan.md:20 [heading] Scope Guardrail
+- .forgeflow/Sagewatch/current-plan.md:24 [heading] Validation Summary
 - .forgeflow/Sagewatch/current-research.md:1 [heading] Current Research — Provider observability
 - .forgeflow/Sagewatch/current-research.md:5 [heading] Recommendation
 - .forgeflow/Sagewatch/current-research.md:16 [heading] Options considered
@@ -36,8 +43,3 @@ Keywords: (none)
 - .forgeflow/Sagewatch/current-research.md:68 [heading] Privacy and security posture
 - .forgeflow/Sagewatch/current-research.md:78 [heading] Codebase patterns
 - .forgeflow/Sagewatch/current-research.md:86 [heading] Risks and tradeoffs
-- .forgeflow/Sagewatch/current-research.md:94 [heading] Accessibility implications
-- .forgeflow/Sagewatch/current-research.md:102 [heading] Phase 0 decision
-- .forgeflow/Sagewatch/current-research.md:111 [heading] Evidence
-- .forgeflow/Sagewatch/patterns.md:1 [heading] Patterns
-- .forgeflow/Sagewatch/review-history.md:1 [heading] Review History

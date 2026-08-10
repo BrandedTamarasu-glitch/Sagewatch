@@ -161,6 +161,25 @@ Preferences:
 - Freshness, health, source confidence, and absolute local reset time remain visible.
 - Keyboard navigation, screen-reader labels, focus visibility, contrast, non-color cues, reduced motion, and 200% scaling are release gates.
 
+## Next bounded increment
+
+The next release increment is desktop integration for daily use. It is intentionally narrow:
+
+- System tray icon with Show, Hide, Refresh, and Quit actions.
+- After a tray interaction proves the window can be recovered, window close hides to tray; before that proof, close exits safely. Explicit Quit always exits cleanly.
+- Opt-in start-at-login backed by the desktop autostart facility, with the preference off by default.
+- Local desktop notifications for newly crossed allowance thresholds only when alerts are enabled.
+- Release AppImage packaging using the existing Tauri bundle configuration, with install/remove and troubleshooting guidance documented.
+- A soak-test checklist that covers startup, tray behavior, provider isolation, refresh cadence, threshold deduplication, suspend/resume, offline behavior, and restart persistence.
+
+Acceptance gates:
+
+- Tray actions work while the main window is hidden.
+- No unquittable background process is left behind after close.
+- Autostart remains user-controlled and testable.
+- Notification failures never block refresh or duplicate alerts.
+- AppImage generation is either green or blocked by a documented environment issue with exact evidence.
+
 ## Required tests
 
 - Domain normalization: clamping, headline selection, and reset handling

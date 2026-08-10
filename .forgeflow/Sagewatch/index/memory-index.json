@@ -1,6 +1,6 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-08-07T22:07:49.578Z",
+  "generated_at": "2026-08-10T14:58:34.227Z",
   "project_dir": ".forgeflow/Sagewatch",
   "sources": [
     {
@@ -15,8 +15,8 @@
     },
     {
       "path": ".forgeflow/Sagewatch/current-plan.md",
-      "bytes": 1756,
-      "mtime_ms": 1786139050027
+      "bytes": 2607,
+      "mtime_ms": 1786371186045
     },
     {
       "path": ".forgeflow/Sagewatch/current-brief.md",
@@ -25,18 +25,18 @@
     },
     {
       "path": ".forgeflow/Sagewatch/patterns.md",
-      "bytes": 63,
-      "mtime_ms": 1786138992383
+      "bytes": 1660,
+      "mtime_ms": 1786369852543
     },
     {
       "path": ".forgeflow/Sagewatch/codebase-map.md",
-      "bytes": 58,
-      "mtime_ms": 1786138992383
+      "bytes": 2894,
+      "mtime_ms": 1786369845547
     },
     {
       "path": ".forgeflow/Sagewatch/review-history.md",
-      "bytes": 18,
-      "mtime_ms": 1786138992383
+      "bytes": 1544,
+      "mtime_ms": 1786371194455
     },
     {
       "path": ".forgeflow/Sagewatch/learnings.jsonl",
@@ -1309,7 +1309,7 @@
       "source": ".forgeflow/Sagewatch/current-plan.md",
       "line": 7,
       "kind": "heading",
-      "text": "Phase sequence",
+      "text": "Phase Sequence",
       "keywords": [
         "phase",
         "sequence"
@@ -1320,26 +1320,27 @@
       "source": ".forgeflow/Sagewatch/current-plan.md",
       "line": 9,
       "kind": "bullet",
-      "text": "Phase sequence: 1. **Source discovery and contracts** — prove Claude Teams and Codex data sources, define allowance semantics, and complete the privacy threat model.",
+      "text": "Phase Sequence: 1. **Source discovery and contracts** — completed. Claude status-line ingestion and Codex app-server access were narrowed to read-only local sources.",
       "keywords": [
         "phase",
         "sequence",
         "source",
         "discovery",
         "contracts",
-        "prove",
+        "completed",
         "claude",
-        "teams",
+        "status",
+        "line",
+        "ingestion",
         "codex",
-        "data",
-        "sources",
-        "define",
-        "allowance",
-        "semantics",
-        "complete",
-        "privacy",
-        "threat",
-        "model"
+        "server",
+        "access",
+        "were",
+        "narrowed",
+        "read",
+        "only",
+        "local",
+        "sources"
       ]
     },
     {
@@ -1347,7 +1348,7 @@
       "source": ".forgeflow/Sagewatch/current-plan.md",
       "line": 10,
       "kind": "bullet",
-      "text": "Phase sequence: 2. **Project foundation and widget shell** — scaffold the isolated Linux app and validate compact/expanded UX with fixtures.",
+      "text": "Phase Sequence: 2. **Project foundation and widget shell** — completed. The Tauri/Vite shell, fixture-first UI, and compact/expanded rendering are in place.",
       "keywords": [
         "phase",
         "sequence",
@@ -1355,14 +1356,15 @@
         "foundation",
         "widget",
         "shell",
-        "scaffold",
-        "isolated",
-        "linux",
-        "validate",
+        "completed",
+        "tauri",
+        "vite",
+        "fixture",
+        "first",
         "compact",
         "expanded",
-        "with",
-        "fixtures"
+        "rendering",
+        "place"
       ]
     },
     {
@@ -1370,7 +1372,7 @@
       "source": ".forgeflow/Sagewatch/current-plan.md",
       "line": 11,
       "kind": "bullet",
-      "text": "Phase sequence: 3. **Provider framework and local safety** — implement adapters, caching, health states, refresh controls, redaction, and safe storage.",
+      "text": "Phase Sequence: 3. **Provider framework and local safety** — completed. Rust owns the provider boundary, normalization, safe storage, and refresh orchestration.",
       "keywords": [
         "phase",
         "sequence",
@@ -1378,16 +1380,15 @@
         "framework",
         "local",
         "safety",
-        "implement",
-        "adapters",
-        "caching",
-        "health",
-        "states",
-        "refresh",
-        "controls",
-        "redaction",
+        "completed",
+        "rust",
+        "owns",
+        "boundary",
+        "normalization",
         "safe",
-        "storage"
+        "storage",
+        "refresh",
+        "orchestration"
       ]
     },
     {
@@ -1395,7 +1396,7 @@
       "source": ".forgeflow/Sagewatch/current-plan.md",
       "line": 12,
       "kind": "bullet",
-      "text": "Phase sequence: 4. **Claude Teams and Codex adapters** — integrate proven sources and validate values against samples.",
+      "text": "Phase Sequence: 4. **Claude Teams and Codex adapters** — completed. Claude uses the session-attached status-line bridge; Codex uses the local `app-server` path with the live probe captured in the adapter tests.",
       "keywords": [
         "phase",
         "sequence",
@@ -1403,13 +1404,22 @@
         "teams",
         "codex",
         "adapters",
-        "integrate",
-        "proven",
-        "sources",
-        "validate",
-        "values",
-        "against",
-        "samples"
+        "completed",
+        "uses",
+        "session",
+        "attached",
+        "status",
+        "line",
+        "bridge",
+        "local",
+        "server",
+        "path",
+        "with",
+        "live",
+        "probe",
+        "captured",
+        "adapter",
+        "tests"
       ]
     },
     {
@@ -1417,7 +1427,7 @@
       "source": ".forgeflow/Sagewatch/current-plan.md",
       "line": 13,
       "kind": "bullet",
-      "text": "Phase sequence: 5. **Product polish, preferences, and alerts** — complete daily-use UX and optional local thresholds.",
+      "text": "Phase Sequence: 5. **Product polish, preferences, and alerts** — completed for the shipped UI/settings surface. The rollout-cache fallback remains deferred and disabled; preference restoration, scheduled refresh, backend backoff, and accessible threshold alerts are wired.",
       "keywords": [
         "phase",
         "sequence",
@@ -1425,11 +1435,25 @@
         "polish",
         "preferences",
         "alerts",
-        "complete",
-        "daily",
-        "optional",
-        "local",
-        "thresholds"
+        "completed",
+        "shipped",
+        "settings",
+        "surface",
+        "rollout",
+        "cache",
+        "fallback",
+        "remains",
+        "deferred",
+        "disabled",
+        "preference",
+        "restoration",
+        "scheduled",
+        "refresh",
+        "backend",
+        "backoff",
+        "accessible",
+        "threshold",
+        "wired"
       ]
     },
     {
@@ -1437,7 +1461,7 @@
       "source": ".forgeflow/Sagewatch/current-plan.md",
       "line": 14,
       "kind": "bullet",
-      "text": "Phase sequence: 6. **Verification, documentation, and release readiness** — validate accessibility, degraded behavior, privacy, packaging, and setup.",
+      "text": "Phase Sequence: 6. **Verification, documentation, and release readiness** — completed. Build, frontend tests, bridge tests, the default Rust suite, and both authenticated live provider checks are green.",
       "keywords": [
         "phase",
         "sequence",
@@ -1445,13 +1469,20 @@
         "documentation",
         "release",
         "readiness",
-        "validate",
-        "accessibility",
-        "degraded",
-        "behavior",
-        "privacy",
-        "packaging",
-        "setup"
+        "completed",
+        "build",
+        "frontend",
+        "tests",
+        "bridge",
+        "default",
+        "rust",
+        "suite",
+        "both",
+        "authenticated",
+        "live",
+        "provider",
+        "checks",
+        "green"
       ]
     },
     {
@@ -1459,7 +1490,7 @@
       "source": ".forgeflow/Sagewatch/current-plan.md",
       "line": 16,
       "kind": "heading",
-      "text": "Hard gate",
+      "text": "Hard Gate",
       "keywords": [
         "hard",
         "gate"
@@ -1470,7 +1501,7 @@
       "source": ".forgeflow/Sagewatch/current-plan.md",
       "line": 20,
       "kind": "heading",
-      "text": "Scope guardrail",
+      "text": "Scope Guardrail",
       "keywords": [
         "scope",
         "guardrail"
@@ -1481,7 +1512,7 @@
       "source": ".forgeflow/Sagewatch/current-plan.md",
       "line": 24,
       "kind": "heading",
-      "text": "Validation summary",
+      "text": "Validation Summary",
       "keywords": [
         "validation",
         "summary"
@@ -1492,15 +1523,12 @@
       "source": ".forgeflow/Sagewatch/current-plan.md",
       "line": 26,
       "kind": "bullet",
-      "text": "Validation summary: - Each provider refreshes and fails independently.",
+      "text": "Validation Summary: - `npm run build` passes.",
       "keywords": [
         "validation",
         "summary",
-        "each",
-        "provider",
-        "refreshes",
-        "fails",
-        "independently"
+        "build",
+        "passes"
       ]
     },
     {
@@ -1508,15 +1536,13 @@
       "source": ".forgeflow/Sagewatch/current-plan.md",
       "line": 27,
       "kind": "bullet",
-      "text": "Validation summary: - Values match fixed source samples.",
+      "text": "Validation Summary: - `npm run test:frontend` passes.",
       "keywords": [
         "validation",
         "summary",
-        "values",
-        "match",
-        "fixed",
-        "source",
-        "samples"
+        "test",
+        "frontend",
+        "passes"
       ]
     },
     {
@@ -1524,7 +1550,114 @@
       "source": ".forgeflow/Sagewatch/current-plan.md",
       "line": 28,
       "kind": "bullet",
-      "text": "Validation summary: - Stale or estimated data is labeled explicitly.",
+      "text": "Validation Summary: - `npm run test:bridge` passes.",
+      "keywords": [
+        "validation",
+        "summary",
+        "test",
+        "bridge",
+        "passes"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-plan.md:29",
+      "source": ".forgeflow/Sagewatch/current-plan.md",
+      "line": 29,
+      "kind": "bullet",
+      "text": "Validation Summary: - `cargo test --offline` passes with 12 Rust tests and 1 intentionally ignored live Codex handshake probe.",
+      "keywords": [
+        "validation",
+        "summary",
+        "cargo",
+        "test",
+        "offline",
+        "passes",
+        "with",
+        "rust",
+        "tests",
+        "intentionally",
+        "ignored",
+        "live",
+        "codex",
+        "handshake",
+        "probe"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-plan.md:30",
+      "source": ".forgeflow/Sagewatch/current-plan.md",
+      "line": 30,
+      "kind": "bullet",
+      "text": "Validation Summary: - The ignored live Codex app-server test was run explicitly against the authenticated local CLI and passed.",
+      "keywords": [
+        "validation",
+        "summary",
+        "ignored",
+        "live",
+        "codex",
+        "server",
+        "test",
+        "explicitly",
+        "against",
+        "authenticated",
+        "local",
+        "passed"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-plan.md:31",
+      "source": ".forgeflow/Sagewatch/current-plan.md",
+      "line": 31,
+      "kind": "bullet",
+      "text": "Validation Summary: - `cargo fmt --check`, strict Clippy, and the release build pass.",
+      "keywords": [
+        "validation",
+        "summary",
+        "cargo",
+        "check",
+        "strict",
+        "clippy",
+        "release",
+        "build",
+        "pass"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-plan.md:32",
+      "source": ".forgeflow/Sagewatch/current-plan.md",
+      "line": 32,
+      "kind": "bullet",
+      "text": "Validation Summary: - The Claude status-line bridge produced a private live snapshot containing five-hour and seven-day windows, and the Rust adapter's explicit live contract test passed.",
+      "keywords": [
+        "validation",
+        "summary",
+        "claude",
+        "status",
+        "line",
+        "bridge",
+        "produced",
+        "private",
+        "live",
+        "snapshot",
+        "containing",
+        "five",
+        "hour",
+        "seven",
+        "windows",
+        "rust",
+        "adapter",
+        "explicit",
+        "contract",
+        "test",
+        "passed"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/current-plan.md:33",
+      "source": ".forgeflow/Sagewatch/current-plan.md",
+      "line": 33,
+      "kind": "bullet",
+      "text": "Validation Summary: - Stale or estimated data is labeled explicitly.",
       "keywords": [
         "validation",
         "summary",
@@ -1536,11 +1669,11 @@
       ]
     },
     {
-      "id": ".forgeflow/Sagewatch/current-plan.md:29",
+      "id": ".forgeflow/Sagewatch/current-plan.md:34",
       "source": ".forgeflow/Sagewatch/current-plan.md",
-      "line": 29,
+      "line": 34,
       "kind": "bullet",
-      "text": "Validation summary: - Logs, caches, and fixtures contain no reusable secrets.",
+      "text": "Validation Summary: - Logs, caches, and fixtures contain no reusable secrets.",
       "keywords": [
         "validation",
         "summary",
@@ -1553,11 +1686,11 @@
       ]
     },
     {
-      "id": ".forgeflow/Sagewatch/current-plan.md:30",
+      "id": ".forgeflow/Sagewatch/current-plan.md:35",
       "source": ".forgeflow/Sagewatch/current-plan.md",
-      "line": 30,
+      "line": 35,
       "kind": "bullet",
-      "text": "Validation summary: - Keyboard, contrast, reduced motion, screen-reader labeling, and 200% scaling are checked before release.",
+      "text": "Validation Summary: - Keyboard, contrast, reduced motion, screen-reader labeling, responsive 200% layout, and honest unavailable states passed Forgeflow review and visual inspection.",
       "keywords": [
         "validation",
         "summary",
@@ -1568,10 +1701,16 @@
         "screen",
         "reader",
         "labeling",
-        "scaling",
-        "checked",
-        "before",
-        "release"
+        "responsive",
+        "layout",
+        "honest",
+        "unavailable",
+        "states",
+        "passed",
+        "forgeflow",
+        "review",
+        "visual",
+        "inspection"
       ]
     },
     {
@@ -3151,6 +3290,402 @@
       ]
     },
     {
+      "id": ".forgeflow/Sagewatch/patterns.md:5",
+      "source": ".forgeflow/Sagewatch/patterns.md",
+      "line": 5,
+      "kind": "heading",
+      "text": "Good Patterns",
+      "keywords": [
+        "good",
+        "patterns"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/patterns.md:7",
+      "source": ".forgeflow/Sagewatch/patterns.md",
+      "line": 7,
+      "kind": "bullet",
+      "text": "Good Patterns: - Normalize provider data in Rust before it ever reaches the UI or disk.",
+      "keywords": [
+        "good",
+        "patterns",
+        "normalize",
+        "provider",
+        "data",
+        "rust",
+        "before",
+        "ever",
+        "reaches",
+        "disk"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/patterns.md:8",
+      "source": ".forgeflow/Sagewatch/patterns.md",
+      "line": 8,
+      "kind": "bullet",
+      "text": "Good Patterns: - Preserve every allowance window, then derive the compact headline from the most constrained active window.",
+      "keywords": [
+        "good",
+        "patterns",
+        "preserve",
+        "every",
+        "allowance",
+        "window",
+        "then",
+        "derive",
+        "compact",
+        "headline",
+        "from",
+        "most",
+        "constrained",
+        "active"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/patterns.md:9",
+      "source": ".forgeflow/Sagewatch/patterns.md",
+      "line": 9,
+      "kind": "bullet",
+      "text": "Good Patterns: - Prefer explicit health/freshness/source-confidence states over inferred certainty.",
+      "keywords": [
+        "good",
+        "patterns",
+        "prefer",
+        "explicit",
+        "health",
+        "freshness",
+        "source",
+        "confidence",
+        "states",
+        "over",
+        "inferred",
+        "certainty"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/patterns.md:10",
+      "source": ".forgeflow/Sagewatch/patterns.md",
+      "line": 10,
+      "kind": "bullet",
+      "text": "Good Patterns: - Use atomic private writes with restrictive permissions for local snapshot and preference files.",
+      "keywords": [
+        "good",
+        "patterns",
+        "atomic",
+        "private",
+        "writes",
+        "with",
+        "restrictive",
+        "permissions",
+        "local",
+        "snapshot",
+        "preference",
+        "files"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/patterns.md:11",
+      "source": ".forgeflow/Sagewatch/patterns.md",
+      "line": 11,
+      "kind": "bullet",
+      "text": "Good Patterns: - Keep provider failures isolated so one provider never erases the other provider's last known snapshot.",
+      "keywords": [
+        "good",
+        "patterns",
+        "keep",
+        "provider",
+        "failures",
+        "isolated",
+        "never",
+        "erases",
+        "other",
+        "last",
+        "known",
+        "snapshot"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/patterns.md:12",
+      "source": ".forgeflow/Sagewatch/patterns.md",
+      "line": 12,
+      "kind": "bullet",
+      "text": "Good Patterns: - Render from DTOs and fixtures in the frontend; do not re-interpret provider payloads there.",
+      "keywords": [
+        "good",
+        "patterns",
+        "render",
+        "from",
+        "dtos",
+        "fixtures",
+        "frontend",
+        "interpret",
+        "provider",
+        "payloads",
+        "there"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/patterns.md:13",
+      "source": ".forgeflow/Sagewatch/patterns.md",
+      "line": 13,
+      "kind": "bullet",
+      "text": "Good Patterns: - Show accessibility and trust state in text, not just color or iconography.",
+      "keywords": [
+        "good",
+        "patterns",
+        "show",
+        "accessibility",
+        "trust",
+        "state",
+        "text",
+        "just",
+        "color",
+        "iconography"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/patterns.md:14",
+      "source": ".forgeflow/Sagewatch/patterns.md",
+      "line": 14,
+      "kind": "bullet",
+      "text": "Good Patterns: - Keep the Claude status-line bridge as a sanitizing writer, not a general-purpose scraper.",
+      "keywords": [
+        "good",
+        "patterns",
+        "keep",
+        "claude",
+        "status",
+        "line",
+        "bridge",
+        "sanitizing",
+        "writer",
+        "general",
+        "purpose",
+        "scraper"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/patterns.md:16",
+      "source": ".forgeflow/Sagewatch/patterns.md",
+      "line": 16,
+      "kind": "heading",
+      "text": "Anti-Patterns",
+      "keywords": [
+        "anti",
+        "patterns"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/patterns.md:18",
+      "source": ".forgeflow/Sagewatch/patterns.md",
+      "line": 18,
+      "kind": "bullet",
+      "text": "Anti-Patterns: - Do not persist raw provider payloads, transcripts, cookies, tokens, or secrets.",
+      "keywords": [
+        "anti",
+        "patterns",
+        "persist",
+        "provider",
+        "payloads",
+        "transcripts",
+        "cookies",
+        "tokens",
+        "secrets"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/patterns.md:19",
+      "source": ".forgeflow/Sagewatch/patterns.md",
+      "line": 19,
+      "kind": "bullet",
+      "text": "Anti-Patterns: - Do not flatten multiple allowance windows into a single percentage or guessed reset time.",
+      "keywords": [
+        "anti",
+        "patterns",
+        "flatten",
+        "multiple",
+        "allowance",
+        "windows",
+        "into",
+        "single",
+        "percentage",
+        "guessed",
+        "reset",
+        "time"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/patterns.md:20",
+      "source": ".forgeflow/Sagewatch/patterns.md",
+      "line": 20,
+      "kind": "bullet",
+      "text": "Anti-Patterns: - Do not treat the Codex rollout JSONL path as a default code path; it remains deferred and opt-in.",
+      "keywords": [
+        "anti",
+        "patterns",
+        "treat",
+        "codex",
+        "rollout",
+        "jsonl",
+        "path",
+        "default",
+        "code",
+        "remains",
+        "deferred"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/patterns.md:21",
+      "source": ".forgeflow/Sagewatch/patterns.md",
+      "line": 21,
+      "kind": "bullet",
+      "text": "Anti-Patterns: - Do not let provider drift masquerade as healthy data.",
+      "keywords": [
+        "anti",
+        "patterns",
+        "provider",
+        "drift",
+        "masquerade",
+        "healthy",
+        "data"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/patterns.md:22",
+      "source": ".forgeflow/Sagewatch/patterns.md",
+      "line": 22,
+      "kind": "bullet",
+      "text": "Anti-Patterns: - Do not move parsing or policy logic into `src/App.ts` or the render helpers.",
+      "keywords": [
+        "anti",
+        "patterns",
+        "move",
+        "parsing",
+        "policy",
+        "logic",
+        "into",
+        "render",
+        "helpers"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/patterns.md:23",
+      "source": ".forgeflow/Sagewatch/patterns.md",
+      "line": 23,
+      "kind": "bullet",
+      "text": "Anti-Patterns: - Do not couple the refresh lifecycle of one provider to the availability of the other.",
+      "keywords": [
+        "anti",
+        "patterns",
+        "couple",
+        "refresh",
+        "lifecycle",
+        "provider",
+        "availability",
+        "other"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/patterns.md:25",
+      "source": ".forgeflow/Sagewatch/patterns.md",
+      "line": 25,
+      "kind": "heading",
+      "text": "Validation Notes",
+      "keywords": [
+        "validation",
+        "notes"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/patterns.md:27",
+      "source": ".forgeflow/Sagewatch/patterns.md",
+      "line": 27,
+      "kind": "bullet",
+      "text": "Validation Notes: - `npm run build` passes.",
+      "keywords": [
+        "validation",
+        "notes",
+        "build",
+        "passes"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/patterns.md:28",
+      "source": ".forgeflow/Sagewatch/patterns.md",
+      "line": 28,
+      "kind": "bullet",
+      "text": "Validation Notes: - `npm run test:frontend` passes.",
+      "keywords": [
+        "validation",
+        "notes",
+        "test",
+        "frontend",
+        "passes"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/patterns.md:29",
+      "source": ".forgeflow/Sagewatch/patterns.md",
+      "line": 29,
+      "kind": "bullet",
+      "text": "Validation Notes: - `npm run test:bridge` passes.",
+      "keywords": [
+        "validation",
+        "notes",
+        "test",
+        "bridge",
+        "passes"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/patterns.md:30",
+      "source": ".forgeflow/Sagewatch/patterns.md",
+      "line": 30,
+      "kind": "bullet",
+      "text": "Validation Notes: - `cargo test` passes with 9 tests and 1 ignored live Codex handshake probe.",
+      "keywords": [
+        "validation",
+        "notes",
+        "cargo",
+        "test",
+        "passes",
+        "with",
+        "tests",
+        "ignored",
+        "live",
+        "codex",
+        "handshake",
+        "probe"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/patterns.md:31",
+      "source": ".forgeflow/Sagewatch/patterns.md",
+      "line": 31,
+      "kind": "bullet",
+      "text": "Validation Notes: - The remaining open live probe is Claude session-attached status-line verification in the user's authenticated local Claude Code context.",
+      "keywords": [
+        "validation",
+        "notes",
+        "remaining",
+        "open",
+        "live",
+        "probe",
+        "claude",
+        "session",
+        "attached",
+        "status",
+        "line",
+        "verification",
+        "user",
+        "authenticated",
+        "local",
+        "code",
+        "context"
+      ]
+    },
+    {
       "id": ".forgeflow/Sagewatch/codebase-map.md:1",
       "source": ".forgeflow/Sagewatch/codebase-map.md",
       "line": 1,
@@ -3158,6 +3693,764 @@
       "text": "Codebase Map",
       "keywords": [
         "codebase"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:5",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 5,
+      "kind": "heading",
+      "text": "Current Shape",
+      "keywords": [
+        "current",
+        "shape"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:7",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 7,
+      "kind": "bullet",
+      "text": "Current Shape: - Tauri 2 backend with a Vite/TypeScript frontend.",
+      "keywords": [
+        "current",
+        "shape",
+        "tauri",
+        "backend",
+        "with",
+        "vite",
+        "typescript",
+        "frontend"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:8",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 8,
+      "kind": "bullet",
+      "text": "Current Shape: - Rust owns domain normalization, provider ingestion, persistence, refresh orchestration, and Tauri commands.",
+      "keywords": [
+        "current",
+        "shape",
+        "rust",
+        "owns",
+        "domain",
+        "normalization",
+        "provider",
+        "ingestion",
+        "persistence",
+        "refresh",
+        "orchestration",
+        "tauri",
+        "commands"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:9",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 9,
+      "kind": "bullet",
+      "text": "Current Shape: - The frontend is presentation-first and consumes typed IPC DTOs plus fixture-backed samples.",
+      "keywords": [
+        "current",
+        "shape",
+        "frontend",
+        "presentation",
+        "first",
+        "consumes",
+        "typed",
+        "dtos",
+        "plus",
+        "fixture",
+        "backed",
+        "samples"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:10",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 10,
+      "kind": "bullet",
+      "text": "Current Shape: - The only local provider bridge outside the app tree is the Claude status-line sanitizer/writer script.",
+      "keywords": [
+        "current",
+        "shape",
+        "only",
+        "local",
+        "provider",
+        "bridge",
+        "outside",
+        "tree",
+        "claude",
+        "status",
+        "line",
+        "sanitizer",
+        "writer",
+        "script"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:12",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 12,
+      "kind": "heading",
+      "text": "Ownership Map",
+      "keywords": [
+        "ownership"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:14",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 14,
+      "kind": "heading",
+      "text": "Warden",
+      "keywords": [
+        "warden"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:18",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 18,
+      "kind": "bullet",
+      "text": "Warden: - `src-tauri/src/domain/mod.rs`",
+      "keywords": [
+        "warden",
+        "tauri",
+        "domain"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:19",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 19,
+      "kind": "bullet",
+      "text": "Warden: - `src-tauri/src/providers/mod.rs`",
+      "keywords": [
+        "warden",
+        "tauri",
+        "providers"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:20",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 20,
+      "kind": "bullet",
+      "text": "Warden: - `src-tauri/src/providers/claude.rs`",
+      "keywords": [
+        "warden",
+        "tauri",
+        "providers",
+        "claude"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:21",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 21,
+      "kind": "bullet",
+      "text": "Warden: - `src-tauri/src/providers/codex.rs`",
+      "keywords": [
+        "warden",
+        "tauri",
+        "providers",
+        "codex"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:22",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 22,
+      "kind": "bullet",
+      "text": "Warden: - `src-tauri/src/store/mod.rs`",
+      "keywords": [
+        "warden",
+        "tauri",
+        "store"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:23",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 23,
+      "kind": "bullet",
+      "text": "Warden: - `src-tauri/src/service/mod.rs`",
+      "keywords": [
+        "warden",
+        "tauri",
+        "service"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:24",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 24,
+      "kind": "bullet",
+      "text": "Warden: - `scripts/claude-statusline-bridge.mjs`",
+      "keywords": [
+        "warden",
+        "scripts",
+        "claude",
+        "statusline",
+        "bridge"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:25",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 25,
+      "kind": "bullet",
+      "text": "Warden: - `scripts/__tests__/claude-statusline-bridge.test.mjs`",
+      "keywords": [
+        "warden",
+        "scripts",
+        "tests",
+        "claude",
+        "statusline",
+        "bridge",
+        "test"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:29",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 29,
+      "kind": "bullet",
+      "text": "Warden: - Normalize provider payloads into the locked allowance contract.",
+      "keywords": [
+        "warden",
+        "normalize",
+        "provider",
+        "payloads",
+        "into",
+        "locked",
+        "allowance",
+        "contract"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:30",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 30,
+      "kind": "bullet",
+      "text": "Warden: - Keep raw provider payloads out of persistence and UI surfaces.",
+      "keywords": [
+        "warden",
+        "keep",
+        "provider",
+        "payloads",
+        "persistence",
+        "surfaces"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:31",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 31,
+      "kind": "bullet",
+      "text": "Warden: - Enforce retry, health, freshness, and corruption-recovery behavior.",
+      "keywords": [
+        "warden",
+        "enforce",
+        "retry",
+        "health",
+        "freshness",
+        "corruption",
+        "recovery",
+        "behavior"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:32",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 32,
+      "kind": "bullet",
+      "text": "Warden: - Gate Codex to the local `app-server` contract and keep the rollout fallback disabled by default.",
+      "keywords": [
+        "warden",
+        "gate",
+        "codex",
+        "local",
+        "server",
+        "contract",
+        "keep",
+        "rollout",
+        "fallback",
+        "disabled",
+        "default"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:34",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 34,
+      "kind": "heading",
+      "text": "Smith",
+      "keywords": [
+        "smith"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:38",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 38,
+      "kind": "bullet",
+      "text": "Smith: - `src-tauri/src/lib.rs`",
+      "keywords": [
+        "smith",
+        "tauri"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:39",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 39,
+      "kind": "bullet",
+      "text": "Smith: - `src-tauri/src/main.rs`",
+      "keywords": [
+        "smith",
+        "tauri",
+        "main"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:40",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 40,
+      "kind": "bullet",
+      "text": "Smith: - `src-tauri/src/commands/mod.rs`",
+      "keywords": [
+        "smith",
+        "tauri",
+        "commands"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:41",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 41,
+      "kind": "bullet",
+      "text": "Smith: - `src-tauri/src/commands/status.rs`",
+      "keywords": [
+        "smith",
+        "tauri",
+        "commands",
+        "status"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:42",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 42,
+      "kind": "bullet",
+      "text": "Smith: - `src-tauri/src/commands/preferences.rs`",
+      "keywords": [
+        "smith",
+        "tauri",
+        "commands",
+        "preferences"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:43",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 43,
+      "kind": "bullet",
+      "text": "Smith: - `src-tauri/src/commands/diagnostics.rs`",
+      "keywords": [
+        "smith",
+        "tauri",
+        "commands",
+        "diagnostics"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:44",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 44,
+      "kind": "bullet",
+      "text": "Smith: - `src/lib/api.ts`",
+      "keywords": [
+        "smith"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:45",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 45,
+      "kind": "bullet",
+      "text": "Smith: - `src/lib/types.ts`",
+      "keywords": [
+        "smith",
+        "types"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:46",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 46,
+      "kind": "bullet",
+      "text": "Smith: - `src/App.ts`",
+      "keywords": [
+        "smith"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:47",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 47,
+      "kind": "bullet",
+      "text": "Smith: - `src/main.ts`",
+      "keywords": [
+        "smith",
+        "main"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:48",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 48,
+      "kind": "bullet",
+      "text": "Smith: - `src/fixtures/status.ts`",
+      "keywords": [
+        "smith",
+        "fixtures",
+        "status"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:49",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 49,
+      "kind": "bullet",
+      "text": "Smith: - `tests/frontend/render.test.mjs`",
+      "keywords": [
+        "smith",
+        "tests",
+        "frontend",
+        "render",
+        "test"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:53",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 53,
+      "kind": "bullet",
+      "text": "Smith: - Expose only the approved IPC commands.",
+      "keywords": [
+        "smith",
+        "expose",
+        "only",
+        "approved",
+        "commands"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:54",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 54,
+      "kind": "bullet",
+      "text": "Smith: - Keep frontend state fixture-first, then swap in live runtime snapshots when available.",
+      "keywords": [
+        "smith",
+        "keep",
+        "frontend",
+        "state",
+        "fixture",
+        "first",
+        "then",
+        "swap",
+        "live",
+        "runtime",
+        "snapshots",
+        "when",
+        "available"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:55",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 55,
+      "kind": "bullet",
+      "text": "Smith: - Maintain typed DTO parity with the Rust contract.",
+      "keywords": [
+        "smith",
+        "maintain",
+        "typed",
+        "parity",
+        "with",
+        "rust",
+        "contract"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:56",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 56,
+      "kind": "bullet",
+      "text": "Smith: - Keep the UI shell responsive to refresh, details, diagnostics, and settings actions.",
+      "keywords": [
+        "smith",
+        "keep",
+        "shell",
+        "responsive",
+        "refresh",
+        "details",
+        "diagnostics",
+        "settings",
+        "actions"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:58",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 58,
+      "kind": "heading",
+      "text": "Lumen",
+      "keywords": [
+        "lumen"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:62",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 62,
+      "kind": "bullet",
+      "text": "Lumen: - `src/components/render.ts`",
+      "keywords": [
+        "lumen",
+        "components",
+        "render"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:63",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 63,
+      "kind": "bullet",
+      "text": "Lumen: - `src/styles.css`",
+      "keywords": [
+        "lumen",
+        "styles"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:67",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 67,
+      "kind": "bullet",
+      "text": "Lumen: - Render the compact cards, details dialog, diagnostics, and settings markup.",
+      "keywords": [
+        "lumen",
+        "render",
+        "compact",
+        "cards",
+        "details",
+        "dialog",
+        "diagnostics",
+        "settings",
+        "markup"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:68",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 68,
+      "kind": "bullet",
+      "text": "Lumen: - Preserve accessibility semantics, keyboard flow, and visible trust signals.",
+      "keywords": [
+        "lumen",
+        "preserve",
+        "accessibility",
+        "semantics",
+        "keyboard",
+        "flow",
+        "visible",
+        "trust",
+        "signals"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:69",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 69,
+      "kind": "bullet",
+      "text": "Lumen: - Keep styling expressive without moving parsing or business logic into the view layer.",
+      "keywords": [
+        "lumen",
+        "keep",
+        "styling",
+        "expressive",
+        "without",
+        "moving",
+        "parsing",
+        "business",
+        "logic",
+        "into",
+        "view",
+        "layer"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:71",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 71,
+      "kind": "heading",
+      "text": "Validation Surfaces",
+      "keywords": [
+        "validation",
+        "surfaces"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:73",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 73,
+      "kind": "bullet",
+      "text": "Validation Surfaces: - Frontend build output is `dist/` from `npm run build`.",
+      "keywords": [
+        "validation",
+        "surfaces",
+        "frontend",
+        "build",
+        "output",
+        "dist",
+        "from"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:74",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 74,
+      "kind": "bullet",
+      "text": "Validation Surfaces: - Frontend rendering tests live in `tests/frontend/render.test.mjs`.",
+      "keywords": [
+        "validation",
+        "surfaces",
+        "frontend",
+        "rendering",
+        "tests",
+        "live",
+        "render",
+        "test"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:75",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 75,
+      "kind": "bullet",
+      "text": "Validation Surfaces: - Bridge sanitation tests live in `scripts/__tests__/claude-statusline-bridge.test.mjs`.",
+      "keywords": [
+        "validation",
+        "surfaces",
+        "bridge",
+        "sanitation",
+        "tests",
+        "live",
+        "scripts",
+        "claude",
+        "statusline",
+        "test"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:76",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 76,
+      "kind": "bullet",
+      "text": "Validation Surfaces: - Rust unit coverage is centered in `src-tauri/src/{domain,providers,service,store}.rs`.",
+      "keywords": [
+        "validation",
+        "surfaces",
+        "rust",
+        "unit",
+        "coverage",
+        "centered",
+        "tauri",
+        "domain",
+        "providers",
+        "service",
+        "store"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:77",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 77,
+      "kind": "bullet",
+      "text": "Validation Surfaces: - The live Codex handshake probe is the ignored `live_authenticated_app_server_handshake` test in `src-tauri/src/providers/codex.rs`.",
+      "keywords": [
+        "validation",
+        "surfaces",
+        "live",
+        "codex",
+        "handshake",
+        "probe",
+        "ignored",
+        "authenticated",
+        "server",
+        "test",
+        "tauri",
+        "providers"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:79",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 79,
+      "kind": "heading",
+      "text": "Deferred Surfaces",
+      "keywords": [
+        "deferred",
+        "surfaces"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:81",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 81,
+      "kind": "bullet",
+      "text": "Deferred Surfaces: - Codex rollout JSONL fallback remains off by default and intentionally unimplemented beyond the toggle and privacy note.",
+      "keywords": [
+        "deferred",
+        "surfaces",
+        "codex",
+        "rollout",
+        "jsonl",
+        "fallback",
+        "remains",
+        "default",
+        "intentionally",
+        "unimplemented",
+        "beyond",
+        "toggle",
+        "privacy",
+        "note"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/codebase-map.md:82",
+      "source": ".forgeflow/Sagewatch/codebase-map.md",
+      "line": 82,
+      "kind": "bullet",
+      "text": "Deferred Surfaces: - Team/admin analytics, cloud sync, and multi-user reporting remain out of scope for v1.",
+      "keywords": [
+        "deferred",
+        "surfaces",
+        "team",
+        "admin",
+        "analytics",
+        "cloud",
+        "sync",
+        "multi",
+        "user",
+        "reporting",
+        "remain",
+        "scope"
       ]
     },
     {
@@ -3169,6 +4462,337 @@
       "keywords": [
         "review",
         "history"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/review-history.md:3",
+      "source": ".forgeflow/Sagewatch/review-history.md",
+      "line": 3,
+      "kind": "heading",
+      "text": "2026-08-10 — Compass validation",
+      "keywords": [
+        "2026",
+        "compass",
+        "validation"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/review-history.md:7",
+      "source": ".forgeflow/Sagewatch/review-history.md",
+      "line": 7,
+      "kind": "bullet",
+      "text": "2026-08-10 — Compass validation: - Persisted preferences were not restored.",
+      "keywords": [
+        "2026",
+        "compass",
+        "validation",
+        "persisted",
+        "preferences",
+        "were",
+        "restored"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/review-history.md:8",
+      "source": ".forgeflow/Sagewatch/review-history.md",
+      "line": 8,
+      "kind": "bullet",
+      "text": "2026-08-10 — Compass validation: - Refresh cadence was stored but inert.",
+      "keywords": [
+        "2026",
+        "compass",
+        "validation",
+        "refresh",
+        "cadence",
+        "stored",
+        "inert"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/review-history.md:9",
+      "source": ".forgeflow/Sagewatch/review-history.md",
+      "line": 9,
+      "kind": "bullet",
+      "text": "2026-08-10 — Compass validation: - Alerts were configured but not implemented.",
+      "keywords": [
+        "2026",
+        "compass",
+        "validation",
+        "alerts",
+        "were",
+        "configured",
+        "implemented"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/review-history.md:13",
+      "source": ".forgeflow/Sagewatch/review-history.md",
+      "line": 13,
+      "kind": "heading",
+      "text": "2026-08-10 — Compass revalidation",
+      "keywords": [
+        "2026",
+        "compass",
+        "revalidation"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/review-history.md:17",
+      "source": ".forgeflow/Sagewatch/review-history.md",
+      "line": 17,
+      "kind": "bullet",
+      "text": "2026-08-10 — Compass revalidation: - Frontend build, frontend tests, bridge tests, Rust formatting, Rust tests, and strict Clippy passed.",
+      "keywords": [
+        "2026",
+        "compass",
+        "revalidation",
+        "frontend",
+        "build",
+        "tests",
+        "bridge",
+        "rust",
+        "formatting",
+        "strict",
+        "clippy",
+        "passed"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/review-history.md:18",
+      "source": ".forgeflow/Sagewatch/review-history.md",
+      "line": 18,
+      "kind": "bullet",
+      "text": "2026-08-10 — Compass revalidation: - Preferences hydrate through `AppSnapshot`.",
+      "keywords": [
+        "2026",
+        "compass",
+        "revalidation",
+        "preferences",
+        "hydrate",
+        "through",
+        "appsnapshot"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/review-history.md:19",
+      "source": ".forgeflow/Sagewatch/review-history.md",
+      "line": 19,
+      "kind": "bullet",
+      "text": "2026-08-10 — Compass revalidation: - Lifecycle refresh, backend retry gating, and accessible deduplicated threshold alerts are active.",
+      "keywords": [
+        "2026",
+        "compass",
+        "revalidation",
+        "lifecycle",
+        "refresh",
+        "backend",
+        "retry",
+        "gating",
+        "accessible",
+        "deduplicated",
+        "threshold",
+        "alerts",
+        "active"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/review-history.md:20",
+      "source": ".forgeflow/Sagewatch/review-history.md",
+      "line": 20,
+      "kind": "bullet",
+      "text": "2026-08-10 — Compass revalidation: - Security, privacy, provider isolation, schema behavior, and accessibility gates passed.",
+      "keywords": [
+        "2026",
+        "compass",
+        "revalidation",
+        "security",
+        "privacy",
+        "provider",
+        "isolation",
+        "schema",
+        "behavior",
+        "accessibility",
+        "gates",
+        "passed"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/review-history.md:22",
+      "source": ".forgeflow/Sagewatch/review-history.md",
+      "line": 22,
+      "kind": "heading",
+      "text": "2026-08-10 — Arbiter integration",
+      "keywords": [
+        "2026",
+        "arbiter",
+        "integration"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/review-history.md:28",
+      "source": ".forgeflow/Sagewatch/review-history.md",
+      "line": 28,
+      "kind": "bullet",
+      "text": "2026-08-10 — Arbiter integration: - The bridge now preserves bounded sanitized `rate_limits.models` data.",
+      "keywords": [
+        "2026",
+        "arbiter",
+        "integration",
+        "bridge",
+        "preserves",
+        "bounded",
+        "sanitized",
+        "rate",
+        "limits",
+        "models",
+        "data"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/review-history.md:29",
+      "source": ".forgeflow/Sagewatch/review-history.md",
+      "line": 29,
+      "kind": "bullet",
+      "text": "2026-08-10 — Arbiter integration: - One shared contract fixture is asserted by both Node bridge and Rust Claude adapter tests.",
+      "keywords": [
+        "2026",
+        "arbiter",
+        "integration",
+        "shared",
+        "contract",
+        "fixture",
+        "asserted",
+        "both",
+        "node",
+        "bridge",
+        "rust",
+        "claude",
+        "adapter",
+        "tests"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/review-history.md:30",
+      "source": ".forgeflow/Sagewatch/review-history.md",
+      "line": 30,
+      "kind": "bullet",
+      "text": "2026-08-10 — Arbiter integration: - No remaining integration blockers were found.",
+      "keywords": [
+        "2026",
+        "arbiter",
+        "integration",
+        "remaining",
+        "blockers",
+        "were",
+        "found"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/review-history.md:31",
+      "source": ".forgeflow/Sagewatch/review-history.md",
+      "line": 31,
+      "kind": "bullet",
+      "text": "2026-08-10 — Arbiter integration: - The authenticated live Codex app-server handshake test passed.",
+      "keywords": [
+        "2026",
+        "arbiter",
+        "integration",
+        "authenticated",
+        "live",
+        "codex",
+        "server",
+        "handshake",
+        "test",
+        "passed"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/review-history.md:33",
+      "source": ".forgeflow/Sagewatch/review-history.md",
+      "line": 33,
+      "kind": "heading",
+      "text": "2026-08-10 — Live Claude verification",
+      "keywords": [
+        "2026",
+        "live",
+        "claude",
+        "verification"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/review-history.md:37",
+      "source": ".forgeflow/Sagewatch/review-history.md",
+      "line": 37,
+      "kind": "bullet",
+      "text": "2026-08-10 — Live Claude verification: - The active Claude Code instance invoked the Sagewatch bridge while preserving Forgeflow's existing status line through safe direct passthrough.",
+      "keywords": [
+        "2026",
+        "live",
+        "claude",
+        "verification",
+        "active",
+        "code",
+        "instance",
+        "invoked",
+        "sagewatch",
+        "bridge",
+        "while",
+        "preserving",
+        "forgeflow",
+        "existing",
+        "status",
+        "line",
+        "through",
+        "safe",
+        "direct",
+        "passthrough"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/review-history.md:38",
+      "source": ".forgeflow/Sagewatch/review-history.md",
+      "line": 38,
+      "kind": "bullet",
+      "text": "2026-08-10 — Live Claude verification: - The bridge wrote a `0600` sanitized snapshot containing five-hour and seven-day allowance windows.",
+      "keywords": [
+        "2026",
+        "live",
+        "claude",
+        "verification",
+        "bridge",
+        "wrote",
+        "0600",
+        "sanitized",
+        "snapshot",
+        "containing",
+        "five",
+        "hour",
+        "seven",
+        "allowance",
+        "windows"
+      ]
+    },
+    {
+      "id": ".forgeflow/Sagewatch/review-history.md:39",
+      "source": ".forgeflow/Sagewatch/review-history.md",
+      "line": 39,
+      "kind": "bullet",
+      "text": "2026-08-10 — Live Claude verification: - The ignored live Rust Claude adapter test loaded and normalized that exact snapshot successfully.",
+      "keywords": [
+        "2026",
+        "live",
+        "claude",
+        "verification",
+        "ignored",
+        "rust",
+        "adapter",
+        "test",
+        "loaded",
+        "normalized",
+        "that",
+        "exact",
+        "snapshot",
+        "successfully"
       ]
     }
   ]
