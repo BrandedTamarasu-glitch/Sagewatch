@@ -13,10 +13,10 @@
     "windows": [
       {
         "title": "Sagewatch",
-        "width": 760,
-        "height": 500,
-        "minWidth": 640,
-        "minHeight": 480,
+        "width": 900,
+        "height": 800,
+        "minWidth": 660,
+        "minHeight": 640,
         "resizable": true,
         "fullscreen": false
       }
