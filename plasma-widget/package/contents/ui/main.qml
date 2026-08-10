@@ -8,9 +8,9 @@ import org.kde.plasma.plasmoid
 
 PlasmoidItem {
     id: root
-    readonly property url homeUrl: StandardPaths.writableLocation(StandardPaths.HomeLocation)
-    readonly property string helperPath: homeUrl.toLocalFile() + "/.local/libexec/sagewatch-plasma-provider"
-    readonly property string refreshHelperPath: homeUrl.toLocalFile() + "/.local/libexec/sagewatch-plasma-refresh"
+    readonly property string homePath: String(StandardPaths.writableLocation(StandardPaths.HomeLocation)).replace(/^file:\/\//, "")
+    readonly property string helperPath: homePath + "/.local/libexec/sagewatch-plasma-provider"
+    readonly property string refreshHelperPath: homePath + "/.local/libexec/sagewatch-plasma-refresh"
     property var snapshot: ({"providers": {}})
     property string errorMessage: ""
     property bool refreshing: false
@@ -50,16 +50,17 @@ PlasmoidItem {
     Plasma5Support.DataSource {
         id: dataSource
         engine: "executable"
-        onNewData: function(sourceName, data) {
-            var stdout = data.stdout ? String(data.stdout).trim() : ""
-            var stderr = data.stderr ? String(data.stderr).trim() : ""
-            var hasExitCode = data["exit code"] !== undefined && data["exit code"] !== null
+        onNewData: function(sourceName, ignoredData) {
+            var result = dataSource.data[sourceName] || ignoredData || ({})
+            var stdout = result["stdout"] ? String(result["stdout"]).trim() : ""
+            var stderr = result["stderr"] ? String(result["stderr"]).trim() : ""
+            var hasExitCode = result["exit code"] !== undefined && result["exit code"] !== null
             if (!stdout && !stderr && !hasExitCode) return
             root.refreshing = false
             if (stdout) try { root.snapshot = JSON.parse(stdout); root.errorMessage = "" }
             catch (error) { root.errorMessage = "Sagewatch returned invalid local data." }
             else if (stderr) root.errorMessage = stderr
-            else if (Number(data["exit code"]) !== 0) root.errorMessage = "Sagewatch data helper exited with code " + data["exit code"] + "."
+            else if (Number(result["exit code"]) !== 0) root.errorMessage = "Sagewatch data helper exited with code " + result["exit code"] + "."
             disconnectSource(sourceName)
         }
     }
