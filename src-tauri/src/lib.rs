@@ -129,6 +129,7 @@ pub fn run() {
             commands::status::get_status,
             commands::status::refresh_provider,
             commands::preferences::set_preferences,
+            commands::preferences::set_claude_usage_probe_enabled,
             commands::diagnostics::get_diagnostics,
             commands::desktop::get_autostart_enabled,
             commands::desktop::set_autostart_enabled,

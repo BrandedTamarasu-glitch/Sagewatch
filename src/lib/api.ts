@@ -9,6 +9,9 @@ export const refreshProvider = (provider: ProviderId): Promise<ProviderStatus> =
 export const setPreferences = (preferences: Preferences): Promise<Preferences> =>
   invoke("set_preferences", { preferences });
 
+export const setClaudeUsageProbeEnabled = (enabled: boolean): Promise<Preferences> =>
+  invoke("set_claude_usage_probe_enabled", { enabled });
+
 export const getDiagnostics = (): Promise<Diagnostics> => invoke("get_diagnostics");
 
 export const getAutostartEnabled = (): Promise<boolean> => invoke("get_autostart_enabled");

@@ -30,6 +30,7 @@ export class SagewatchApp {
 
   constructor(private readonly root: HTMLElement) {
     this.root.addEventListener("click", this.onClick);
+    this.root.addEventListener("change", this.onChange);
     this.root.addEventListener("submit", this.onSubmit);
     document.addEventListener("visibilitychange", this.onVisibilityChange);
     window.addEventListener("pagehide", this.destroy, { once: true });
@@ -93,6 +94,22 @@ export class SagewatchApp {
   };
 
   private closeDialog() { const provider = this.selected; this.selected = null; this.focusAfterRender = provider ? `[data-details="${provider}"]` : null; this.render(); }
+
+  private onChange = async (event: Event) => {
+    const input = event.target as HTMLInputElement;
+    if (input.name !== "claude_usage_probe_enabled" || input.type !== "checkbox") return;
+    const previousPreferences = this.preferences;
+    this.preferences = { ...this.preferences, claude_usage_probe_enabled: input.checked };
+    try {
+      this.preferences = await api.setClaudeUsageProbeEnabled(input.checked);
+      this.notice = input.checked ? "Experimental Claude /usage refresh enabled." : "Experimental Claude /usage refresh disabled.";
+    }
+    catch {
+      this.preferences = previousPreferences;
+      this.notice = "Claude /usage refresh could not be changed. The previous setting remains active.";
+      this.render();
+    }
+  };
 
   private async refresh(provider: ProviderId) {
     if (this.inFlight.has(provider)) return;
@@ -190,6 +207,7 @@ export class SagewatchApp {
     this.interval = null;
     document.removeEventListener("visibilitychange", this.onVisibilityChange);
     this.root.removeEventListener("click", this.onClick);
+    this.root.removeEventListener("change", this.onChange);
     this.root.removeEventListener("submit", this.onSubmit);
   };
 }

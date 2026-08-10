@@ -5,5 +5,5 @@ pub(crate) mod status;
 
 pub use desktop::{get_autostart_enabled, set_autostart_enabled, show_desktop_notification};
 pub use diagnostics::get_diagnostics;
-pub use preferences::set_preferences;
+pub use preferences::{set_claude_usage_probe_enabled, set_preferences};
 pub use status::{get_status, refresh_provider};
