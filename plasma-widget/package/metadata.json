@@ -1,0 +1,16 @@
+{
+  "KPlugin": {
+    "Authors": [{ "Name": "Sagewatch contributors" }],
+    "Category": "System Information",
+    "Description": "Private local Claude and Codex allowance dashboard",
+    "Icon": "view-statistics",
+    "Id": "com.github.brandedtamarasu.sagewatch",
+    "License": "MIT",
+    "Name": "Sagewatch",
+    "Version": "0.1.2",
+    "Website": "https://github.com/BrandedTamarasu-glitch/Sagewatch",
+    "BugReportUrl": "https://github.com/BrandedTamarasu-glitch/Sagewatch/issues"
+  },
+  "X-Plasma-API-Minimum-Version": "6.0",
+  "KPackageStructure": "Plasma/Applet"
+}

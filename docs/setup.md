@@ -64,6 +64,35 @@ The feed is session-attached. It updates while Claude Code invokes the status li
 
 The tray icon, notifications, and start-at-login preference are part of the desktop-integration release increment. They are local-only features and depend on the current Linux desktop session honoring the standard tray, notification, and XDG autostart facilities.
 
+### Native KDE Plasma 6 widget
+
+The repository includes a native Plasma 6 dashboard backed by the same Rust provider adapters and sanitized local state as the desktop application. Install it for the current user:
+
+```sh
+./scripts/install-plasma-widget.sh
+```
+
+The installer:
+
+1. Builds `sagewatch-plasma-provider` in release mode.
+2. Installs the helper to `~/.local/libexec/sagewatch-plasma-provider`.
+3. Installs `com.github.brandedtamarasu.sagewatch` with `kpackagetool6`.
+
+Add it from **Desktop Edit Mode → Add Widgets → Sagewatch**. The widget polls cached sanitized state once per minute; its refresh control asks the helper to refresh both providers directly. It never receives CLI credentials or raw provider responses.
+
+To test the installed package in a separate window:
+
+```sh
+plasmawindowed com.github.brandedtamarasu.sagewatch
+```
+
+To remove it:
+
+```sh
+kpackagetool6 --type Plasma/Applet --remove com.github.brandedtamarasu.sagewatch
+rm ~/.local/libexec/sagewatch-plasma-provider
+```
+
 ## Experimental background Claude refresh
 
 Sagewatch can optionally refresh account-wide Claude usage even when no regular Claude session is open. Enable **Experimental Claude /usage refresh** in Settings. It is disabled by default.

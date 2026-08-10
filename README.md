@@ -42,6 +42,16 @@ chmod +x Sagewatch_0.1.2_amd64.AppImage
 
 Sagewatch currently targets 64-bit Linux desktops. See the [setup guide](docs/setup.md) for provider configuration, desktop integration, and removal.
 
+### KDE Plasma 6 widget
+
+Sagewatch also includes a native Plasma widget. From a source checkout, install it for the current user with:
+
+```sh
+./scripts/install-plasma-widget.sh
+```
+
+Then right-click the desktop, choose **Enter Edit Mode**, select **Add Widgets**, and add **Sagewatch**. The installer builds a read-only local data helper in `~/.local/libexec/` and installs the widget in `~/.local/share/plasma/plasmoids/`. It does not require root access.
+
 ## Provider support
 
 | Provider | Integration | Notes |
@@ -66,6 +76,7 @@ npm run test:bridge
 cargo test --manifest-path src-tauri/Cargo.toml
 npm run build
 NO_STRIP=1 npm run tauri -- build
+./scripts/install-plasma-widget.sh
 ```
 
 `NO_STRIP=1` avoids an incompatibility between rolling-release Linux libraries and the older `strip` bundled with `linuxdeploy`.
