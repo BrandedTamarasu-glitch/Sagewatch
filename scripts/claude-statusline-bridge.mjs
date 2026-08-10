@@ -40,7 +40,7 @@ function percentage(value) {
 
 function isoTimestamp(value) {
   if (typeof value !== "string" && typeof value !== "number") return undefined;
-  const date = new Date(value);
+  const date = new Date(typeof value === "number" && Math.abs(value) < 1e12 ? value * 1_000 : value);
   return Number.isNaN(date.valueOf()) ? undefined : date.toISOString();
 }
 
@@ -66,7 +66,7 @@ function shortPlan(value) {
     : undefined;
 }
 
-export function sanitizeStatusline(input, now = new Date()) {
+export function sanitizeStatusline(input, now = new Date(), configuredPlan) {
   if (!input || typeof input !== "object" || Array.isArray(input)) {
     throw new Error("status-line input must be a JSON object");
   }
@@ -97,7 +97,7 @@ export function sanitizeStatusline(input, now = new Date()) {
     observed_at: now.toISOString(),
     rate_limits: rateLimits,
   };
-  const plan = shortPlan(input.plan) ?? shortPlan(input.subscription?.plan);
+  const plan = shortPlan(input.plan) ?? shortPlan(input.subscription?.plan) ?? shortPlan(configuredPlan);
   if (plan) snapshot.plan = plan;
   return snapshot;
 }
@@ -143,7 +143,7 @@ async function readStdin() {
 export async function main(argv = process.argv.slice(2)) {
   const passthrough = parseArguments(argv);
   const raw = await readStdin();
-  const snapshot = sanitizeStatusline(JSON.parse(raw));
+  const snapshot = sanitizeStatusline(JSON.parse(raw), new Date(), process.env.SAGEWATCH_CLAUDE_PLAN);
   await writeSnapshot(defaultSnapshotPath(), snapshot);
 
   if (passthrough.length) {

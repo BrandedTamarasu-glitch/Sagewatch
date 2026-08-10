@@ -19,10 +19,14 @@ Claude Code sends its status-line command one JSON object on standard input. Con
 {
   "statusLine": {
     "type": "command",
-    "command": "node /absolute/path/to/Sagewatch/scripts/claude-statusline-bridge.mjs"
+    "command": "SAGEWATCH_CLAUDE_PLAN='Claude Team' node /absolute/path/to/Sagewatch/scripts/claude-statusline-bridge.mjs"
   }
 }
 ```
+
+`SAGEWATCH_CLAUDE_PLAN` is optional. Claude's status-line payload does not currently
+include subscription-plan metadata, so set this only when you want Sagewatch to
+display a manually confirmed plan name.
 
 The bridge writes the sanitized observation to:
 

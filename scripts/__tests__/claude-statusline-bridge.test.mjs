@@ -55,6 +55,16 @@ test("rejects missing or unsupported rate-limit data", () => {
   );
 });
 
+test("normalizes Unix-second resets and an explicit plan", () => {
+  const snapshot = sanitizeStatusline(
+    { rate_limits: { five_hour: { used_percentage: 5, resets_at: 1786388400 } } },
+    new Date("2026-08-10T19:00:00Z"),
+    "Claude Team",
+  );
+  assert.equal(snapshot.rate_limits.five_hour.resets_at, "2026-08-10T19:00:00.000Z");
+  assert.equal(snapshot.plan, "Claude Team");
+});
+
 test("preserves bounded sanitized model-scoped windows using the shared adapter contract", async () => {
   const expected = JSON.parse(
     await readFile(new URL("../../tests/fixtures/claude-model-statusline.json", import.meta.url), "utf8"),

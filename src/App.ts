@@ -41,6 +41,7 @@ export class SagewatchApp {
     catch { this.notice = "Live status is unavailable."; }
     this.render();
     this.scheduleRefresh();
+    void this.refreshAll();
   }
 
   private render() {
@@ -92,10 +93,17 @@ export class SagewatchApp {
     if (this.interval != null) window.clearInterval(this.interval);
     this.interval = null;
     if (document.visibilityState === "hidden") return;
-    this.interval = window.setInterval(() => { void Promise.allSettled((["claude", "codex"] as ProviderId[]).map((provider) => this.refresh(provider))); }, refreshMilliseconds(this.preferences.refresh_interval_seconds));
+    this.interval = window.setInterval(() => { void this.refreshAll(); }, refreshMilliseconds(this.preferences.refresh_interval_seconds));
   }
 
-  private onVisibilityChange = () => this.scheduleRefresh();
+  private refreshAll() {
+    return Promise.allSettled((["claude", "codex"] as ProviderId[]).map((provider) => this.refresh(provider)));
+  }
+
+  private onVisibilityChange = () => {
+    this.scheduleRefresh();
+    if (!document.hidden) void this.refreshAll();
+  };
 
   destroy = () => {
     if (this.interval != null) window.clearInterval(this.interval);
