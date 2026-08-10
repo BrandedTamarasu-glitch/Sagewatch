@@ -8,4 +8,3 @@ Decision summary:
 - Codex uses the local experimental app-server `account/rateLimits/read` method.
 - A privacy-sensitive Codex rollout-cache fallback is optional and disabled by default.
 - Browser scraping, hidden OAuth endpoint calls, and direct credential collection are excluded.
-
