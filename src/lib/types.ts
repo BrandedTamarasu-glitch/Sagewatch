@@ -53,6 +53,7 @@ export interface Preferences {
   alerts_enabled: boolean;
   start_at_login: boolean;
   codex_rollout_fallback_enabled: boolean;
+  claude_usage_probe_enabled: boolean;
 }
 
 export interface ProviderDiagnostic {

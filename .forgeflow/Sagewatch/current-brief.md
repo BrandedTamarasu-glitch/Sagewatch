@@ -144,6 +144,15 @@ Preferences:
 - `alert_thresholds`
 - `alerts_enabled`
 - `codex_rollout_fallback_enabled`
+- `claude_usage_probe_enabled` (experimental, opt-in, default off)
+
+### Experimental Claude `/usage` refresh increment
+
+- When `claude_usage_probe_enabled` is true, scheduled and manual Claude refreshes launch the fixed, startup-discovered and canonicalized Claude executable directly in a real PTY, never through a shell.
+- Gate the probe to Claude Code 2.1.x and fail safely on version drift.
+- Use a private isolated working directory, avoid overlapping probes, and enforce bounded startup, snapshot, exit, and total lifetimes.
+- Send `/usage`, Escape, and `/exit`; additionally press Enter only after a bounded in-memory scanner matches both exact phrases in Claude's one-time trust prompt for the controlled empty private directory. Never parse terminal percentages or persist/log output, prompts, transcripts, or credentials.
+- Success requires the existing sanitized status-line snapshot's `observed_at` value to advance. Provider failure preserves the previous snapshot and reports honest diagnostics.
 
 ## Source ingestion rules
 

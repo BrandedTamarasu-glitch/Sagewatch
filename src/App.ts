@@ -108,7 +108,7 @@ export class SagewatchApp {
   private onSubmit = async (event: Event) => {
     const form = (event.target as Element).closest<HTMLFormElement>("[data-settings]"); if (!form) return; event.preventDefault();
     const data = new FormData(form); const thresholds = String(data.get("alert_thresholds") ?? "").split(",").map(Number).filter((value) => Number.isFinite(value) && value >= 0 && value <= 100);
-    const next: Preferences = { ...this.preferences, refresh_interval_seconds: Number(data.get("refresh_interval_seconds")), time_format: data.get("time_format") as Preferences["time_format"], alert_thresholds: thresholds, alerts_enabled: data.get("alerts_enabled") === "on", start_at_login: this.autostartEnabled, codex_rollout_fallback_enabled: data.get("codex_rollout_fallback_enabled") === "on" };
+    const next: Preferences = { ...this.preferences, refresh_interval_seconds: Number(data.get("refresh_interval_seconds")), time_format: data.get("time_format") as Preferences["time_format"], alert_thresholds: thresholds, alerts_enabled: data.get("alerts_enabled") === "on", start_at_login: this.autostartEnabled, codex_rollout_fallback_enabled: data.get("codex_rollout_fallback_enabled") === "on", claude_usage_probe_enabled: data.get("claude_usage_probe_enabled") === "on" };
     const requestedAutostart = data.get("autostart_enabled") === "on";
     this.saving = true; this.render();
     const preferencesResult = await Promise.allSettled([api.setPreferences(next)]).then(([result]) => result);

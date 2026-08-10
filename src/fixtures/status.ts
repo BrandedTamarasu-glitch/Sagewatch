@@ -7,6 +7,7 @@ export const fixturePreferences: Preferences = {
   alerts_enabled: false,
   start_at_login: false,
   codex_rollout_fallback_enabled: false,
+  claude_usage_probe_enabled: false,
 };
 
 export const fixtureProviders: ProviderStatus[] = [

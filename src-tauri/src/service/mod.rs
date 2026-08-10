@@ -108,7 +108,7 @@ impl RefreshService {
         Self::with_policy(
             adapters,
             store,
-            Duration::from_secs(15),
+            Duration::from_secs(23),
             Arc::new(ExponentialBackoff::default()),
         )
     }
@@ -118,9 +118,13 @@ impl RefreshService {
         timeout: Duration,
         backoff: Arc<dyn BackoffPolicy>,
     ) -> Result<Self, ServiceError> {
+        let preferences = store.load_preferences()?.normalize().unwrap_or_default();
         let adapters: HashMap<_, _> = adapters
             .into_iter()
-            .map(|adapter| (adapter.capabilities().provider, adapter))
+            .map(|adapter| {
+                adapter.set_preferences(&preferences);
+                (adapter.capabilities().provider, adapter)
+            })
             .collect();
         let saved = store.load_snapshots()?;
         let states = saved
@@ -135,7 +139,6 @@ impl RefreshService {
                 )
             })
             .collect();
-        let preferences = store.load_preferences()?.normalize().unwrap_or_default();
         Ok(Self {
             adapters,
             states: RwLock::new(states),
@@ -175,6 +178,9 @@ impl RefreshService {
             retryable: false,
         })?;
         self.store.save_preferences(&preferences)?;
+        for adapter in self.adapters.values() {
+            adapter.set_preferences(&preferences);
+        }
         *self.preferences.write().await = preferences.clone();
         Ok(preferences)
     }

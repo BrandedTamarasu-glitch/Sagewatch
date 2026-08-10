@@ -55,6 +55,12 @@ The feed is session-attached. It updates while Claude Code invokes the status li
 
 The tray icon, notifications, and start-at-login preference are part of the desktop-integration release increment. They are local-only features and depend on the current Linux desktop session honoring the standard tray, notification, and XDG autostart facilities.
 
+## Experimental background Claude refresh
+
+Sagewatch can optionally refresh account-wide Claude usage even when no regular Claude session is open. Enable **Experimental Claude /usage refresh** in Settings. It is disabled by default.
+
+When enabled, each Claude refresh starts the fixed Claude executable discovered and canonicalized at Sagewatch startup in a real local PTY, from a private Sagewatch working directory. Sagewatch checks for a compatible Claude Code 2.1.x version, waits for the interactive prompt, sends `/usage`, Escape, and `/exit`, and allows up to 17 seconds for the existing status-line bridge to advance its sanitized snapshot within a strict 22-second probe lifetime. It leaves `/usage` open for up to 12 seconds before returning to the prompt, allowing for the bridge's measured latency. On Claude's exact one-time safety screen it may also press Enter to trust that controlled empty directory. It never parses terminal percentages and does not persist or log PTY output, prompts, transcripts, or credentials. A timeout, concurrent probe, incompatible version, or unchanged snapshot fails safely and keeps the last valid status visible.
+
 If you are testing an AppImage build, make the artifact executable and launch it directly:
 
 ```sh

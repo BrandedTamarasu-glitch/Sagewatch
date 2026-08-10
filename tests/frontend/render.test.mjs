@@ -37,6 +37,9 @@ test("settings expose alert thresholds and explicit fallback privacy text", () =
   assert.match(html, /Start Sagewatch at login/);
   assert.match(html, /Privacy note/);
   assert.match(html, /off by default/);
+  assert.match(html, /name="claude_usage_probe_enabled"/);
+  assert.match(html, /Experimental privacy note/);
+  assert.match(html, /sends \/usage, Escape, and \/exit/);
 });
 
 test("settings surface autostart failures accessibly without changing the checkbox", () => {

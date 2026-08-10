@@ -172,6 +172,8 @@ pub struct Preferences {
     pub alerts_enabled: bool,
     pub codex_rollout_fallback_enabled: bool,
     #[serde(default)]
+    pub claude_usage_probe_enabled: bool,
+    #[serde(default)]
     pub start_at_login: bool,
 }
 
@@ -183,6 +185,7 @@ impl Default for Preferences {
             alert_thresholds: vec![20, 10],
             alerts_enabled: false,
             codex_rollout_fallback_enabled: false,
+            claude_usage_probe_enabled: false,
             start_at_login: false,
         }
     }

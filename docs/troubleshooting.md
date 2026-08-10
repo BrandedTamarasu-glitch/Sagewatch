@@ -20,6 +20,13 @@ The bridge emits no visual status by itself. Configure `--passthrough /absolute/
 
 An epoch-like reset time such as `Jan 21, 1970` means the source did not provide a usable reset timestamp and the app is showing a malformed or placeholder value. Treat it as stale or invalid data, not as a real live reset. Re-run a verified refresh from the underlying source and do not ship the value until the adapter or ingest path is fixed.
 
+## Experimental Claude `/usage` refresh fails
+
+- Confirm the status-line bridge still works during a normal Claude Code session.
+- Run `claude --version`; Sagewatch currently fails closed unless the discovered client is Claude Code 2.1.x.
+- A probe allows up to 17 seconds after `/usage` for the sanitized snapshot `observed_at` value to advance, within a strict 22-second probe lifetime. If it still times out, the last valid snapshot remains visible and diagnostics report the provider failure.
+- Sagewatch prevents overlapping probes. A concurrent manual or tray refresh may therefore report a retryable failure instead of launching a second Claude process.
+
 ## Permission or write failures
 
 The bridge needs permission to create its data directory and replace its snapshot. Check ownership of the selected path. Expected Unix permissions are `0700` for the `ingest` directory and `0600` for the JSON file.

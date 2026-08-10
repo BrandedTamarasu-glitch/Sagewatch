@@ -1,4 +1,4 @@
-use crate::domain::{Health, Provider, ProviderStatus};
+use crate::domain::{Health, Preferences, Provider, ProviderStatus};
 use async_trait::async_trait;
 use serde::{Deserialize, Serialize};
 use std::sync::{Arc, Mutex};
@@ -51,6 +51,7 @@ pub struct ProviderDiagnostics {
 
 #[async_trait]
 pub trait ProviderAdapter: Send + Sync {
+    fn set_preferences(&self, _preferences: &Preferences) {}
     async fn probe(&self) -> CapabilityReport;
     async fn refresh(&self) -> Result<ProviderStatus, AdapterError>;
     fn diagnose(&self, error: &AdapterError) -> ProviderDiagnostics;
