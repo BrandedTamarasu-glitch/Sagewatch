@@ -1,0 +1,45 @@
+{
+  "title": "Sagewatch v0.1.0",
+  "summary": "Initial local release of a read-only Claude Teams and Codex subscription allowance monitor.",
+  "impact": "Adds a complete Tauri 2 desktop widget with local provider adapters, safe normalized storage, accessible status UX, scheduled refresh, and threshold alerts.",
+  "branch": "main",
+  "baseBranch": "initial release",
+  "generatedAt": "2026-08-10T07:04:07-07:00",
+  "files": [
+    "src-tauri/src/providers/",
+    "src-tauri/src/service/",
+    "src-tauri/src/store/",
+    "src/",
+    "scripts/claude-statusline-bridge.mjs",
+    "docs/"
+  ],
+  "tests": [
+    "npm run build: pass",
+    "npm run test:frontend: pass",
+    "npm run test:bridge: pass",
+    "cargo fmt --check: pass",
+    "cargo test --offline: 12 passed, 1 intentionally ignored live test",
+    "live authenticated Codex handshake: pass",
+    "cargo clippy --offline --all-targets -- -D warnings: pass",
+    "cargo build --release --offline: pass"
+  ],
+  "reviewGate": "APPROVE",
+  "reviewGateNote": "Compass revalidation and Arbiter integration review passed after all findings were remediated.",
+  "capabilities": [
+    "Displays multiple Claude Teams and Codex allowance windows without flattening provider semantics.",
+    "Uses already authenticated local clients and stores normalized snapshots only.",
+    "Shows explicit freshness, health, provenance, reset time, and honest unavailable states.",
+    "Restores preferences, schedules independent refreshes, enforces backoff, and emits deduplicated accessible alerts."
+  ],
+  "risksMitigated": [
+    "No passwords, tokens, cookies, transcripts, or raw provider responses are retained.",
+    "Provider schema drift fails closed and one failing provider does not erase the other.",
+    "Claude status-line input is sanitized through a bounded allowlist before Rust ingestion.",
+    "Codex app-server execution uses fixed arguments, bounded output, timeouts, and a compatible-version gate."
+  ],
+  "notes": [
+    "No remote, push, or PR was created.",
+    "Claude live-session verification remains a documented target-machine check.",
+    "Team-wide administrative analytics and rollout transcript fallback remain deferred."
+  ]
+}
