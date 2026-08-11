@@ -12,6 +12,7 @@ PlasmoidItem {
     readonly property string helperPath: homePath + "/.local/libexec/sagewatch-plasma-provider"
     readonly property string refreshHelperPath: homePath + "/.local/libexec/sagewatch-plasma-refresh"
     property var snapshot: ({"providers": {}})
+    property int snapshotRevision: 0
     property string errorMessage: ""
     property bool refreshing: false
 
@@ -57,7 +58,7 @@ PlasmoidItem {
             var hasExitCode = result["exit code"] !== undefined && result["exit code"] !== null
             if (!stdout && !stderr && !hasExitCode) return
             root.refreshing = false
-            if (stdout) try { root.snapshot = JSON.parse(stdout); root.errorMessage = "" }
+            if (stdout) try { root.snapshot = JSON.parse(stdout); root.snapshotRevision += 1; root.errorMessage = "" }
             catch (error) { root.errorMessage = "Sagewatch returned invalid local data." }
             else if (stderr) root.errorMessage = stderr
             else if (Number(result["exit code"]) !== 0) root.errorMessage = "Sagewatch data helper exited with code " + result["exit code"] + "."
@@ -96,8 +97,24 @@ PlasmoidItem {
                 PlasmaComponents.Label { visible: root.errorMessage.length > 0; Layout.fillWidth: true; text: root.errorMessage; color: Kirigami.Theme.negativeTextColor; wrapMode: Text.Wrap }
                 RowLayout {
                     Layout.fillWidth: true; Layout.fillHeight: true; spacing: Kirigami.Units.largeSpacing
-                    ProviderCard { Layout.fillWidth: true; Layout.fillHeight: true; providerName: "Claude"; accentColor: "#c87550"; status: root.provider("claude"); remaining: root.percentage(status); resetText: root.resetLabel(status) }
-                    ProviderCard { Layout.fillWidth: true; Layout.fillHeight: true; providerName: "Codex"; accentColor: "#3d9b70"; status: root.provider("codex"); remaining: root.percentage(status); resetText: root.resetLabel(status) }
+                    ProviderCard {
+                        Layout.fillWidth: true; Layout.fillHeight: true
+                        providerName: "Claude"; accentColor: "#c87550"
+                        status: { root.snapshotRevision; return root.provider("claude") }
+                        healthValue: status && status.health ? status.health : "unavailable"
+                        freshnessValue: status && status.freshness ? status.freshness : "unknown"
+                        planValue: status && status.plan && status.plan !== "unknown" ? status.plan : "Plan unavailable"
+                        remaining: root.percentage(status); resetText: root.resetLabel(status)
+                    }
+                    ProviderCard {
+                        Layout.fillWidth: true; Layout.fillHeight: true
+                        providerName: "Codex"; accentColor: "#3d9b70"
+                        status: { root.snapshotRevision; return root.provider("codex") }
+                        healthValue: status && status.health ? status.health : "unavailable"
+                        freshnessValue: status && status.freshness ? status.freshness : "unknown"
+                        planValue: status && status.plan && status.plan !== "unknown" ? status.plan : "Plan unavailable"
+                        remaining: root.percentage(status); resetText: root.resetLabel(status)
+                    }
                 }
                 PlasmaComponents.Label { Layout.fillWidth: true; horizontalAlignment: Text.AlignHCenter; text: "Local only · No credentials stored"; color: Kirigami.Theme.disabledTextColor; font.pixelSize: Kirigami.Theme.smallFont.pixelSize }
             }

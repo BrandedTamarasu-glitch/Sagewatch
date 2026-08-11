@@ -8,10 +8,13 @@ Rectangle {
     required property string providerName
     required property color accentColor
     property var status: null
+    property string healthValue: "unavailable"
+    property string freshnessValue: "unknown"
+    property string planValue: "Plan unavailable"
     property var remaining: null
     property string resetText: "Not available"
-    readonly property string health: status && status.health ? status.health.replaceAll("_", " ") : "unavailable"
-    readonly property string plan: status && status.plan && status.plan !== "unknown" ? status.plan : "Plan unavailable"
+    readonly property string healthLabel: healthValue.replaceAll("_", " ")
+    readonly property string healthIcon: healthValue === "healthy" ? "✓" : healthValue === "error" || healthValue === "unsupported" || healthValue === "source_changed" ? "×" : "!"
     readonly property real amount: remaining === null || remaining === undefined ? 0 : Number(remaining)
     radius: Kirigami.Units.largeSpacing
     color: Qt.tint(Kirigami.Theme.backgroundColor, Qt.alpha(accentColor, 0.09))
@@ -23,13 +26,13 @@ Rectangle {
             Layout.fillWidth: true
             ColumnLayout { spacing: 0
                 PlasmaComponents.Label { text: card.providerName; font.pixelSize: Kirigami.Theme.defaultFont.pixelSize * 1.2; font.bold: true }
-                PlasmaComponents.Label { text: card.plan; color: Kirigami.Theme.disabledTextColor; font.pixelSize: Kirigami.Theme.smallFont.pixelSize }
+                PlasmaComponents.Label { text: card.planValue; color: Kirigami.Theme.disabledTextColor; font.pixelSize: Kirigami.Theme.smallFont.pixelSize }
             }
             Item { Layout.fillWidth: true }
             Rectangle {
-                implicitWidth: healthLabel.implicitWidth + Kirigami.Units.largeSpacing; implicitHeight: healthLabel.implicitHeight + Kirigami.Units.smallSpacing
+                implicitWidth: healthText.implicitWidth + Kirigami.Units.largeSpacing; implicitHeight: healthText.implicitHeight + Kirigami.Units.smallSpacing
                 radius: height / 2; color: Qt.alpha(card.accentColor, 0.16); border.color: Qt.alpha(card.accentColor, 0.4)
-                PlasmaComponents.Label { id: healthLabel; anchors.centerIn: parent; text: "✓ " + card.health.charAt(0).toUpperCase() + card.health.slice(1); color: card.accentColor; font.pixelSize: Kirigami.Theme.smallFont.pixelSize; font.bold: true }
+                PlasmaComponents.Label { id: healthText; anchors.centerIn: parent; text: card.healthIcon + " " + card.healthLabel.charAt(0).toUpperCase() + card.healthLabel.slice(1); color: card.accentColor; font.pixelSize: Kirigami.Theme.smallFont.pixelSize; font.bold: true }
             }
         }
         Item { Layout.preferredHeight: Kirigami.Units.smallSpacing }
@@ -45,7 +48,7 @@ Rectangle {
             PlasmaComponents.Label { text: "Resets"; color: Kirigami.Theme.disabledTextColor }
             PlasmaComponents.Label { text: card.resetText; Layout.fillWidth: true; elide: Text.ElideRight }
             PlasmaComponents.Label { text: "Freshness"; color: Kirigami.Theme.disabledTextColor }
-            PlasmaComponents.Label { text: card.status && card.status.freshness ? card.status.freshness : "unknown"; color: card.accentColor; font.bold: true }
+            PlasmaComponents.Label { text: card.freshnessValue; color: card.accentColor; font.bold: true }
         }
     }
 }
